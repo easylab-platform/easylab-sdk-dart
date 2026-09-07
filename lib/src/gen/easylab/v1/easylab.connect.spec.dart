@@ -289,13 +289,6 @@ abstract final class OpsService {
     easylabv1easylab.BuildResponse.new,
   );
 
-  static const run = connect.Spec(
-    '/$name/Run',
-    connect.StreamType.unary,
-    easylabv1easylab.RunRequest.new,
-    easylabv1easylab.RunResponse.new,
-  );
-
   static const taskLog = connect.Spec(
     '/$name/TaskLog',
     connect.StreamType.server,

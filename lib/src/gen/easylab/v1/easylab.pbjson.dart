@@ -1362,43 +1362,6 @@ final $typed_data.Uint8List buildResponseDescriptor = $convert.base64Decode(
     'Cg1CdWlsZFJlc3BvbnNlEg4KAm9rGAEgASgIUgJvaxIXCgd0YXNrX2lkGAIgASgJUgZ0YXNrSW'
     'QSFAoFaW1hZ2UYAyABKAlSBWltYWdlEhQKBWVycm9yGAQgASgJUgVlcnJvcg==');
 
-@$core.Deprecated('Use runRequestDescriptor instead')
-const RunRequest$json = {
-  '1': 'RunRequest',
-  '2': [
-    {'1': 'protocol', '3': 1, '4': 1, '5': 9, '10': 'protocol'},
-    {'1': 'org', '3': 2, '4': 1, '5': 9, '10': 'org'},
-    {'1': 'repo', '3': 3, '4': 1, '5': 9, '10': 'repo'},
-    {'1': 'ref', '3': 4, '4': 1, '5': 9, '10': 'ref'},
-    {'1': 'name', '3': 5, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'version', '3': 6, '4': 1, '5': 9, '10': 'version'},
-    {'1': 'file', '3': 7, '4': 1, '5': 9, '10': 'file'},
-    {'1': 'dockerfile_path', '3': 8, '4': 1, '5': 9, '10': 'dockerfilePath'},
-  ],
-};
-
-/// Descriptor for `RunRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List runRequestDescriptor = $convert.base64Decode(
-    'CgpSdW5SZXF1ZXN0EhoKCHByb3RvY29sGAEgASgJUghwcm90b2NvbBIQCgNvcmcYAiABKAlSA2'
-    '9yZxISCgRyZXBvGAMgASgJUgRyZXBvEhAKA3JlZhgEIAEoCVIDcmVmEhIKBG5hbWUYBSABKAlS'
-    'BG5hbWUSGAoHdmVyc2lvbhgGIAEoCVIHdmVyc2lvbhISCgRmaWxlGAcgASgJUgRmaWxlEicKD2'
-    'RvY2tlcmZpbGVfcGF0aBgIIAEoCVIOZG9ja2VyZmlsZVBhdGg=');
-
-@$core.Deprecated('Use runResponseDescriptor instead')
-const RunResponse$json = {
-  '1': 'RunResponse',
-  '2': [
-    {'1': 'ok', '3': 1, '4': 1, '5': 8, '10': 'ok'},
-    {'1': 'task_id', '3': 2, '4': 1, '5': 9, '10': 'taskId'},
-    {'1': 'error', '3': 3, '4': 1, '5': 9, '10': 'error'},
-  ],
-};
-
-/// Descriptor for `RunResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List runResponseDescriptor = $convert.base64Decode(
-    'CgtSdW5SZXNwb25zZRIOCgJvaxgBIAEoCFICb2sSFwoHdGFza19pZBgCIAEoCVIGdGFza0lkEh'
-    'QKBWVycm9yGAMgASgJUgVlcnJvcg==');
-
 @$core.Deprecated('Use opsStatusRequestDescriptor instead')
 const OpsStatusRequest$json = {
   '1': 'OpsStatusRequest',
@@ -2296,7 +2259,6 @@ const $core.Map<$core.String, $core.dynamic> OpsServiceBase$json = {
       '2': '.easylab.v1.BuildRequest',
       '3': '.easylab.v1.BuildResponse'
     },
-    {'1': 'Run', '2': '.easylab.v1.RunRequest', '3': '.easylab.v1.RunResponse'},
     {
       '1': 'TaskLog',
       '2': '.easylab.v1.TaskLogRequest',
@@ -2351,8 +2313,6 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>>
   '.easylab.v1.GetTaskResponse': GetTaskResponse$json,
   '.easylab.v1.BuildRequest': BuildRequest$json,
   '.easylab.v1.BuildResponse': BuildResponse$json,
-  '.easylab.v1.RunRequest': RunRequest$json,
-  '.easylab.v1.RunResponse': RunResponse$json,
   '.easylab.v1.TaskLogRequest': TaskLogRequest$json,
   '.easylab.v1.TaskLogResponse': TaskLogResponse$json,
   '.easylab.v1.SyncRequest': SyncRequest$json,
@@ -2381,10 +2341,9 @@ final $typed_data.Uint8List opsServiceDescriptor = $convert.base64Decode(
     'FiLnYxLkxpc3RUYXNrc1JlcXVlc3QaHS5lYXN5bGFiLnYxLkxpc3RUYXNrc1Jlc3BvbnNlEkIK'
     'B0dldFRhc2sSGi5lYXN5bGFiLnYxLkdldFRhc2tSZXF1ZXN0GhsuZWFzeWxhYi52MS5HZXRUYX'
     'NrUmVzcG9uc2USPAoFQnVpbGQSGC5lYXN5bGFiLnYxLkJ1aWxkUmVxdWVzdBoZLmVhc3lsYWIu'
-    'djEuQnVpbGRSZXNwb25zZRI2CgNSdW4SFi5lYXN5bGFiLnYxLlJ1blJlcXVlc3QaFy5lYXN5bG'
-    'FiLnYxLlJ1blJlc3BvbnNlEkQKB1Rhc2tMb2cSGi5lYXN5bGFiLnYxLlRhc2tMb2dSZXF1ZXN0'
-    'GhsuZWFzeWxhYi52MS5UYXNrTG9nUmVzcG9uc2UwARI5CgRTeW5jEhcuZWFzeWxhYi52MS5TeW'
-    '5jUmVxdWVzdBoYLmVhc3lsYWIudjEuU3luY1Jlc3BvbnNl');
+    'djEuQnVpbGRSZXNwb25zZRJECgdUYXNrTG9nEhouZWFzeWxhYi52MS5UYXNrTG9nUmVxdWVzdB'
+    'obLmVhc3lsYWIudjEuVGFza0xvZ1Jlc3BvbnNlMAESOQoEU3luYxIXLmVhc3lsYWIudjEuU3lu'
+    'Y1JlcXVlc3QaGC5lYXN5bGFiLnYxLlN5bmNSZXNwb25zZQ==');
 
 const $core.Map<$core.String, $core.dynamic> RegistryServiceBase$json = {
   '1': 'RegistryService',

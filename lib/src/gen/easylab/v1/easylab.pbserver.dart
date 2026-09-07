@@ -221,8 +221,6 @@ abstract class OpsServiceBase extends $pb.GeneratedService {
       $pb.ServerContext ctx, $0.GetTaskRequest request);
   $async.Future<$0.BuildResponse> build(
       $pb.ServerContext ctx, $0.BuildRequest request);
-  $async.Future<$0.RunResponse> run(
-      $pb.ServerContext ctx, $0.RunRequest request);
   $async.Future<$0.TaskLogResponse> taskLog(
       $pb.ServerContext ctx, $0.TaskLogRequest request);
   $async.Future<$0.SyncResponse> sync(
@@ -258,8 +256,6 @@ abstract class OpsServiceBase extends $pb.GeneratedService {
         return $0.GetTaskRequest();
       case 'Build':
         return $0.BuildRequest();
-      case 'Run':
-        return $0.RunRequest();
       case 'TaskLog':
         return $0.TaskLogRequest();
       case 'Sync':
@@ -300,8 +296,6 @@ abstract class OpsServiceBase extends $pb.GeneratedService {
         return getTask(ctx, request as $0.GetTaskRequest);
       case 'Build':
         return build(ctx, request as $0.BuildRequest);
-      case 'Run':
-        return run(ctx, request as $0.RunRequest);
       case 'TaskLog':
         return taskLog(ctx, request as $0.TaskLogRequest);
       case 'Sync':

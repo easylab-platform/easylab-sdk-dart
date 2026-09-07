@@ -674,23 +674,6 @@ extension type OpsServiceClient (connect.Transport _transport) {
     );
   }
 
-  Future<easylabv1easylab.RunResponse> run(
-    easylabv1easylab.RunRequest input, {
-    connect.Headers? headers,
-    connect.AbortSignal? signal,
-    Function(connect.Headers)? onHeader,
-    Function(connect.Headers)? onTrailer,
-  }) {
-    return connect.Client(_transport).unary(
-      specs.OpsService.run,
-      input,
-      signal: signal,
-      headers: headers,
-      onHeader: onHeader,
-      onTrailer: onTrailer,
-    );
-  }
-
   Stream<easylabv1easylab.TaskLogResponse> taskLog(
     easylabv1easylab.TaskLogRequest input, {
     connect.Headers? headers,
