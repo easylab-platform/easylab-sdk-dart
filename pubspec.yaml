@@ -1,0 +1,13 @@
+name: easylab_client_sdk
+description: "EasyLab typed client SDK for Dart/Flutter (Connect: easylab.v1 + agent.v1 via the easylab gateway)."
+version: 0.1.0
+publish_to: 'none'
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  connectrpc: ^2.0.0
+  protobuf: ^6.0.0
+  fixnum: ^1.1.1
+  http2: ^2.3.0
