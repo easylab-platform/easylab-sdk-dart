@@ -11,6 +11,8 @@
 //   final sessions = await client.agent.listSessions(ListSessionsRequest());
 library;
 
+import 'dart:io' as io;
+
 import 'package:connectrpc/connect.dart' as connect;
 import 'package:connectrpc/http2.dart';
 import 'package:connectrpc/protobuf.dart';
@@ -37,16 +39,25 @@ class EasyLabClient {
   final String token;
   final connect.Transport _transport;
 
-  EasyLabClient({required this.baseUrl, required this.token})
-      : _transport = _build(baseUrl, token);
+  /// [securityContext] lets callers trust a private/self-signed gateway CA
+  /// (the easylab TLS edge issues *.nip.io leaves from its own CA). When null
+  /// the default system trust store is used.
+  EasyLabClient({
+    required this.baseUrl,
+    required this.token,
+    io.SecurityContext? securityContext,
+  }) : _transport = _build(baseUrl, token, securityContext);
 
-  static connect.Transport _build(String baseUrl, String token) {
+  static connect.Transport _build(
+      String baseUrl, String token, io.SecurityContext? securityContext) {
     final trimmed =
         baseUrl.endsWith('/') ? baseUrl.substring(0, baseUrl.length - 1) : baseUrl;
     return protocol.Transport(
       baseUrl: trimmed,
       codec: const ProtoCodec(),
-      httpClient: createHttpClient(),
+      httpClient: createHttpClient(
+        transport: Http2ClientTransport(context: securityContext),
+      ),
     );
   }
 
