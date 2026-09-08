@@ -433,6 +433,146 @@ extension type LabServiceClient (connect.Transport _transport) {
       onTrailer: onTrailer,
     );
   }
+
+  /// ---- Lab additions (REST removals) ----
+  Future<easylabv1easylab.DeleteOrgResponse> deleteOrg(
+    easylabv1easylab.DeleteOrgRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.LabService.deleteOrg,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  /// Releases (backed by the generic artifact registry; format "generic").
+  Future<easylabv1easylab.ListReleasesResponse> listReleases(
+    easylabv1easylab.ListReleasesRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.LabService.listReleases,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.DownloadReleaseAssetResponse> downloadReleaseAsset(
+    easylabv1easylab.DownloadReleaseAssetRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.LabService.downloadReleaseAsset,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  /// Source archive tarball for a rev/tag.
+  Future<easylabv1easylab.ArchiveResponse> archive(
+    easylabv1easylab.ArchiveRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.LabService.archive,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  /// Mirror (persistent push/pull mirrors on a repo).
+  Future<easylabv1easylab.GetMirrorResponse> getMirror(
+    easylabv1easylab.GetMirrorRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.LabService.getMirror,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.SetMirrorResponse> setMirror(
+    easylabv1easylab.SetMirrorRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.LabService.setMirror,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.DeleteMirrorResponse> deleteMirror(
+    easylabv1easylab.DeleteMirrorRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.LabService.deleteMirror,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.SyncMirrorResponse> syncMirror(
+    easylabv1easylab.SyncMirrorRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.LabService.syncMirror,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
 }
 /// OpsService covers the dev/deploy surface (services, sandboxes, builds).
 extension type OpsServiceClient (connect.Transport _transport) {
@@ -804,6 +944,23 @@ extension type RegistryServiceClient (connect.Transport _transport) {
   }) {
     return connect.Client(_transport).unary(
       specs.RegistryService.listPublishSpecs,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.OCICatalogResponse> oCICatalog(
+    easylabv1easylab.OCICatalogRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.RegistryService.oCICatalog,
       input,
       signal: signal,
       headers: headers,

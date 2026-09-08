@@ -71,6 +71,22 @@ abstract class LabServiceBase extends $pb.GeneratedService {
       $pb.ServerContext ctx, $0.CompareRequest request);
   $async.Future<$0.RebaseResponse> rebase(
       $pb.ServerContext ctx, $0.RebaseRequest request);
+  $async.Future<$0.DeleteOrgResponse> deleteOrg(
+      $pb.ServerContext ctx, $0.DeleteOrgRequest request);
+  $async.Future<$0.ListReleasesResponse> listReleases(
+      $pb.ServerContext ctx, $0.ListReleasesRequest request);
+  $async.Future<$0.DownloadReleaseAssetResponse> downloadReleaseAsset(
+      $pb.ServerContext ctx, $0.DownloadReleaseAssetRequest request);
+  $async.Future<$0.ArchiveResponse> archive(
+      $pb.ServerContext ctx, $0.ArchiveRequest request);
+  $async.Future<$0.GetMirrorResponse> getMirror(
+      $pb.ServerContext ctx, $0.GetMirrorRequest request);
+  $async.Future<$0.SetMirrorResponse> setMirror(
+      $pb.ServerContext ctx, $0.SetMirrorRequest request);
+  $async.Future<$0.DeleteMirrorResponse> deleteMirror(
+      $pb.ServerContext ctx, $0.DeleteMirrorRequest request);
+  $async.Future<$0.SyncMirrorResponse> syncMirror(
+      $pb.ServerContext ctx, $0.SyncMirrorRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -124,6 +140,22 @@ abstract class LabServiceBase extends $pb.GeneratedService {
         return $0.CompareRequest();
       case 'Rebase':
         return $0.RebaseRequest();
+      case 'DeleteOrg':
+        return $0.DeleteOrgRequest();
+      case 'ListReleases':
+        return $0.ListReleasesRequest();
+      case 'DownloadReleaseAsset':
+        return $0.DownloadReleaseAssetRequest();
+      case 'Archive':
+        return $0.ArchiveRequest();
+      case 'GetMirror':
+        return $0.GetMirrorRequest();
+      case 'SetMirror':
+        return $0.SetMirrorRequest();
+      case 'DeleteMirror':
+        return $0.DeleteMirrorRequest();
+      case 'SyncMirror':
+        return $0.SyncMirrorRequest();
       default:
         throw $core.ArgumentError('Unknown method: $methodName');
     }
@@ -182,6 +214,23 @@ abstract class LabServiceBase extends $pb.GeneratedService {
         return compare(ctx, request as $0.CompareRequest);
       case 'Rebase':
         return rebase(ctx, request as $0.RebaseRequest);
+      case 'DeleteOrg':
+        return deleteOrg(ctx, request as $0.DeleteOrgRequest);
+      case 'ListReleases':
+        return listReleases(ctx, request as $0.ListReleasesRequest);
+      case 'DownloadReleaseAsset':
+        return downloadReleaseAsset(
+            ctx, request as $0.DownloadReleaseAssetRequest);
+      case 'Archive':
+        return archive(ctx, request as $0.ArchiveRequest);
+      case 'GetMirror':
+        return getMirror(ctx, request as $0.GetMirrorRequest);
+      case 'SetMirror':
+        return setMirror(ctx, request as $0.SetMirrorRequest);
+      case 'DeleteMirror':
+        return deleteMirror(ctx, request as $0.DeleteMirrorRequest);
+      case 'SyncMirror':
+        return syncMirror(ctx, request as $0.SyncMirrorRequest);
       default:
         throw $core.ArgumentError('Unknown method: $methodName');
     }
@@ -323,6 +372,8 @@ abstract class RegistryServiceBase extends $pb.GeneratedService {
       $pb.ServerContext ctx, $0.DeletePackageVersionRequest request);
   $async.Future<$0.ListPublishSpecsResponse> listPublishSpecs(
       $pb.ServerContext ctx, $0.ListPublishSpecsRequest request);
+  $async.Future<$0.OCICatalogResponse> oCICatalog(
+      $pb.ServerContext ctx, $0.OCICatalogRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -338,6 +389,8 @@ abstract class RegistryServiceBase extends $pb.GeneratedService {
         return $0.DeletePackageVersionRequest();
       case 'ListPublishSpecs':
         return $0.ListPublishSpecsRequest();
+      case 'OCICatalog':
+        return $0.OCICatalogRequest();
       default:
         throw $core.ArgumentError('Unknown method: $methodName');
     }
@@ -359,6 +412,8 @@ abstract class RegistryServiceBase extends $pb.GeneratedService {
             ctx, request as $0.DeletePackageVersionRequest);
       case 'ListPublishSpecs':
         return listPublishSpecs(ctx, request as $0.ListPublishSpecsRequest);
+      case 'OCICatalog':
+        return oCICatalog(ctx, request as $0.OCICatalogRequest);
       default:
         throw $core.ArgumentError('Unknown method: $methodName');
     }

@@ -185,6 +185,66 @@ abstract final class LabService {
     easylabv1easylab.RebaseRequest.new,
     easylabv1easylab.RebaseResponse.new,
   );
+
+  /// ---- Lab additions (REST removals) ----
+  static const deleteOrg = connect.Spec(
+    '/$name/DeleteOrg',
+    connect.StreamType.unary,
+    easylabv1easylab.DeleteOrgRequest.new,
+    easylabv1easylab.DeleteOrgResponse.new,
+  );
+
+  /// Releases (backed by the generic artifact registry; format "generic").
+  static const listReleases = connect.Spec(
+    '/$name/ListReleases',
+    connect.StreamType.unary,
+    easylabv1easylab.ListReleasesRequest.new,
+    easylabv1easylab.ListReleasesResponse.new,
+  );
+
+  static const downloadReleaseAsset = connect.Spec(
+    '/$name/DownloadReleaseAsset',
+    connect.StreamType.unary,
+    easylabv1easylab.DownloadReleaseAssetRequest.new,
+    easylabv1easylab.DownloadReleaseAssetResponse.new,
+  );
+
+  /// Source archive tarball for a rev/tag.
+  static const archive = connect.Spec(
+    '/$name/Archive',
+    connect.StreamType.unary,
+    easylabv1easylab.ArchiveRequest.new,
+    easylabv1easylab.ArchiveResponse.new,
+  );
+
+  /// Mirror (persistent push/pull mirrors on a repo).
+  static const getMirror = connect.Spec(
+    '/$name/GetMirror',
+    connect.StreamType.unary,
+    easylabv1easylab.GetMirrorRequest.new,
+    easylabv1easylab.GetMirrorResponse.new,
+  );
+
+  static const setMirror = connect.Spec(
+    '/$name/SetMirror',
+    connect.StreamType.unary,
+    easylabv1easylab.SetMirrorRequest.new,
+    easylabv1easylab.SetMirrorResponse.new,
+  );
+
+  static const deleteMirror = connect.Spec(
+    '/$name/DeleteMirror',
+    connect.StreamType.unary,
+    easylabv1easylab.DeleteMirrorRequest.new,
+    easylabv1easylab.DeleteMirrorResponse.new,
+  );
+
+  static const syncMirror = connect.Spec(
+    '/$name/SyncMirror',
+    connect.StreamType.unary,
+    easylabv1easylab.SyncMirrorRequest.new,
+    easylabv1easylab.SyncMirrorResponse.new,
+  );
 }
 /// OpsService covers the dev/deploy surface (services, sandboxes, builds).
 abstract final class OpsService {
@@ -348,5 +408,12 @@ abstract final class RegistryService {
     connect.StreamType.unary,
     easylabv1easylab.ListPublishSpecsRequest.new,
     easylabv1easylab.ListPublishSpecsResponse.new,
+  );
+
+  static const oCICatalog = connect.Spec(
+    '/$name/OCICatalog',
+    connect.StreamType.unary,
+    easylabv1easylab.OCICatalogRequest.new,
+    easylabv1easylab.OCICatalogResponse.new,
   );
 }

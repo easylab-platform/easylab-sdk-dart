@@ -1960,6 +1960,357 @@ final $typed_data.Uint8List taskLogResponseDescriptor = $convert.base64Decode(
     'Cg9UYXNrTG9nUmVzcG9uc2USFgoGc3RyZWFtGAEgASgJUgZzdHJlYW0SEgoEbGluZRgCIAEoCV'
     'IEbGluZQ==');
 
+@$core.Deprecated('Use deleteOrgRequestDescriptor instead')
+const DeleteOrgRequest$json = {
+  '1': 'DeleteOrgRequest',
+  '2': [
+    {'1': 'org', '3': 1, '4': 1, '5': 9, '10': 'org'},
+  ],
+};
+
+/// Descriptor for `DeleteOrgRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteOrgRequestDescriptor =
+    $convert.base64Decode('ChBEZWxldGVPcmdSZXF1ZXN0EhAKA29yZxgBIAEoCVIDb3Jn');
+
+@$core.Deprecated('Use deleteOrgResponseDescriptor instead')
+const DeleteOrgResponse$json = {
+  '1': 'DeleteOrgResponse',
+  '2': [
+    {'1': 'ok', '3': 1, '4': 1, '5': 8, '10': 'ok'},
+    {'1': 'error', '3': 2, '4': 1, '5': 9, '10': 'error'},
+  ],
+};
+
+/// Descriptor for `DeleteOrgResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteOrgResponseDescriptor = $convert.base64Decode(
+    'ChFEZWxldGVPcmdSZXNwb25zZRIOCgJvaxgBIAEoCFICb2sSFAoFZXJyb3IYAiABKAlSBWVycm'
+    '9y');
+
+@$core.Deprecated('Use releaseViewDescriptor instead')
+const ReleaseView$json = {
+  '1': 'ReleaseView',
+  '2': [
+    {'1': 'tag', '3': 1, '4': 1, '5': 9, '10': 'tag'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'draft', '3': 4, '4': 1, '5': 8, '10': 'draft'},
+    {'1': 'prerelease', '3': 5, '4': 1, '5': 8, '10': 'prerelease'},
+    {'1': 'revision_id', '3': 6, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'created', '3': 7, '4': 1, '5': 9, '10': 'created'},
+    {
+      '1': 'assets',
+      '3': 8,
+      '4': 3,
+      '5': 11,
+      '6': '.easylab.v1.ReleaseAssetView',
+      '10': 'assets'
+    },
+  ],
+};
+
+/// Descriptor for `ReleaseView`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List releaseViewDescriptor = $convert.base64Decode(
+    'CgtSZWxlYXNlVmlldxIQCgN0YWcYASABKAlSA3RhZxISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2'
+    'Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhIUCgVkcmFmdBgEIAEoCFIFZHJhZnQSHgoK'
+    'cHJlcmVsZWFzZRgFIAEoCFIKcHJlcmVsZWFzZRIfCgtyZXZpc2lvbl9pZBgGIAEoCVIKcmV2aX'
+    'Npb25JZBIYCgdjcmVhdGVkGAcgASgJUgdjcmVhdGVkEjQKBmFzc2V0cxgIIAMoCzIcLmVhc3ls'
+    'YWIudjEuUmVsZWFzZUFzc2V0Vmlld1IGYXNzZXRz');
+
+@$core.Deprecated('Use releaseAssetViewDescriptor instead')
+const ReleaseAssetView$json = {
+  '1': 'ReleaseAssetView',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'size', '3': 2, '4': 1, '5': 3, '10': 'size'},
+    {'1': 'digest', '3': 3, '4': 1, '5': 9, '10': 'digest'},
+    {'1': 'content_type', '3': 4, '4': 1, '5': 9, '10': 'contentType'},
+  ],
+};
+
+/// Descriptor for `ReleaseAssetView`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List releaseAssetViewDescriptor = $convert.base64Decode(
+    'ChBSZWxlYXNlQXNzZXRWaWV3EhIKBG5hbWUYASABKAlSBG5hbWUSEgoEc2l6ZRgCIAEoA1IEc2'
+    'l6ZRIWCgZkaWdlc3QYAyABKAlSBmRpZ2VzdBIhCgxjb250ZW50X3R5cGUYBCABKAlSC2NvbnRl'
+    'bnRUeXBl');
+
+@$core.Deprecated('Use listReleasesRequestDescriptor instead')
+const ListReleasesRequest$json = {
+  '1': 'ListReleasesRequest',
+  '2': [
+    {'1': 'org', '3': 1, '4': 1, '5': 9, '10': 'org'},
+    {'1': 'repo', '3': 2, '4': 1, '5': 9, '10': 'repo'},
+  ],
+};
+
+/// Descriptor for `ListReleasesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listReleasesRequestDescriptor = $convert.base64Decode(
+    'ChNMaXN0UmVsZWFzZXNSZXF1ZXN0EhAKA29yZxgBIAEoCVIDb3JnEhIKBHJlcG8YAiABKAlSBH'
+    'JlcG8=');
+
+@$core.Deprecated('Use listReleasesResponseDescriptor instead')
+const ListReleasesResponse$json = {
+  '1': 'ListReleasesResponse',
+  '2': [
+    {
+      '1': 'releases',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.easylab.v1.ReleaseView',
+      '10': 'releases'
+    },
+  ],
+};
+
+/// Descriptor for `ListReleasesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listReleasesResponseDescriptor = $convert.base64Decode(
+    'ChRMaXN0UmVsZWFzZXNSZXNwb25zZRIzCghyZWxlYXNlcxgBIAMoCzIXLmVhc3lsYWIudjEuUm'
+    'VsZWFzZVZpZXdSCHJlbGVhc2Vz');
+
+@$core.Deprecated('Use downloadReleaseAssetRequestDescriptor instead')
+const DownloadReleaseAssetRequest$json = {
+  '1': 'DownloadReleaseAssetRequest',
+  '2': [
+    {'1': 'org', '3': 1, '4': 1, '5': 9, '10': 'org'},
+    {'1': 'repo', '3': 2, '4': 1, '5': 9, '10': 'repo'},
+    {'1': 'tag', '3': 3, '4': 1, '5': 9, '10': 'tag'},
+    {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `DownloadReleaseAssetRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List downloadReleaseAssetRequestDescriptor =
+    $convert.base64Decode(
+        'ChtEb3dubG9hZFJlbGVhc2VBc3NldFJlcXVlc3QSEAoDb3JnGAEgASgJUgNvcmcSEgoEcmVwbx'
+        'gCIAEoCVIEcmVwbxIQCgN0YWcYAyABKAlSA3RhZxISCgRuYW1lGAQgASgJUgRuYW1l');
+
+@$core.Deprecated('Use downloadReleaseAssetResponseDescriptor instead')
+const DownloadReleaseAssetResponse$json = {
+  '1': 'DownloadReleaseAssetResponse',
+  '2': [
+    {'1': 'data', '3': 1, '4': 1, '5': 12, '10': 'data'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'content_type', '3': 3, '4': 1, '5': 9, '10': 'contentType'},
+  ],
+};
+
+/// Descriptor for `DownloadReleaseAssetResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List downloadReleaseAssetResponseDescriptor =
+    $convert.base64Decode(
+        'ChxEb3dubG9hZFJlbGVhc2VBc3NldFJlc3BvbnNlEhIKBGRhdGEYASABKAxSBGRhdGESEgoEbm'
+        'FtZRgCIAEoCVIEbmFtZRIhCgxjb250ZW50X3R5cGUYAyABKAlSC2NvbnRlbnRUeXBl');
+
+@$core.Deprecated('Use archiveRequestDescriptor instead')
+const ArchiveRequest$json = {
+  '1': 'ArchiveRequest',
+  '2': [
+    {'1': 'org', '3': 1, '4': 1, '5': 9, '10': 'org'},
+    {'1': 'repo', '3': 2, '4': 1, '5': 9, '10': 'repo'},
+    {'1': 'ref', '3': 3, '4': 1, '5': 9, '10': 'ref'},
+  ],
+};
+
+/// Descriptor for `ArchiveRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List archiveRequestDescriptor = $convert.base64Decode(
+    'Cg5BcmNoaXZlUmVxdWVzdBIQCgNvcmcYASABKAlSA29yZxISCgRyZXBvGAIgASgJUgRyZXBvEh'
+    'AKA3JlZhgDIAEoCVIDcmVm');
+
+@$core.Deprecated('Use archiveResponseDescriptor instead')
+const ArchiveResponse$json = {
+  '1': 'ArchiveResponse',
+  '2': [
+    {'1': 'data', '3': 1, '4': 1, '5': 12, '10': 'data'},
+    {'1': 'filename', '3': 2, '4': 1, '5': 9, '10': 'filename'},
+  ],
+};
+
+/// Descriptor for `ArchiveResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List archiveResponseDescriptor = $convert.base64Decode(
+    'Cg9BcmNoaXZlUmVzcG9uc2USEgoEZGF0YRgBIAEoDFIEZGF0YRIaCghmaWxlbmFtZRgCIAEoCV'
+    'IIZmlsZW5hbWU=');
+
+@$core.Deprecated('Use mirrorCfgDescriptor instead')
+const MirrorCfg$json = {
+  '1': 'MirrorCfg',
+  '2': [
+    {'1': 'pull_url', '3': 1, '4': 1, '5': 9, '10': 'pullUrl'},
+    {'1': 'push_url', '3': 2, '4': 1, '5': 9, '10': 'pushUrl'},
+    {'1': 'push_secret_set', '3': 3, '4': 1, '5': 8, '10': 'pushSecretSet'},
+  ],
+};
+
+/// Descriptor for `MirrorCfg`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List mirrorCfgDescriptor = $convert.base64Decode(
+    'CglNaXJyb3JDZmcSGQoIcHVsbF91cmwYASABKAlSB3B1bGxVcmwSGQoIcHVzaF91cmwYAiABKA'
+    'lSB3B1c2hVcmwSJgoPcHVzaF9zZWNyZXRfc2V0GAMgASgIUg1wdXNoU2VjcmV0U2V0');
+
+@$core.Deprecated('Use getMirrorRequestDescriptor instead')
+const GetMirrorRequest$json = {
+  '1': 'GetMirrorRequest',
+  '2': [
+    {'1': 'org', '3': 1, '4': 1, '5': 9, '10': 'org'},
+    {'1': 'repo', '3': 2, '4': 1, '5': 9, '10': 'repo'},
+  ],
+};
+
+/// Descriptor for `GetMirrorRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMirrorRequestDescriptor = $convert.base64Decode(
+    'ChBHZXRNaXJyb3JSZXF1ZXN0EhAKA29yZxgBIAEoCVIDb3JnEhIKBHJlcG8YAiABKAlSBHJlcG'
+    '8=');
+
+@$core.Deprecated('Use getMirrorResponseDescriptor instead')
+const GetMirrorResponse$json = {
+  '1': 'GetMirrorResponse',
+  '2': [
+    {
+      '1': 'mirror',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.easylab.v1.MirrorCfg',
+      '10': 'mirror'
+    },
+  ],
+};
+
+/// Descriptor for `GetMirrorResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMirrorResponseDescriptor = $convert.base64Decode(
+    'ChFHZXRNaXJyb3JSZXNwb25zZRItCgZtaXJyb3IYASABKAsyFS5lYXN5bGFiLnYxLk1pcnJvck'
+    'NmZ1IGbWlycm9y');
+
+@$core.Deprecated('Use setMirrorRequestDescriptor instead')
+const SetMirrorRequest$json = {
+  '1': 'SetMirrorRequest',
+  '2': [
+    {'1': 'org', '3': 1, '4': 1, '5': 9, '10': 'org'},
+    {'1': 'repo', '3': 2, '4': 1, '5': 9, '10': 'repo'},
+    {'1': 'pull_url', '3': 3, '4': 1, '5': 9, '10': 'pullUrl'},
+    {'1': 'push_url', '3': 4, '4': 1, '5': 9, '10': 'pushUrl'},
+    {'1': 'push_secret', '3': 5, '4': 1, '5': 9, '10': 'pushSecret'},
+  ],
+};
+
+/// Descriptor for `SetMirrorRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setMirrorRequestDescriptor = $convert.base64Decode(
+    'ChBTZXRNaXJyb3JSZXF1ZXN0EhAKA29yZxgBIAEoCVIDb3JnEhIKBHJlcG8YAiABKAlSBHJlcG'
+    '8SGQoIcHVsbF91cmwYAyABKAlSB3B1bGxVcmwSGQoIcHVzaF91cmwYBCABKAlSB3B1c2hVcmwS'
+    'HwoLcHVzaF9zZWNyZXQYBSABKAlSCnB1c2hTZWNyZXQ=');
+
+@$core.Deprecated('Use setMirrorResponseDescriptor instead')
+const SetMirrorResponse$json = {
+  '1': 'SetMirrorResponse',
+  '2': [
+    {'1': 'ok', '3': 1, '4': 1, '5': 8, '10': 'ok'},
+    {'1': 'error', '3': 2, '4': 1, '5': 9, '10': 'error'},
+  ],
+};
+
+/// Descriptor for `SetMirrorResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setMirrorResponseDescriptor = $convert.base64Decode(
+    'ChFTZXRNaXJyb3JSZXNwb25zZRIOCgJvaxgBIAEoCFICb2sSFAoFZXJyb3IYAiABKAlSBWVycm'
+    '9y');
+
+@$core.Deprecated('Use deleteMirrorRequestDescriptor instead')
+const DeleteMirrorRequest$json = {
+  '1': 'DeleteMirrorRequest',
+  '2': [
+    {'1': 'org', '3': 1, '4': 1, '5': 9, '10': 'org'},
+    {'1': 'repo', '3': 2, '4': 1, '5': 9, '10': 'repo'},
+  ],
+};
+
+/// Descriptor for `DeleteMirrorRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteMirrorRequestDescriptor = $convert.base64Decode(
+    'ChNEZWxldGVNaXJyb3JSZXF1ZXN0EhAKA29yZxgBIAEoCVIDb3JnEhIKBHJlcG8YAiABKAlSBH'
+    'JlcG8=');
+
+@$core.Deprecated('Use deleteMirrorResponseDescriptor instead')
+const DeleteMirrorResponse$json = {
+  '1': 'DeleteMirrorResponse',
+  '2': [
+    {'1': 'ok', '3': 1, '4': 1, '5': 8, '10': 'ok'},
+    {'1': 'error', '3': 2, '4': 1, '5': 9, '10': 'error'},
+  ],
+};
+
+/// Descriptor for `DeleteMirrorResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteMirrorResponseDescriptor = $convert.base64Decode(
+    'ChREZWxldGVNaXJyb3JSZXNwb25zZRIOCgJvaxgBIAEoCFICb2sSFAoFZXJyb3IYAiABKAlSBW'
+    'Vycm9y');
+
+@$core.Deprecated('Use syncMirrorRequestDescriptor instead')
+const SyncMirrorRequest$json = {
+  '1': 'SyncMirrorRequest',
+  '2': [
+    {'1': 'org', '3': 1, '4': 1, '5': 9, '10': 'org'},
+    {'1': 'repo', '3': 2, '4': 1, '5': 9, '10': 'repo'},
+    {'1': 'kind', '3': 3, '4': 1, '5': 9, '10': 'kind'},
+    {
+      '1': 'body',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.easylab.v1.SyncMirrorRequest.BodyEntry',
+      '10': 'body'
+    },
+  ],
+  '3': [SyncMirrorRequest_BodyEntry$json],
+};
+
+@$core.Deprecated('Use syncMirrorRequestDescriptor instead')
+const SyncMirrorRequest_BodyEntry$json = {
+  '1': 'BodyEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `SyncMirrorRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List syncMirrorRequestDescriptor = $convert.base64Decode(
+    'ChFTeW5jTWlycm9yUmVxdWVzdBIQCgNvcmcYASABKAlSA29yZxISCgRyZXBvGAIgASgJUgRyZX'
+    'BvEhIKBGtpbmQYAyABKAlSBGtpbmQSOwoEYm9keRgEIAMoCzInLmVhc3lsYWIudjEuU3luY01p'
+    'cnJvclJlcXVlc3QuQm9keUVudHJ5UgRib2R5GjcKCUJvZHlFbnRyeRIQCgNrZXkYASABKAlSA2'
+    'tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgB');
+
+@$core.Deprecated('Use syncMirrorResponseDescriptor instead')
+const SyncMirrorResponse$json = {
+  '1': 'SyncMirrorResponse',
+  '2': [
+    {'1': 'ok', '3': 1, '4': 1, '5': 8, '10': 'ok'},
+    {'1': 'updated_branches', '3': 2, '4': 1, '5': 9, '10': 'updatedBranches'},
+    {'1': 'error', '3': 3, '4': 1, '5': 9, '10': 'error'},
+  ],
+};
+
+/// Descriptor for `SyncMirrorResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List syncMirrorResponseDescriptor = $convert.base64Decode(
+    'ChJTeW5jTWlycm9yUmVzcG9uc2USDgoCb2sYASABKAhSAm9rEikKEHVwZGF0ZWRfYnJhbmNoZX'
+    'MYAiABKAlSD3VwZGF0ZWRCcmFuY2hlcxIUCgVlcnJvchgDIAEoCVIFZXJyb3I=');
+
+@$core.Deprecated('Use oCICatalogRequestDescriptor instead')
+const OCICatalogRequest$json = {
+  '1': 'OCICatalogRequest',
+};
+
+/// Descriptor for `OCICatalogRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List oCICatalogRequestDescriptor =
+    $convert.base64Decode('ChFPQ0lDYXRhbG9nUmVxdWVzdA==');
+
+@$core.Deprecated('Use oCICatalogResponseDescriptor instead')
+const OCICatalogResponse$json = {
+  '1': 'OCICatalogResponse',
+  '2': [
+    {'1': 'repositories', '3': 1, '4': 3, '5': 9, '10': 'repositories'},
+  ],
+};
+
+/// Descriptor for `OCICatalogResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List oCICatalogResponseDescriptor = $convert.base64Decode(
+    'ChJPQ0lDYXRhbG9nUmVzcG9uc2USIgoMcmVwb3NpdG9yaWVzGAEgAygJUgxyZXBvc2l0b3JpZX'
+    'M=');
+
 const $core.Map<$core.String, $core.dynamic> LabServiceBase$json = {
   '1': 'LabService',
   '2': [
@@ -2084,6 +2435,46 @@ const $core.Map<$core.String, $core.dynamic> LabServiceBase$json = {
       '2': '.easylab.v1.RebaseRequest',
       '3': '.easylab.v1.RebaseResponse'
     },
+    {
+      '1': 'DeleteOrg',
+      '2': '.easylab.v1.DeleteOrgRequest',
+      '3': '.easylab.v1.DeleteOrgResponse'
+    },
+    {
+      '1': 'ListReleases',
+      '2': '.easylab.v1.ListReleasesRequest',
+      '3': '.easylab.v1.ListReleasesResponse'
+    },
+    {
+      '1': 'DownloadReleaseAsset',
+      '2': '.easylab.v1.DownloadReleaseAssetRequest',
+      '3': '.easylab.v1.DownloadReleaseAssetResponse'
+    },
+    {
+      '1': 'Archive',
+      '2': '.easylab.v1.ArchiveRequest',
+      '3': '.easylab.v1.ArchiveResponse'
+    },
+    {
+      '1': 'GetMirror',
+      '2': '.easylab.v1.GetMirrorRequest',
+      '3': '.easylab.v1.GetMirrorResponse'
+    },
+    {
+      '1': 'SetMirror',
+      '2': '.easylab.v1.SetMirrorRequest',
+      '3': '.easylab.v1.SetMirrorResponse'
+    },
+    {
+      '1': 'DeleteMirror',
+      '2': '.easylab.v1.DeleteMirrorRequest',
+      '3': '.easylab.v1.DeleteMirrorResponse'
+    },
+    {
+      '1': 'SyncMirror',
+      '2': '.easylab.v1.SyncMirrorRequest',
+      '3': '.easylab.v1.SyncMirrorResponse'
+    },
   ],
 };
 
@@ -2149,6 +2540,26 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>>
   '.easylab.v1.CompareResponse': CompareResponse$json,
   '.easylab.v1.RebaseRequest': RebaseRequest$json,
   '.easylab.v1.RebaseResponse': RebaseResponse$json,
+  '.easylab.v1.DeleteOrgRequest': DeleteOrgRequest$json,
+  '.easylab.v1.DeleteOrgResponse': DeleteOrgResponse$json,
+  '.easylab.v1.ListReleasesRequest': ListReleasesRequest$json,
+  '.easylab.v1.ListReleasesResponse': ListReleasesResponse$json,
+  '.easylab.v1.ReleaseView': ReleaseView$json,
+  '.easylab.v1.ReleaseAssetView': ReleaseAssetView$json,
+  '.easylab.v1.DownloadReleaseAssetRequest': DownloadReleaseAssetRequest$json,
+  '.easylab.v1.DownloadReleaseAssetResponse': DownloadReleaseAssetResponse$json,
+  '.easylab.v1.ArchiveRequest': ArchiveRequest$json,
+  '.easylab.v1.ArchiveResponse': ArchiveResponse$json,
+  '.easylab.v1.GetMirrorRequest': GetMirrorRequest$json,
+  '.easylab.v1.GetMirrorResponse': GetMirrorResponse$json,
+  '.easylab.v1.MirrorCfg': MirrorCfg$json,
+  '.easylab.v1.SetMirrorRequest': SetMirrorRequest$json,
+  '.easylab.v1.SetMirrorResponse': SetMirrorResponse$json,
+  '.easylab.v1.DeleteMirrorRequest': DeleteMirrorRequest$json,
+  '.easylab.v1.DeleteMirrorResponse': DeleteMirrorResponse$json,
+  '.easylab.v1.SyncMirrorRequest': SyncMirrorRequest$json,
+  '.easylab.v1.SyncMirrorRequest.BodyEntry': SyncMirrorRequest_BodyEntry$json,
+  '.easylab.v1.SyncMirrorResponse': SyncMirrorResponse$json,
 };
 
 /// Descriptor for `LabService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2184,7 +2595,19 @@ final $typed_data.Uint8List labServiceDescriptor = $convert.base64Decode(
     'UmVzcG9uc2USPAoFR3JhcGgSGC5lYXN5bGFiLnYxLkdyYXBoUmVxdWVzdBoZLmVhc3lsYWIudj'
     'EuR3JhcGhSZXNwb25zZRJCCgdDb21wYXJlEhouZWFzeWxhYi52MS5Db21wYXJlUmVxdWVzdBob'
     'LmVhc3lsYWIudjEuQ29tcGFyZVJlc3BvbnNlEj8KBlJlYmFzZRIZLmVhc3lsYWIudjEuUmViYX'
-    'NlUmVxdWVzdBoaLmVhc3lsYWIudjEuUmViYXNlUmVzcG9uc2U=');
+    'NlUmVxdWVzdBoaLmVhc3lsYWIudjEuUmViYXNlUmVzcG9uc2USSAoJRGVsZXRlT3JnEhwuZWFz'
+    'eWxhYi52MS5EZWxldGVPcmdSZXF1ZXN0Gh0uZWFzeWxhYi52MS5EZWxldGVPcmdSZXNwb25zZR'
+    'JRCgxMaXN0UmVsZWFzZXMSHy5lYXN5bGFiLnYxLkxpc3RSZWxlYXNlc1JlcXVlc3QaIC5lYXN5'
+    'bGFiLnYxLkxpc3RSZWxlYXNlc1Jlc3BvbnNlEmkKFERvd25sb2FkUmVsZWFzZUFzc2V0EicuZW'
+    'FzeWxhYi52MS5Eb3dubG9hZFJlbGVhc2VBc3NldFJlcXVlc3QaKC5lYXN5bGFiLnYxLkRvd25s'
+    'b2FkUmVsZWFzZUFzc2V0UmVzcG9uc2USQgoHQXJjaGl2ZRIaLmVhc3lsYWIudjEuQXJjaGl2ZV'
+    'JlcXVlc3QaGy5lYXN5bGFiLnYxLkFyY2hpdmVSZXNwb25zZRJICglHZXRNaXJyb3ISHC5lYXN5'
+    'bGFiLnYxLkdldE1pcnJvclJlcXVlc3QaHS5lYXN5bGFiLnYxLkdldE1pcnJvclJlc3BvbnNlEk'
+    'gKCVNldE1pcnJvchIcLmVhc3lsYWIudjEuU2V0TWlycm9yUmVxdWVzdBodLmVhc3lsYWIudjEu'
+    'U2V0TWlycm9yUmVzcG9uc2USUQoMRGVsZXRlTWlycm9yEh8uZWFzeWxhYi52MS5EZWxldGVNaX'
+    'Jyb3JSZXF1ZXN0GiAuZWFzeWxhYi52MS5EZWxldGVNaXJyb3JSZXNwb25zZRJLCgpTeW5jTWly'
+    'cm9yEh0uZWFzeWxhYi52MS5TeW5jTWlycm9yUmVxdWVzdBoeLmVhc3lsYWIudjEuU3luY01pcn'
+    'JvclJlc3BvbnNl');
 
 const $core.Map<$core.String, $core.dynamic> OpsServiceBase$json = {
   '1': 'OpsService',
@@ -2378,6 +2801,11 @@ const $core.Map<$core.String, $core.dynamic> RegistryServiceBase$json = {
       '2': '.easylab.v1.ListPublishSpecsRequest',
       '3': '.easylab.v1.ListPublishSpecsResponse'
     },
+    {
+      '1': 'OCICatalog',
+      '2': '.easylab.v1.OCICatalogRequest',
+      '3': '.easylab.v1.OCICatalogResponse'
+    },
   ],
 };
 
@@ -2401,6 +2829,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>>
   '.easylab.v1.ListPublishSpecsRequest': ListPublishSpecsRequest$json,
   '.easylab.v1.ListPublishSpecsResponse': ListPublishSpecsResponse$json,
   '.easylab.v1.PublishSpec': PublishSpec$json,
+  '.easylab.v1.OCICatalogRequest': OCICatalogRequest$json,
+  '.easylab.v1.OCICatalogResponse': OCICatalogResponse$json,
 };
 
 /// Descriptor for `RegistryService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2415,4 +2845,5 @@ final $typed_data.Uint8List registryServiceDescriptor = $convert.base64Decode(
     'dlVmVyc2lvbhInLmVhc3lsYWIudjEuRGVsZXRlUGFja2FnZVZlcnNpb25SZXF1ZXN0GiguZWFz'
     'eWxhYi52MS5EZWxldGVQYWNrYWdlVmVyc2lvblJlc3BvbnNlEl0KEExpc3RQdWJsaXNoU3BlY3'
     'MSIy5lYXN5bGFiLnYxLkxpc3RQdWJsaXNoU3BlY3NSZXF1ZXN0GiQuZWFzeWxhYi52MS5MaXN0'
-    'UHVibGlzaFNwZWNzUmVzcG9uc2U=');
+    'UHVibGlzaFNwZWNzUmVzcG9uc2USSwoKT0NJQ2F0YWxvZxIdLmVhc3lsYWIudjEuT0NJQ2F0YW'
+    'xvZ1JlcXVlc3QaHi5lYXN5bGFiLnYxLk9DSUNhdGFsb2dSZXNwb25zZQ==');

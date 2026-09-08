@@ -8514,6 +8514,1536 @@ class TaskLogResponse extends $pb.GeneratedMessage {
   void clearLine() => $_clearField(2);
 }
 
+class DeleteOrgRequest extends $pb.GeneratedMessage {
+  factory DeleteOrgRequest({
+    $core.String? org,
+  }) {
+    final result = create();
+    if (org != null) result.org = org;
+    return result;
+  }
+
+  DeleteOrgRequest._();
+
+  factory DeleteOrgRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteOrgRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteOrgRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'org')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteOrgRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteOrgRequest copyWith(void Function(DeleteOrgRequest) updates) =>
+      super.copyWith((message) => updates(message as DeleteOrgRequest))
+          as DeleteOrgRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteOrgRequest create() => DeleteOrgRequest._();
+  @$core.override
+  DeleteOrgRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteOrgRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteOrgRequest>(create);
+  static DeleteOrgRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get org => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set org($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrg() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrg() => $_clearField(1);
+}
+
+class DeleteOrgResponse extends $pb.GeneratedMessage {
+  factory DeleteOrgResponse({
+    $core.bool? ok,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (ok != null) result.ok = ok;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  DeleteOrgResponse._();
+
+  factory DeleteOrgResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteOrgResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteOrgResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'ok')
+    ..aOS(2, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteOrgResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteOrgResponse copyWith(void Function(DeleteOrgResponse) updates) =>
+      super.copyWith((message) => updates(message as DeleteOrgResponse))
+          as DeleteOrgResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteOrgResponse create() => DeleteOrgResponse._();
+  @$core.override
+  DeleteOrgResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteOrgResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteOrgResponse>(create);
+  static DeleteOrgResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get ok => $_getBF(0);
+  @$pb.TagNumber(1)
+  set ok($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOk() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOk() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get error => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set error($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasError() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearError() => $_clearField(2);
+}
+
+class ReleaseView extends $pb.GeneratedMessage {
+  factory ReleaseView({
+    $core.String? tag,
+    $core.String? name,
+    $core.String? description,
+    $core.bool? draft,
+    $core.bool? prerelease,
+    $core.String? revisionId,
+    $core.String? created,
+    $core.Iterable<ReleaseAssetView>? assets,
+  }) {
+    final result = create();
+    if (tag != null) result.tag = tag;
+    if (name != null) result.name = name;
+    if (description != null) result.description = description;
+    if (draft != null) result.draft = draft;
+    if (prerelease != null) result.prerelease = prerelease;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (created != null) result.created = created;
+    if (assets != null) result.assets.addAll(assets);
+    return result;
+  }
+
+  ReleaseView._();
+
+  factory ReleaseView.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReleaseView.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReleaseView',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'tag')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOB(4, _omitFieldNames ? '' : 'draft')
+    ..aOB(5, _omitFieldNames ? '' : 'prerelease')
+    ..aOS(6, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(7, _omitFieldNames ? '' : 'created')
+    ..pPM<ReleaseAssetView>(8, _omitFieldNames ? '' : 'assets',
+        subBuilder: ReleaseAssetView.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReleaseView clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReleaseView copyWith(void Function(ReleaseView) updates) =>
+      super.copyWith((message) => updates(message as ReleaseView))
+          as ReleaseView;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReleaseView create() => ReleaseView._();
+  @$core.override
+  ReleaseView createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReleaseView getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReleaseView>(create);
+  static ReleaseView? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get tag => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set tag($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTag() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTag() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get draft => $_getBF(3);
+  @$pb.TagNumber(4)
+  set draft($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDraft() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDraft() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get prerelease => $_getBF(4);
+  @$pb.TagNumber(5)
+  set prerelease($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrerelease() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrerelease() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get revisionId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set revisionId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRevisionId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRevisionId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get created => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set created($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCreated() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCreated() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $pb.PbList<ReleaseAssetView> get assets => $_getList(7);
+}
+
+class ReleaseAssetView extends $pb.GeneratedMessage {
+  factory ReleaseAssetView({
+    $core.String? name,
+    $fixnum.Int64? size,
+    $core.String? digest,
+    $core.String? contentType,
+  }) {
+    final result = create();
+    if (name != null) result.name = name;
+    if (size != null) result.size = size;
+    if (digest != null) result.digest = digest;
+    if (contentType != null) result.contentType = contentType;
+    return result;
+  }
+
+  ReleaseAssetView._();
+
+  factory ReleaseAssetView.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReleaseAssetView.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReleaseAssetView',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aInt64(2, _omitFieldNames ? '' : 'size')
+    ..aOS(3, _omitFieldNames ? '' : 'digest')
+    ..aOS(4, _omitFieldNames ? '' : 'contentType')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReleaseAssetView clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReleaseAssetView copyWith(void Function(ReleaseAssetView) updates) =>
+      super.copyWith((message) => updates(message as ReleaseAssetView))
+          as ReleaseAssetView;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReleaseAssetView create() => ReleaseAssetView._();
+  @$core.override
+  ReleaseAssetView createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReleaseAssetView getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReleaseAssetView>(create);
+  static ReleaseAssetView? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get size => $_getI64(1);
+  @$pb.TagNumber(2)
+  set size($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSize() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSize() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get digest => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set digest($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDigest() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDigest() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get contentType => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set contentType($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasContentType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearContentType() => $_clearField(4);
+}
+
+class ListReleasesRequest extends $pb.GeneratedMessage {
+  factory ListReleasesRequest({
+    $core.String? org,
+    $core.String? repo,
+  }) {
+    final result = create();
+    if (org != null) result.org = org;
+    if (repo != null) result.repo = repo;
+    return result;
+  }
+
+  ListReleasesRequest._();
+
+  factory ListReleasesRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListReleasesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListReleasesRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'org')
+    ..aOS(2, _omitFieldNames ? '' : 'repo')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListReleasesRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListReleasesRequest copyWith(void Function(ListReleasesRequest) updates) =>
+      super.copyWith((message) => updates(message as ListReleasesRequest))
+          as ListReleasesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListReleasesRequest create() => ListReleasesRequest._();
+  @$core.override
+  ListReleasesRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListReleasesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListReleasesRequest>(create);
+  static ListReleasesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get org => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set org($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrg() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrg() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get repo => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set repo($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRepo() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRepo() => $_clearField(2);
+}
+
+class ListReleasesResponse extends $pb.GeneratedMessage {
+  factory ListReleasesResponse({
+    $core.Iterable<ReleaseView>? releases,
+  }) {
+    final result = create();
+    if (releases != null) result.releases.addAll(releases);
+    return result;
+  }
+
+  ListReleasesResponse._();
+
+  factory ListReleasesResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListReleasesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListReleasesResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..pPM<ReleaseView>(1, _omitFieldNames ? '' : 'releases',
+        subBuilder: ReleaseView.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListReleasesResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListReleasesResponse copyWith(void Function(ListReleasesResponse) updates) =>
+      super.copyWith((message) => updates(message as ListReleasesResponse))
+          as ListReleasesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListReleasesResponse create() => ListReleasesResponse._();
+  @$core.override
+  ListReleasesResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListReleasesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListReleasesResponse>(create);
+  static ListReleasesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ReleaseView> get releases => $_getList(0);
+}
+
+class DownloadReleaseAssetRequest extends $pb.GeneratedMessage {
+  factory DownloadReleaseAssetRequest({
+    $core.String? org,
+    $core.String? repo,
+    $core.String? tag,
+    $core.String? name,
+  }) {
+    final result = create();
+    if (org != null) result.org = org;
+    if (repo != null) result.repo = repo;
+    if (tag != null) result.tag = tag;
+    if (name != null) result.name = name;
+    return result;
+  }
+
+  DownloadReleaseAssetRequest._();
+
+  factory DownloadReleaseAssetRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DownloadReleaseAssetRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DownloadReleaseAssetRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'org')
+    ..aOS(2, _omitFieldNames ? '' : 'repo')
+    ..aOS(3, _omitFieldNames ? '' : 'tag')
+    ..aOS(4, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DownloadReleaseAssetRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DownloadReleaseAssetRequest copyWith(
+          void Function(DownloadReleaseAssetRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as DownloadReleaseAssetRequest))
+          as DownloadReleaseAssetRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DownloadReleaseAssetRequest create() =>
+      DownloadReleaseAssetRequest._();
+  @$core.override
+  DownloadReleaseAssetRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DownloadReleaseAssetRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DownloadReleaseAssetRequest>(create);
+  static DownloadReleaseAssetRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get org => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set org($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrg() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrg() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get repo => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set repo($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRepo() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRepo() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get tag => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set tag($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTag() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTag() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get name => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set name($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearName() => $_clearField(4);
+}
+
+class DownloadReleaseAssetResponse extends $pb.GeneratedMessage {
+  factory DownloadReleaseAssetResponse({
+    $core.List<$core.int>? data,
+    $core.String? name,
+    $core.String? contentType,
+  }) {
+    final result = create();
+    if (data != null) result.data = data;
+    if (name != null) result.name = name;
+    if (contentType != null) result.contentType = contentType;
+    return result;
+  }
+
+  DownloadReleaseAssetResponse._();
+
+  factory DownloadReleaseAssetResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DownloadReleaseAssetResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DownloadReleaseAssetResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'contentType')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DownloadReleaseAssetResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DownloadReleaseAssetResponse copyWith(
+          void Function(DownloadReleaseAssetResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as DownloadReleaseAssetResponse))
+          as DownloadReleaseAssetResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DownloadReleaseAssetResponse create() =>
+      DownloadReleaseAssetResponse._();
+  @$core.override
+  DownloadReleaseAssetResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DownloadReleaseAssetResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DownloadReleaseAssetResponse>(create);
+  static DownloadReleaseAssetResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get data => $_getN(0);
+  @$pb.TagNumber(1)
+  set data($core.List<$core.int> value) => $_setBytes(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasData() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearData() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get contentType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set contentType($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContentType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContentType() => $_clearField(3);
+}
+
+class ArchiveRequest extends $pb.GeneratedMessage {
+  factory ArchiveRequest({
+    $core.String? org,
+    $core.String? repo,
+    $core.String? ref,
+  }) {
+    final result = create();
+    if (org != null) result.org = org;
+    if (repo != null) result.repo = repo;
+    if (ref != null) result.ref = ref;
+    return result;
+  }
+
+  ArchiveRequest._();
+
+  factory ArchiveRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ArchiveRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ArchiveRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'org')
+    ..aOS(2, _omitFieldNames ? '' : 'repo')
+    ..aOS(3, _omitFieldNames ? '' : 'ref')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ArchiveRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ArchiveRequest copyWith(void Function(ArchiveRequest) updates) =>
+      super.copyWith((message) => updates(message as ArchiveRequest))
+          as ArchiveRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ArchiveRequest create() => ArchiveRequest._();
+  @$core.override
+  ArchiveRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ArchiveRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ArchiveRequest>(create);
+  static ArchiveRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get org => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set org($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrg() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrg() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get repo => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set repo($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRepo() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRepo() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get ref => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set ref($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRef() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRef() => $_clearField(3);
+}
+
+class ArchiveResponse extends $pb.GeneratedMessage {
+  factory ArchiveResponse({
+    $core.List<$core.int>? data,
+    $core.String? filename,
+  }) {
+    final result = create();
+    if (data != null) result.data = data;
+    if (filename != null) result.filename = filename;
+    return result;
+  }
+
+  ArchiveResponse._();
+
+  factory ArchiveResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ArchiveResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ArchiveResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
+    ..aOS(2, _omitFieldNames ? '' : 'filename')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ArchiveResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ArchiveResponse copyWith(void Function(ArchiveResponse) updates) =>
+      super.copyWith((message) => updates(message as ArchiveResponse))
+          as ArchiveResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ArchiveResponse create() => ArchiveResponse._();
+  @$core.override
+  ArchiveResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ArchiveResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ArchiveResponse>(create);
+  static ArchiveResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get data => $_getN(0);
+  @$pb.TagNumber(1)
+  set data($core.List<$core.int> value) => $_setBytes(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasData() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearData() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get filename => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set filename($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasFilename() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFilename() => $_clearField(2);
+}
+
+class MirrorCfg extends $pb.GeneratedMessage {
+  factory MirrorCfg({
+    $core.String? pullUrl,
+    $core.String? pushUrl,
+    $core.bool? pushSecretSet,
+  }) {
+    final result = create();
+    if (pullUrl != null) result.pullUrl = pullUrl;
+    if (pushUrl != null) result.pushUrl = pushUrl;
+    if (pushSecretSet != null) result.pushSecretSet = pushSecretSet;
+    return result;
+  }
+
+  MirrorCfg._();
+
+  factory MirrorCfg.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MirrorCfg.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MirrorCfg',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'pullUrl')
+    ..aOS(2, _omitFieldNames ? '' : 'pushUrl')
+    ..aOB(3, _omitFieldNames ? '' : 'pushSecretSet')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MirrorCfg clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MirrorCfg copyWith(void Function(MirrorCfg) updates) =>
+      super.copyWith((message) => updates(message as MirrorCfg)) as MirrorCfg;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MirrorCfg create() => MirrorCfg._();
+  @$core.override
+  MirrorCfg createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MirrorCfg getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MirrorCfg>(create);
+  static MirrorCfg? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get pullUrl => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set pullUrl($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPullUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPullUrl() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get pushUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pushUrl($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPushUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPushUrl() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get pushSecretSet => $_getBF(2);
+  @$pb.TagNumber(3)
+  set pushSecretSet($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPushSecretSet() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPushSecretSet() => $_clearField(3);
+}
+
+class GetMirrorRequest extends $pb.GeneratedMessage {
+  factory GetMirrorRequest({
+    $core.String? org,
+    $core.String? repo,
+  }) {
+    final result = create();
+    if (org != null) result.org = org;
+    if (repo != null) result.repo = repo;
+    return result;
+  }
+
+  GetMirrorRequest._();
+
+  factory GetMirrorRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMirrorRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMirrorRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'org')
+    ..aOS(2, _omitFieldNames ? '' : 'repo')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMirrorRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMirrorRequest copyWith(void Function(GetMirrorRequest) updates) =>
+      super.copyWith((message) => updates(message as GetMirrorRequest))
+          as GetMirrorRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMirrorRequest create() => GetMirrorRequest._();
+  @$core.override
+  GetMirrorRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMirrorRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMirrorRequest>(create);
+  static GetMirrorRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get org => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set org($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrg() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrg() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get repo => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set repo($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRepo() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRepo() => $_clearField(2);
+}
+
+class GetMirrorResponse extends $pb.GeneratedMessage {
+  factory GetMirrorResponse({
+    MirrorCfg? mirror,
+  }) {
+    final result = create();
+    if (mirror != null) result.mirror = mirror;
+    return result;
+  }
+
+  GetMirrorResponse._();
+
+  factory GetMirrorResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMirrorResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMirrorResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOM<MirrorCfg>(1, _omitFieldNames ? '' : 'mirror',
+        subBuilder: MirrorCfg.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMirrorResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMirrorResponse copyWith(void Function(GetMirrorResponse) updates) =>
+      super.copyWith((message) => updates(message as GetMirrorResponse))
+          as GetMirrorResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMirrorResponse create() => GetMirrorResponse._();
+  @$core.override
+  GetMirrorResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMirrorResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMirrorResponse>(create);
+  static GetMirrorResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  MirrorCfg get mirror => $_getN(0);
+  @$pb.TagNumber(1)
+  set mirror(MirrorCfg value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMirror() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMirror() => $_clearField(1);
+  @$pb.TagNumber(1)
+  MirrorCfg ensureMirror() => $_ensure(0);
+}
+
+class SetMirrorRequest extends $pb.GeneratedMessage {
+  factory SetMirrorRequest({
+    $core.String? org,
+    $core.String? repo,
+    $core.String? pullUrl,
+    $core.String? pushUrl,
+    $core.String? pushSecret,
+  }) {
+    final result = create();
+    if (org != null) result.org = org;
+    if (repo != null) result.repo = repo;
+    if (pullUrl != null) result.pullUrl = pullUrl;
+    if (pushUrl != null) result.pushUrl = pushUrl;
+    if (pushSecret != null) result.pushSecret = pushSecret;
+    return result;
+  }
+
+  SetMirrorRequest._();
+
+  factory SetMirrorRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetMirrorRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetMirrorRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'org')
+    ..aOS(2, _omitFieldNames ? '' : 'repo')
+    ..aOS(3, _omitFieldNames ? '' : 'pullUrl')
+    ..aOS(4, _omitFieldNames ? '' : 'pushUrl')
+    ..aOS(5, _omitFieldNames ? '' : 'pushSecret')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMirrorRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMirrorRequest copyWith(void Function(SetMirrorRequest) updates) =>
+      super.copyWith((message) => updates(message as SetMirrorRequest))
+          as SetMirrorRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetMirrorRequest create() => SetMirrorRequest._();
+  @$core.override
+  SetMirrorRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetMirrorRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetMirrorRequest>(create);
+  static SetMirrorRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get org => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set org($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrg() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrg() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get repo => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set repo($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRepo() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRepo() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get pullUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set pullUrl($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPullUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPullUrl() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get pushUrl => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set pushUrl($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPushUrl() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPushUrl() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get pushSecret => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set pushSecret($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPushSecret() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPushSecret() => $_clearField(5);
+}
+
+class SetMirrorResponse extends $pb.GeneratedMessage {
+  factory SetMirrorResponse({
+    $core.bool? ok,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (ok != null) result.ok = ok;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  SetMirrorResponse._();
+
+  factory SetMirrorResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetMirrorResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetMirrorResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'ok')
+    ..aOS(2, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMirrorResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMirrorResponse copyWith(void Function(SetMirrorResponse) updates) =>
+      super.copyWith((message) => updates(message as SetMirrorResponse))
+          as SetMirrorResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetMirrorResponse create() => SetMirrorResponse._();
+  @$core.override
+  SetMirrorResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetMirrorResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetMirrorResponse>(create);
+  static SetMirrorResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get ok => $_getBF(0);
+  @$pb.TagNumber(1)
+  set ok($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOk() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOk() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get error => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set error($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasError() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearError() => $_clearField(2);
+}
+
+class DeleteMirrorRequest extends $pb.GeneratedMessage {
+  factory DeleteMirrorRequest({
+    $core.String? org,
+    $core.String? repo,
+  }) {
+    final result = create();
+    if (org != null) result.org = org;
+    if (repo != null) result.repo = repo;
+    return result;
+  }
+
+  DeleteMirrorRequest._();
+
+  factory DeleteMirrorRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteMirrorRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteMirrorRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'org')
+    ..aOS(2, _omitFieldNames ? '' : 'repo')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteMirrorRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteMirrorRequest copyWith(void Function(DeleteMirrorRequest) updates) =>
+      super.copyWith((message) => updates(message as DeleteMirrorRequest))
+          as DeleteMirrorRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteMirrorRequest create() => DeleteMirrorRequest._();
+  @$core.override
+  DeleteMirrorRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteMirrorRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteMirrorRequest>(create);
+  static DeleteMirrorRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get org => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set org($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrg() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrg() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get repo => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set repo($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRepo() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRepo() => $_clearField(2);
+}
+
+class DeleteMirrorResponse extends $pb.GeneratedMessage {
+  factory DeleteMirrorResponse({
+    $core.bool? ok,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (ok != null) result.ok = ok;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  DeleteMirrorResponse._();
+
+  factory DeleteMirrorResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteMirrorResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteMirrorResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'ok')
+    ..aOS(2, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteMirrorResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteMirrorResponse copyWith(void Function(DeleteMirrorResponse) updates) =>
+      super.copyWith((message) => updates(message as DeleteMirrorResponse))
+          as DeleteMirrorResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteMirrorResponse create() => DeleteMirrorResponse._();
+  @$core.override
+  DeleteMirrorResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteMirrorResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteMirrorResponse>(create);
+  static DeleteMirrorResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get ok => $_getBF(0);
+  @$pb.TagNumber(1)
+  set ok($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOk() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOk() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get error => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set error($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasError() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearError() => $_clearField(2);
+}
+
+class SyncMirrorRequest extends $pb.GeneratedMessage {
+  factory SyncMirrorRequest({
+    $core.String? org,
+    $core.String? repo,
+    $core.String? kind,
+    $core.Iterable<$core.MapEntry<$core.String, $core.String>>? body,
+  }) {
+    final result = create();
+    if (org != null) result.org = org;
+    if (repo != null) result.repo = repo;
+    if (kind != null) result.kind = kind;
+    if (body != null) result.body.addEntries(body);
+    return result;
+  }
+
+  SyncMirrorRequest._();
+
+  factory SyncMirrorRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SyncMirrorRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SyncMirrorRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'org')
+    ..aOS(2, _omitFieldNames ? '' : 'repo')
+    ..aOS(3, _omitFieldNames ? '' : 'kind')
+    ..m<$core.String, $core.String>(4, _omitFieldNames ? '' : 'body',
+        entryClassName: 'SyncMirrorRequest.BodyEntry',
+        keyFieldType: $pb.PbFieldType.OS,
+        valueFieldType: $pb.PbFieldType.OS,
+        packageName: const $pb.PackageName('easylab.v1'))
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SyncMirrorRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SyncMirrorRequest copyWith(void Function(SyncMirrorRequest) updates) =>
+      super.copyWith((message) => updates(message as SyncMirrorRequest))
+          as SyncMirrorRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SyncMirrorRequest create() => SyncMirrorRequest._();
+  @$core.override
+  SyncMirrorRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SyncMirrorRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SyncMirrorRequest>(create);
+  static SyncMirrorRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get org => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set org($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrg() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrg() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get repo => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set repo($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRepo() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRepo() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get kind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set kind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbMap<$core.String, $core.String> get body => $_getMap(3);
+}
+
+class SyncMirrorResponse extends $pb.GeneratedMessage {
+  factory SyncMirrorResponse({
+    $core.bool? ok,
+    $core.String? updatedBranches,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (ok != null) result.ok = ok;
+    if (updatedBranches != null) result.updatedBranches = updatedBranches;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  SyncMirrorResponse._();
+
+  factory SyncMirrorResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SyncMirrorResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SyncMirrorResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'ok')
+    ..aOS(2, _omitFieldNames ? '' : 'updatedBranches')
+    ..aOS(3, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SyncMirrorResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SyncMirrorResponse copyWith(void Function(SyncMirrorResponse) updates) =>
+      super.copyWith((message) => updates(message as SyncMirrorResponse))
+          as SyncMirrorResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SyncMirrorResponse create() => SyncMirrorResponse._();
+  @$core.override
+  SyncMirrorResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SyncMirrorResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SyncMirrorResponse>(create);
+  static SyncMirrorResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get ok => $_getBF(0);
+  @$pb.TagNumber(1)
+  set ok($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOk() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOk() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get updatedBranches => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set updatedBranches($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUpdatedBranches() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUpdatedBranches() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get error => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set error($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasError() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearError() => $_clearField(3);
+}
+
+class OCICatalogRequest extends $pb.GeneratedMessage {
+  factory OCICatalogRequest() => create();
+
+  OCICatalogRequest._();
+
+  factory OCICatalogRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OCICatalogRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OCICatalogRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OCICatalogRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OCICatalogRequest copyWith(void Function(OCICatalogRequest) updates) =>
+      super.copyWith((message) => updates(message as OCICatalogRequest))
+          as OCICatalogRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OCICatalogRequest create() => OCICatalogRequest._();
+  @$core.override
+  OCICatalogRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OCICatalogRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OCICatalogRequest>(create);
+  static OCICatalogRequest? _defaultInstance;
+}
+
+class OCICatalogResponse extends $pb.GeneratedMessage {
+  factory OCICatalogResponse({
+    $core.Iterable<$core.String>? repositories,
+  }) {
+    final result = create();
+    if (repositories != null) result.repositories.addAll(repositories);
+    return result;
+  }
+
+  OCICatalogResponse._();
+
+  factory OCICatalogResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OCICatalogResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OCICatalogResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'repositories')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OCICatalogResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OCICatalogResponse copyWith(void Function(OCICatalogResponse) updates) =>
+      super.copyWith((message) => updates(message as OCICatalogResponse))
+          as OCICatalogResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OCICatalogResponse create() => OCICatalogResponse._();
+  @$core.override
+  OCICatalogResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OCICatalogResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OCICatalogResponse>(create);
+  static OCICatalogResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<$core.String> get repositories => $_getList(0);
+}
+
 /// LabService covers the revision-native repo + filesystem surface.
 class LabServiceApi {
   final $pb.RpcClient _client;
@@ -8619,6 +10149,46 @@ class LabServiceApi {
           $pb.ClientContext? ctx, RebaseRequest request) =>
       _client.invoke<RebaseResponse>(
           ctx, 'LabService', 'Rebase', request, RebaseResponse());
+
+  /// ---- Lab additions (REST removals) ----
+  $async.Future<DeleteOrgResponse> deleteOrg(
+          $pb.ClientContext? ctx, DeleteOrgRequest request) =>
+      _client.invoke<DeleteOrgResponse>(
+          ctx, 'LabService', 'DeleteOrg', request, DeleteOrgResponse());
+
+  /// Releases (backed by the generic artifact registry; format "generic").
+  $async.Future<ListReleasesResponse> listReleases(
+          $pb.ClientContext? ctx, ListReleasesRequest request) =>
+      _client.invoke<ListReleasesResponse>(
+          ctx, 'LabService', 'ListReleases', request, ListReleasesResponse());
+  $async.Future<DownloadReleaseAssetResponse> downloadReleaseAsset(
+          $pb.ClientContext? ctx, DownloadReleaseAssetRequest request) =>
+      _client.invoke<DownloadReleaseAssetResponse>(ctx, 'LabService',
+          'DownloadReleaseAsset', request, DownloadReleaseAssetResponse());
+
+  /// Source archive tarball for a rev/tag.
+  $async.Future<ArchiveResponse> archive(
+          $pb.ClientContext? ctx, ArchiveRequest request) =>
+      _client.invoke<ArchiveResponse>(
+          ctx, 'LabService', 'Archive', request, ArchiveResponse());
+
+  /// Mirror (persistent push/pull mirrors on a repo).
+  $async.Future<GetMirrorResponse> getMirror(
+          $pb.ClientContext? ctx, GetMirrorRequest request) =>
+      _client.invoke<GetMirrorResponse>(
+          ctx, 'LabService', 'GetMirror', request, GetMirrorResponse());
+  $async.Future<SetMirrorResponse> setMirror(
+          $pb.ClientContext? ctx, SetMirrorRequest request) =>
+      _client.invoke<SetMirrorResponse>(
+          ctx, 'LabService', 'SetMirror', request, SetMirrorResponse());
+  $async.Future<DeleteMirrorResponse> deleteMirror(
+          $pb.ClientContext? ctx, DeleteMirrorRequest request) =>
+      _client.invoke<DeleteMirrorResponse>(
+          ctx, 'LabService', 'DeleteMirror', request, DeleteMirrorResponse());
+  $async.Future<SyncMirrorResponse> syncMirror(
+          $pb.ClientContext? ctx, SyncMirrorRequest request) =>
+      _client.invoke<SyncMirrorResponse>(
+          ctx, 'LabService', 'SyncMirror', request, SyncMirrorResponse());
 }
 
 /// OpsService covers the dev/deploy surface (services, sandboxes, builds).
@@ -8723,6 +10293,10 @@ class RegistryServiceApi {
           $pb.ClientContext? ctx, ListPublishSpecsRequest request) =>
       _client.invoke<ListPublishSpecsResponse>(ctx, 'RegistryService',
           'ListPublishSpecs', request, ListPublishSpecsResponse());
+  $async.Future<OCICatalogResponse> oCICatalog(
+          $pb.ClientContext? ctx, OCICatalogRequest request) =>
+      _client.invoke<OCICatalogResponse>(
+          ctx, 'RegistryService', 'OCICatalog', request, OCICatalogResponse());
 }
 
 const $core.bool _omitFieldNames =
