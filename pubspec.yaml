@@ -1,6 +1,6 @@
 name: easylab_client_sdk
-description: "EasyLab typed client SDK for Dart/Flutter (Connect: easylab.v1 + agent.v1 via the easylab gateway)."
-version: 0.2.1
+description: "EasyLab typed client SDK for Dart/Flutter — buf-generated Connect code (easylab.v1 + agent.v1 + worker.v1). No hand-written wrappers."
+version: 0.3.0
 publish_to: 'none'
 
 environment:
@@ -10,4 +10,3 @@ dependencies:
   connectrpc: ^2.0.0
   protobuf: ^6.0.0
   fixnum: ^1.1.1
-  http2: ^2.3.0

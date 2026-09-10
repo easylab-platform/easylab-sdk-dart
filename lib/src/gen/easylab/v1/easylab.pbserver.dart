@@ -15,147 +15,148 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'easylab.pb.dart' as $0;
+import '../../worker/v1/worker.pb.dart' as $0;
+import 'easylab.pb.dart' as $1;
 import 'easylab.pbjson.dart';
 
 export 'easylab.pb.dart';
 
 abstract class LabServiceBase extends $pb.GeneratedService {
-  $async.Future<$0.HealthResponse> health(
-      $pb.ServerContext ctx, $0.HealthRequest request);
-  $async.Future<$0.StatusResponse> status(
-      $pb.ServerContext ctx, $0.StatusRequest request);
-  $async.Future<$0.ListReposResponse> listRepos(
-      $pb.ServerContext ctx, $0.ListReposRequest request);
-  $async.Future<$0.CreateRepoResponse> createRepo(
-      $pb.ServerContext ctx, $0.CreateRepoRequest request);
-  $async.Future<$0.DeleteRepoResponse> deleteRepo(
-      $pb.ServerContext ctx, $0.DeleteRepoRequest request);
-  $async.Future<$0.EnsureRepoResponse> ensureRepo(
-      $pb.ServerContext ctx, $0.EnsureRepoRequest request);
-  $async.Future<$0.EnsureOrgResponse> ensureOrg(
-      $pb.ServerContext ctx, $0.EnsureOrgRequest request);
-  $async.Future<$0.ForkRepoResponse> forkRepo(
-      $pb.ServerContext ctx, $0.ForkRepoRequest request);
-  $async.Future<$0.CloneRepoResponse> cloneRepo(
-      $pb.ServerContext ctx, $0.CloneRepoRequest request);
-  $async.Future<$0.TreeResponse> tree(
-      $pb.ServerContext ctx, $0.TreeRequest request);
-  $async.Future<$0.ReadBlobResponse> readBlob(
-      $pb.ServerContext ctx, $0.ReadBlobRequest request);
-  $async.Future<$0.WriteBlobResponse> writeBlob(
-      $pb.ServerContext ctx, $0.WriteBlobRequest request);
-  $async.Future<$0.LogResponse> log(
-      $pb.ServerContext ctx, $0.LogRequest request);
-  $async.Future<$0.TagsResponse> tags(
-      $pb.ServerContext ctx, $0.TagsRequest request);
-  $async.Future<$0.BranchesResponse> branches(
-      $pb.ServerContext ctx, $0.BranchesRequest request);
-  $async.Future<$0.RevisionsResponse> revisions(
-      $pb.ServerContext ctx, $0.RevisionsRequest request);
-  $async.Future<$0.DiffResponse> diff(
-      $pb.ServerContext ctx, $0.DiffRequest request);
-  $async.Future<$0.BlameResponse> blame(
-      $pb.ServerContext ctx, $0.BlameRequest request);
-  $async.Future<$0.DeleteBranchResponse> deleteBranch(
-      $pb.ServerContext ctx, $0.DeleteBranchRequest request);
-  $async.Future<$0.CreateBranchResponse> createBranch(
-      $pb.ServerContext ctx, $0.CreateBranchRequest request);
-  $async.Future<$0.FileHistoryResponse> fileHistory(
-      $pb.ServerContext ctx, $0.FileHistoryRequest request);
-  $async.Future<$0.SearchResponse> search(
-      $pb.ServerContext ctx, $0.SearchRequest request);
-  $async.Future<$0.GraphResponse> graph(
-      $pb.ServerContext ctx, $0.GraphRequest request);
-  $async.Future<$0.CompareResponse> compare(
-      $pb.ServerContext ctx, $0.CompareRequest request);
-  $async.Future<$0.RebaseResponse> rebase(
-      $pb.ServerContext ctx, $0.RebaseRequest request);
-  $async.Future<$0.DeleteOrgResponse> deleteOrg(
-      $pb.ServerContext ctx, $0.DeleteOrgRequest request);
-  $async.Future<$0.ListReleasesResponse> listReleases(
-      $pb.ServerContext ctx, $0.ListReleasesRequest request);
-  $async.Future<$0.DownloadReleaseAssetResponse> downloadReleaseAsset(
-      $pb.ServerContext ctx, $0.DownloadReleaseAssetRequest request);
-  $async.Future<$0.ArchiveResponse> archive(
-      $pb.ServerContext ctx, $0.ArchiveRequest request);
-  $async.Future<$0.GetMirrorResponse> getMirror(
-      $pb.ServerContext ctx, $0.GetMirrorRequest request);
-  $async.Future<$0.SetMirrorResponse> setMirror(
-      $pb.ServerContext ctx, $0.SetMirrorRequest request);
-  $async.Future<$0.DeleteMirrorResponse> deleteMirror(
-      $pb.ServerContext ctx, $0.DeleteMirrorRequest request);
-  $async.Future<$0.SyncMirrorResponse> syncMirror(
-      $pb.ServerContext ctx, $0.SyncMirrorRequest request);
+  $async.Future<$1.HealthResponse> health(
+      $pb.ServerContext ctx, $1.HealthRequest request);
+  $async.Future<$1.StatusResponse> status(
+      $pb.ServerContext ctx, $1.StatusRequest request);
+  $async.Future<$1.ListReposResponse> listRepos(
+      $pb.ServerContext ctx, $1.ListReposRequest request);
+  $async.Future<$1.CreateRepoResponse> createRepo(
+      $pb.ServerContext ctx, $1.CreateRepoRequest request);
+  $async.Future<$1.DeleteRepoResponse> deleteRepo(
+      $pb.ServerContext ctx, $1.DeleteRepoRequest request);
+  $async.Future<$1.EnsureRepoResponse> ensureRepo(
+      $pb.ServerContext ctx, $1.EnsureRepoRequest request);
+  $async.Future<$1.EnsureOrgResponse> ensureOrg(
+      $pb.ServerContext ctx, $1.EnsureOrgRequest request);
+  $async.Future<$1.ForkRepoResponse> forkRepo(
+      $pb.ServerContext ctx, $1.ForkRepoRequest request);
+  $async.Future<$1.CloneRepoResponse> cloneRepo(
+      $pb.ServerContext ctx, $1.CloneRepoRequest request);
+  $async.Future<$1.TreeResponse> tree(
+      $pb.ServerContext ctx, $1.TreeRequest request);
+  $async.Future<$1.ReadBlobResponse> readBlob(
+      $pb.ServerContext ctx, $1.ReadBlobRequest request);
+  $async.Future<$1.WriteBlobResponse> writeBlob(
+      $pb.ServerContext ctx, $1.WriteBlobRequest request);
+  $async.Future<$1.LogResponse> log(
+      $pb.ServerContext ctx, $1.LogRequest request);
+  $async.Future<$1.TagsResponse> tags(
+      $pb.ServerContext ctx, $1.TagsRequest request);
+  $async.Future<$1.BranchesResponse> branches(
+      $pb.ServerContext ctx, $1.BranchesRequest request);
+  $async.Future<$1.RevisionsResponse> revisions(
+      $pb.ServerContext ctx, $1.RevisionsRequest request);
+  $async.Future<$1.DiffResponse> diff(
+      $pb.ServerContext ctx, $1.DiffRequest request);
+  $async.Future<$1.BlameResponse> blame(
+      $pb.ServerContext ctx, $1.BlameRequest request);
+  $async.Future<$1.DeleteBranchResponse> deleteBranch(
+      $pb.ServerContext ctx, $1.DeleteBranchRequest request);
+  $async.Future<$1.CreateBranchResponse> createBranch(
+      $pb.ServerContext ctx, $1.CreateBranchRequest request);
+  $async.Future<$1.FileHistoryResponse> fileHistory(
+      $pb.ServerContext ctx, $1.FileHistoryRequest request);
+  $async.Future<$1.SearchResponse> search(
+      $pb.ServerContext ctx, $1.SearchRequest request);
+  $async.Future<$1.GraphResponse> graph(
+      $pb.ServerContext ctx, $1.GraphRequest request);
+  $async.Future<$1.CompareResponse> compare(
+      $pb.ServerContext ctx, $1.CompareRequest request);
+  $async.Future<$1.RebaseResponse> rebase(
+      $pb.ServerContext ctx, $1.RebaseRequest request);
+  $async.Future<$1.DeleteOrgResponse> deleteOrg(
+      $pb.ServerContext ctx, $1.DeleteOrgRequest request);
+  $async.Future<$1.ListReleasesResponse> listReleases(
+      $pb.ServerContext ctx, $1.ListReleasesRequest request);
+  $async.Future<$1.DownloadReleaseAssetResponse> downloadReleaseAsset(
+      $pb.ServerContext ctx, $1.DownloadReleaseAssetRequest request);
+  $async.Future<$1.ArchiveResponse> archive(
+      $pb.ServerContext ctx, $1.ArchiveRequest request);
+  $async.Future<$1.GetMirrorResponse> getMirror(
+      $pb.ServerContext ctx, $1.GetMirrorRequest request);
+  $async.Future<$1.SetMirrorResponse> setMirror(
+      $pb.ServerContext ctx, $1.SetMirrorRequest request);
+  $async.Future<$1.DeleteMirrorResponse> deleteMirror(
+      $pb.ServerContext ctx, $1.DeleteMirrorRequest request);
+  $async.Future<$1.SyncMirrorResponse> syncMirror(
+      $pb.ServerContext ctx, $1.SyncMirrorRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
       case 'Health':
-        return $0.HealthRequest();
+        return $1.HealthRequest();
       case 'Status':
-        return $0.StatusRequest();
+        return $1.StatusRequest();
       case 'ListRepos':
-        return $0.ListReposRequest();
+        return $1.ListReposRequest();
       case 'CreateRepo':
-        return $0.CreateRepoRequest();
+        return $1.CreateRepoRequest();
       case 'DeleteRepo':
-        return $0.DeleteRepoRequest();
+        return $1.DeleteRepoRequest();
       case 'EnsureRepo':
-        return $0.EnsureRepoRequest();
+        return $1.EnsureRepoRequest();
       case 'EnsureOrg':
-        return $0.EnsureOrgRequest();
+        return $1.EnsureOrgRequest();
       case 'ForkRepo':
-        return $0.ForkRepoRequest();
+        return $1.ForkRepoRequest();
       case 'CloneRepo':
-        return $0.CloneRepoRequest();
+        return $1.CloneRepoRequest();
       case 'Tree':
-        return $0.TreeRequest();
+        return $1.TreeRequest();
       case 'ReadBlob':
-        return $0.ReadBlobRequest();
+        return $1.ReadBlobRequest();
       case 'WriteBlob':
-        return $0.WriteBlobRequest();
+        return $1.WriteBlobRequest();
       case 'Log':
-        return $0.LogRequest();
+        return $1.LogRequest();
       case 'Tags':
-        return $0.TagsRequest();
+        return $1.TagsRequest();
       case 'Branches':
-        return $0.BranchesRequest();
+        return $1.BranchesRequest();
       case 'Revisions':
-        return $0.RevisionsRequest();
+        return $1.RevisionsRequest();
       case 'Diff':
-        return $0.DiffRequest();
+        return $1.DiffRequest();
       case 'Blame':
-        return $0.BlameRequest();
+        return $1.BlameRequest();
       case 'DeleteBranch':
-        return $0.DeleteBranchRequest();
+        return $1.DeleteBranchRequest();
       case 'CreateBranch':
-        return $0.CreateBranchRequest();
+        return $1.CreateBranchRequest();
       case 'FileHistory':
-        return $0.FileHistoryRequest();
+        return $1.FileHistoryRequest();
       case 'Search':
-        return $0.SearchRequest();
+        return $1.SearchRequest();
       case 'Graph':
-        return $0.GraphRequest();
+        return $1.GraphRequest();
       case 'Compare':
-        return $0.CompareRequest();
+        return $1.CompareRequest();
       case 'Rebase':
-        return $0.RebaseRequest();
+        return $1.RebaseRequest();
       case 'DeleteOrg':
-        return $0.DeleteOrgRequest();
+        return $1.DeleteOrgRequest();
       case 'ListReleases':
-        return $0.ListReleasesRequest();
+        return $1.ListReleasesRequest();
       case 'DownloadReleaseAsset':
-        return $0.DownloadReleaseAssetRequest();
+        return $1.DownloadReleaseAssetRequest();
       case 'Archive':
-        return $0.ArchiveRequest();
+        return $1.ArchiveRequest();
       case 'GetMirror':
-        return $0.GetMirrorRequest();
+        return $1.GetMirrorRequest();
       case 'SetMirror':
-        return $0.SetMirrorRequest();
+        return $1.SetMirrorRequest();
       case 'DeleteMirror':
-        return $0.DeleteMirrorRequest();
+        return $1.DeleteMirrorRequest();
       case 'SyncMirror':
-        return $0.SyncMirrorRequest();
+        return $1.SyncMirrorRequest();
       default:
         throw $core.ArgumentError('Unknown method: $methodName');
     }
@@ -165,72 +166,72 @@ abstract class LabServiceBase extends $pb.GeneratedService {
       $core.String methodName, $pb.GeneratedMessage request) {
     switch (methodName) {
       case 'Health':
-        return health(ctx, request as $0.HealthRequest);
+        return health(ctx, request as $1.HealthRequest);
       case 'Status':
-        return status(ctx, request as $0.StatusRequest);
+        return status(ctx, request as $1.StatusRequest);
       case 'ListRepos':
-        return listRepos(ctx, request as $0.ListReposRequest);
+        return listRepos(ctx, request as $1.ListReposRequest);
       case 'CreateRepo':
-        return createRepo(ctx, request as $0.CreateRepoRequest);
+        return createRepo(ctx, request as $1.CreateRepoRequest);
       case 'DeleteRepo':
-        return deleteRepo(ctx, request as $0.DeleteRepoRequest);
+        return deleteRepo(ctx, request as $1.DeleteRepoRequest);
       case 'EnsureRepo':
-        return ensureRepo(ctx, request as $0.EnsureRepoRequest);
+        return ensureRepo(ctx, request as $1.EnsureRepoRequest);
       case 'EnsureOrg':
-        return ensureOrg(ctx, request as $0.EnsureOrgRequest);
+        return ensureOrg(ctx, request as $1.EnsureOrgRequest);
       case 'ForkRepo':
-        return forkRepo(ctx, request as $0.ForkRepoRequest);
+        return forkRepo(ctx, request as $1.ForkRepoRequest);
       case 'CloneRepo':
-        return cloneRepo(ctx, request as $0.CloneRepoRequest);
+        return cloneRepo(ctx, request as $1.CloneRepoRequest);
       case 'Tree':
-        return tree(ctx, request as $0.TreeRequest);
+        return tree(ctx, request as $1.TreeRequest);
       case 'ReadBlob':
-        return readBlob(ctx, request as $0.ReadBlobRequest);
+        return readBlob(ctx, request as $1.ReadBlobRequest);
       case 'WriteBlob':
-        return writeBlob(ctx, request as $0.WriteBlobRequest);
+        return writeBlob(ctx, request as $1.WriteBlobRequest);
       case 'Log':
-        return log(ctx, request as $0.LogRequest);
+        return log(ctx, request as $1.LogRequest);
       case 'Tags':
-        return tags(ctx, request as $0.TagsRequest);
+        return tags(ctx, request as $1.TagsRequest);
       case 'Branches':
-        return branches(ctx, request as $0.BranchesRequest);
+        return branches(ctx, request as $1.BranchesRequest);
       case 'Revisions':
-        return revisions(ctx, request as $0.RevisionsRequest);
+        return revisions(ctx, request as $1.RevisionsRequest);
       case 'Diff':
-        return diff(ctx, request as $0.DiffRequest);
+        return diff(ctx, request as $1.DiffRequest);
       case 'Blame':
-        return blame(ctx, request as $0.BlameRequest);
+        return blame(ctx, request as $1.BlameRequest);
       case 'DeleteBranch':
-        return deleteBranch(ctx, request as $0.DeleteBranchRequest);
+        return deleteBranch(ctx, request as $1.DeleteBranchRequest);
       case 'CreateBranch':
-        return createBranch(ctx, request as $0.CreateBranchRequest);
+        return createBranch(ctx, request as $1.CreateBranchRequest);
       case 'FileHistory':
-        return fileHistory(ctx, request as $0.FileHistoryRequest);
+        return fileHistory(ctx, request as $1.FileHistoryRequest);
       case 'Search':
-        return search(ctx, request as $0.SearchRequest);
+        return search(ctx, request as $1.SearchRequest);
       case 'Graph':
-        return graph(ctx, request as $0.GraphRequest);
+        return graph(ctx, request as $1.GraphRequest);
       case 'Compare':
-        return compare(ctx, request as $0.CompareRequest);
+        return compare(ctx, request as $1.CompareRequest);
       case 'Rebase':
-        return rebase(ctx, request as $0.RebaseRequest);
+        return rebase(ctx, request as $1.RebaseRequest);
       case 'DeleteOrg':
-        return deleteOrg(ctx, request as $0.DeleteOrgRequest);
+        return deleteOrg(ctx, request as $1.DeleteOrgRequest);
       case 'ListReleases':
-        return listReleases(ctx, request as $0.ListReleasesRequest);
+        return listReleases(ctx, request as $1.ListReleasesRequest);
       case 'DownloadReleaseAsset':
         return downloadReleaseAsset(
-            ctx, request as $0.DownloadReleaseAssetRequest);
+            ctx, request as $1.DownloadReleaseAssetRequest);
       case 'Archive':
-        return archive(ctx, request as $0.ArchiveRequest);
+        return archive(ctx, request as $1.ArchiveRequest);
       case 'GetMirror':
-        return getMirror(ctx, request as $0.GetMirrorRequest);
+        return getMirror(ctx, request as $1.GetMirrorRequest);
       case 'SetMirror':
-        return setMirror(ctx, request as $0.SetMirrorRequest);
+        return setMirror(ctx, request as $1.SetMirrorRequest);
       case 'DeleteMirror':
-        return deleteMirror(ctx, request as $0.DeleteMirrorRequest);
+        return deleteMirror(ctx, request as $1.DeleteMirrorRequest);
       case 'SyncMirror':
-        return syncMirror(ctx, request as $0.SyncMirrorRequest);
+        return syncMirror(ctx, request as $1.SyncMirrorRequest);
       default:
         throw $core.ArgumentError('Unknown method: $methodName');
     }
@@ -242,73 +243,69 @@ abstract class LabServiceBase extends $pb.GeneratedService {
 }
 
 abstract class OpsServiceBase extends $pb.GeneratedService {
-  $async.Future<$0.OpsStatusResponse> opsStatus(
-      $pb.ServerContext ctx, $0.OpsStatusRequest request);
-  $async.Future<$0.ListNamespacesResponse> listNamespaces(
-      $pb.ServerContext ctx, $0.ListNamespacesRequest request);
-  $async.Future<$0.ListServicesResponse> listServices(
-      $pb.ServerContext ctx, $0.ListServicesRequest request);
-  $async.Future<$0.GetServiceResponse> getService(
-      $pb.ServerContext ctx, $0.GetServiceRequest request);
-  $async.Future<$0.LaunchServiceResponse> launchService(
-      $pb.ServerContext ctx, $0.LaunchServiceRequest request);
-  $async.Future<$0.DeleteServiceResponse> deleteService(
-      $pb.ServerContext ctx, $0.DeleteServiceRequest request);
-  $async.Future<$0.ScaleServiceResponse> scaleService(
-      $pb.ServerContext ctx, $0.ScaleServiceRequest request);
-  $async.Future<$0.SandboxExecResponse> sandboxExec(
-      $pb.ServerContext ctx, $0.SandboxExecRequest request);
-  $async.Future<$0.SandboxReadResponse> sandboxRead(
-      $pb.ServerContext ctx, $0.SandboxReadRequest request);
-  $async.Future<$0.SandboxWriteResponse> sandboxWrite(
-      $pb.ServerContext ctx, $0.SandboxWriteRequest request);
-  $async.Future<$0.SandboxJobKillResponse> sandboxJobKill(
-      $pb.ServerContext ctx, $0.SandboxJobKillRequest request);
-  $async.Future<$0.ListTasksResponse> listTasks(
-      $pb.ServerContext ctx, $0.ListTasksRequest request);
-  $async.Future<$0.GetTaskResponse> getTask(
-      $pb.ServerContext ctx, $0.GetTaskRequest request);
-  $async.Future<$0.BuildResponse> build(
-      $pb.ServerContext ctx, $0.BuildRequest request);
-  $async.Future<$0.TaskLogResponse> taskLog(
-      $pb.ServerContext ctx, $0.TaskLogRequest request);
-  $async.Future<$0.SyncResponse> sync(
-      $pb.ServerContext ctx, $0.SyncRequest request);
+  $async.Future<$1.OpsStatusResponse> opsStatus(
+      $pb.ServerContext ctx, $1.OpsStatusRequest request);
+  $async.Future<$1.ListNamespacesResponse> listNamespaces(
+      $pb.ServerContext ctx, $1.ListNamespacesRequest request);
+  $async.Future<$1.ListServicesResponse> listServices(
+      $pb.ServerContext ctx, $1.ListServicesRequest request);
+  $async.Future<$1.GetServiceResponse> getService(
+      $pb.ServerContext ctx, $1.GetServiceRequest request);
+  $async.Future<$1.LaunchServiceResponse> launchService(
+      $pb.ServerContext ctx, $1.LaunchServiceRequest request);
+  $async.Future<$1.DeleteServiceResponse> deleteService(
+      $pb.ServerContext ctx, $1.DeleteServiceRequest request);
+  $async.Future<$1.ScaleServiceResponse> scaleService(
+      $pb.ServerContext ctx, $1.ScaleServiceRequest request);
+  $async.Future<$1.SandboxExecResponse> sandboxExec(
+      $pb.ServerContext ctx, $1.SandboxExecRequest request);
+  $async.Future<$1.SandboxReadResponse> sandboxRead(
+      $pb.ServerContext ctx, $1.SandboxReadRequest request);
+  $async.Future<$1.SandboxWriteResponse> sandboxWrite(
+      $pb.ServerContext ctx, $1.SandboxWriteRequest request);
+  $async.Future<$1.SandboxJobKillResponse> sandboxJobKill(
+      $pb.ServerContext ctx, $1.SandboxJobKillRequest request);
+  $async.Future<$1.ListTasksResponse> listTasks(
+      $pb.ServerContext ctx, $1.ListTasksRequest request);
+  $async.Future<$1.GetTaskResponse> getTask(
+      $pb.ServerContext ctx, $1.GetTaskRequest request);
+  $async.Future<$1.TaskLogResponse> taskLog(
+      $pb.ServerContext ctx, $1.TaskLogRequest request);
+  $async.Future<$1.SyncResponse> sync(
+      $pb.ServerContext ctx, $1.SyncRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
       case 'OpsStatus':
-        return $0.OpsStatusRequest();
+        return $1.OpsStatusRequest();
       case 'ListNamespaces':
-        return $0.ListNamespacesRequest();
+        return $1.ListNamespacesRequest();
       case 'ListServices':
-        return $0.ListServicesRequest();
+        return $1.ListServicesRequest();
       case 'GetService':
-        return $0.GetServiceRequest();
+        return $1.GetServiceRequest();
       case 'LaunchService':
-        return $0.LaunchServiceRequest();
+        return $1.LaunchServiceRequest();
       case 'DeleteService':
-        return $0.DeleteServiceRequest();
+        return $1.DeleteServiceRequest();
       case 'ScaleService':
-        return $0.ScaleServiceRequest();
+        return $1.ScaleServiceRequest();
       case 'SandboxExec':
-        return $0.SandboxExecRequest();
+        return $1.SandboxExecRequest();
       case 'SandboxRead':
-        return $0.SandboxReadRequest();
+        return $1.SandboxReadRequest();
       case 'SandboxWrite':
-        return $0.SandboxWriteRequest();
+        return $1.SandboxWriteRequest();
       case 'SandboxJobKill':
-        return $0.SandboxJobKillRequest();
+        return $1.SandboxJobKillRequest();
       case 'ListTasks':
-        return $0.ListTasksRequest();
+        return $1.ListTasksRequest();
       case 'GetTask':
-        return $0.GetTaskRequest();
-      case 'Build':
-        return $0.BuildRequest();
+        return $1.GetTaskRequest();
       case 'TaskLog':
-        return $0.TaskLogRequest();
+        return $1.TaskLogRequest();
       case 'Sync':
-        return $0.SyncRequest();
+        return $1.SyncRequest();
       default:
         throw $core.ArgumentError('Unknown method: $methodName');
     }
@@ -318,37 +315,35 @@ abstract class OpsServiceBase extends $pb.GeneratedService {
       $core.String methodName, $pb.GeneratedMessage request) {
     switch (methodName) {
       case 'OpsStatus':
-        return opsStatus(ctx, request as $0.OpsStatusRequest);
+        return opsStatus(ctx, request as $1.OpsStatusRequest);
       case 'ListNamespaces':
-        return listNamespaces(ctx, request as $0.ListNamespacesRequest);
+        return listNamespaces(ctx, request as $1.ListNamespacesRequest);
       case 'ListServices':
-        return listServices(ctx, request as $0.ListServicesRequest);
+        return listServices(ctx, request as $1.ListServicesRequest);
       case 'GetService':
-        return getService(ctx, request as $0.GetServiceRequest);
+        return getService(ctx, request as $1.GetServiceRequest);
       case 'LaunchService':
-        return launchService(ctx, request as $0.LaunchServiceRequest);
+        return launchService(ctx, request as $1.LaunchServiceRequest);
       case 'DeleteService':
-        return deleteService(ctx, request as $0.DeleteServiceRequest);
+        return deleteService(ctx, request as $1.DeleteServiceRequest);
       case 'ScaleService':
-        return scaleService(ctx, request as $0.ScaleServiceRequest);
+        return scaleService(ctx, request as $1.ScaleServiceRequest);
       case 'SandboxExec':
-        return sandboxExec(ctx, request as $0.SandboxExecRequest);
+        return sandboxExec(ctx, request as $1.SandboxExecRequest);
       case 'SandboxRead':
-        return sandboxRead(ctx, request as $0.SandboxReadRequest);
+        return sandboxRead(ctx, request as $1.SandboxReadRequest);
       case 'SandboxWrite':
-        return sandboxWrite(ctx, request as $0.SandboxWriteRequest);
+        return sandboxWrite(ctx, request as $1.SandboxWriteRequest);
       case 'SandboxJobKill':
-        return sandboxJobKill(ctx, request as $0.SandboxJobKillRequest);
+        return sandboxJobKill(ctx, request as $1.SandboxJobKillRequest);
       case 'ListTasks':
-        return listTasks(ctx, request as $0.ListTasksRequest);
+        return listTasks(ctx, request as $1.ListTasksRequest);
       case 'GetTask':
-        return getTask(ctx, request as $0.GetTaskRequest);
-      case 'Build':
-        return build(ctx, request as $0.BuildRequest);
+        return getTask(ctx, request as $1.GetTaskRequest);
       case 'TaskLog':
-        return taskLog(ctx, request as $0.TaskLogRequest);
+        return taskLog(ctx, request as $1.TaskLogRequest);
       case 'Sync':
-        return sync(ctx, request as $0.SyncRequest);
+        return sync(ctx, request as $1.SyncRequest);
       default:
         throw $core.ArgumentError('Unknown method: $methodName');
     }
@@ -360,37 +355,37 @@ abstract class OpsServiceBase extends $pb.GeneratedService {
 }
 
 abstract class RegistryServiceBase extends $pb.GeneratedService {
-  $async.Future<$0.ListPackageTypesResponse> listPackageTypes(
-      $pb.ServerContext ctx, $0.ListPackageTypesRequest request);
-  $async.Future<$0.ListPackagesResponse> listPackages(
-      $pb.ServerContext ctx, $0.ListPackagesRequest request);
-  $async.Future<$0.PackageVersionsResponse> packageVersions(
-      $pb.ServerContext ctx, $0.PackageVersionsRequest request);
-  $async.Future<$0.DeletePackageResponse> deletePackage(
-      $pb.ServerContext ctx, $0.DeletePackageRequest request);
-  $async.Future<$0.DeletePackageVersionResponse> deletePackageVersion(
-      $pb.ServerContext ctx, $0.DeletePackageVersionRequest request);
-  $async.Future<$0.ListPublishSpecsResponse> listPublishSpecs(
-      $pb.ServerContext ctx, $0.ListPublishSpecsRequest request);
-  $async.Future<$0.OCICatalogResponse> oCICatalog(
-      $pb.ServerContext ctx, $0.OCICatalogRequest request);
+  $async.Future<$1.ListPackageTypesResponse> listPackageTypes(
+      $pb.ServerContext ctx, $1.ListPackageTypesRequest request);
+  $async.Future<$1.ListPackagesResponse> listPackages(
+      $pb.ServerContext ctx, $1.ListPackagesRequest request);
+  $async.Future<$1.PackageVersionsResponse> packageVersions(
+      $pb.ServerContext ctx, $1.PackageVersionsRequest request);
+  $async.Future<$1.DeletePackageResponse> deletePackage(
+      $pb.ServerContext ctx, $1.DeletePackageRequest request);
+  $async.Future<$1.DeletePackageVersionResponse> deletePackageVersion(
+      $pb.ServerContext ctx, $1.DeletePackageVersionRequest request);
+  $async.Future<$1.ListPublishSpecsResponse> listPublishSpecs(
+      $pb.ServerContext ctx, $1.ListPublishSpecsRequest request);
+  $async.Future<$1.OCICatalogResponse> oCICatalog(
+      $pb.ServerContext ctx, $1.OCICatalogRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
       case 'ListPackageTypes':
-        return $0.ListPackageTypesRequest();
+        return $1.ListPackageTypesRequest();
       case 'ListPackages':
-        return $0.ListPackagesRequest();
+        return $1.ListPackagesRequest();
       case 'PackageVersions':
-        return $0.PackageVersionsRequest();
+        return $1.PackageVersionsRequest();
       case 'DeletePackage':
-        return $0.DeletePackageRequest();
+        return $1.DeletePackageRequest();
       case 'DeletePackageVersion':
-        return $0.DeletePackageVersionRequest();
+        return $1.DeletePackageVersionRequest();
       case 'ListPublishSpecs':
-        return $0.ListPublishSpecsRequest();
+        return $1.ListPublishSpecsRequest();
       case 'OCICatalog':
-        return $0.OCICatalogRequest();
+        return $1.OCICatalogRequest();
       default:
         throw $core.ArgumentError('Unknown method: $methodName');
     }
@@ -400,20 +395,20 @@ abstract class RegistryServiceBase extends $pb.GeneratedService {
       $core.String methodName, $pb.GeneratedMessage request) {
     switch (methodName) {
       case 'ListPackageTypes':
-        return listPackageTypes(ctx, request as $0.ListPackageTypesRequest);
+        return listPackageTypes(ctx, request as $1.ListPackageTypesRequest);
       case 'ListPackages':
-        return listPackages(ctx, request as $0.ListPackagesRequest);
+        return listPackages(ctx, request as $1.ListPackagesRequest);
       case 'PackageVersions':
-        return packageVersions(ctx, request as $0.PackageVersionsRequest);
+        return packageVersions(ctx, request as $1.PackageVersionsRequest);
       case 'DeletePackage':
-        return deletePackage(ctx, request as $0.DeletePackageRequest);
+        return deletePackage(ctx, request as $1.DeletePackageRequest);
       case 'DeletePackageVersion':
         return deletePackageVersion(
-            ctx, request as $0.DeletePackageVersionRequest);
+            ctx, request as $1.DeletePackageVersionRequest);
       case 'ListPublishSpecs':
-        return listPublishSpecs(ctx, request as $0.ListPublishSpecsRequest);
+        return listPublishSpecs(ctx, request as $1.ListPublishSpecsRequest);
       case 'OCICatalog':
-        return oCICatalog(ctx, request as $0.OCICatalogRequest);
+        return oCICatalog(ctx, request as $1.OCICatalogRequest);
       default:
         throw $core.ArgumentError('Unknown method: $methodName');
     }
@@ -422,4 +417,204 @@ abstract class RegistryServiceBase extends $pb.GeneratedService {
   $core.Map<$core.String, $core.dynamic> get $json => RegistryServiceBase$json;
   $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>>
       get $messageJson => RegistryServiceBase$messageJson;
+}
+
+abstract class SandboxServiceBase extends $pb.GeneratedService {
+  $async.Future<$1.ListSandboxesResponse> listSandboxes(
+      $pb.ServerContext ctx, $1.ListSandboxesRequest request);
+  $async.Future<$1.GetSandboxResponse> getSandbox(
+      $pb.ServerContext ctx, $1.GetSandboxRequest request);
+  $async.Future<$1.EnsureSandboxImageResponse> ensureSandboxImage(
+      $pb.ServerContext ctx, $1.EnsureSandboxImageRequest request);
+  $async.Future<$1.LaunchSandboxResponse> launchSandbox(
+      $pb.ServerContext ctx, $1.LaunchSandboxRequest request);
+  $async.Future<$1.DeleteSandboxResponse> deleteSandbox(
+      $pb.ServerContext ctx, $1.DeleteSandboxRequest request);
+  $async.Future<$0.ExecuteResponse> execute(
+      $pb.ServerContext ctx, $1.ExecuteRequest request);
+  $async.Future<$0.ListJobsResponse> listJobs(
+      $pb.ServerContext ctx, $1.ListJobsRequest request);
+  $async.Future<$0.JobOutputResponse> jobOutput(
+      $pb.ServerContext ctx, $1.JobOutputRequest request);
+  $async.Future<$0.WatchJobResponse> watchJob(
+      $pb.ServerContext ctx, $1.WatchJobRequest request);
+  $async.Future<$0.JobWaitResponse> jobWait(
+      $pb.ServerContext ctx, $1.JobWaitRequest request);
+  $async.Future<$0.JobStdinResponse> jobStdin(
+      $pb.ServerContext ctx, $1.JobStdinRequest request);
+  $async.Future<$0.JobKillResponse> jobKill(
+      $pb.ServerContext ctx, $1.JobKillRequest request);
+  $async.Future<$0.FileReadResponse> fileRead(
+      $pb.ServerContext ctx, $1.FileReadRequest request);
+  $async.Future<$1.SyncWorkspaceResponse> syncWorkspace(
+      $pb.ServerContext ctx, $1.SyncWorkspaceRequest request);
+  $async.Future<$0.FileWriteResponse> fileWrite(
+      $pb.ServerContext ctx, $1.FileWriteRequest request);
+  $async.Future<$0.FileListResponse> fileList(
+      $pb.ServerContext ctx, $1.FileListRequest request);
+
+  $pb.GeneratedMessage createRequest($core.String methodName) {
+    switch (methodName) {
+      case 'ListSandboxes':
+        return $1.ListSandboxesRequest();
+      case 'GetSandbox':
+        return $1.GetSandboxRequest();
+      case 'EnsureSandboxImage':
+        return $1.EnsureSandboxImageRequest();
+      case 'LaunchSandbox':
+        return $1.LaunchSandboxRequest();
+      case 'DeleteSandbox':
+        return $1.DeleteSandboxRequest();
+      case 'Execute':
+        return $1.ExecuteRequest();
+      case 'ListJobs':
+        return $1.ListJobsRequest();
+      case 'JobOutput':
+        return $1.JobOutputRequest();
+      case 'WatchJob':
+        return $1.WatchJobRequest();
+      case 'JobWait':
+        return $1.JobWaitRequest();
+      case 'JobStdin':
+        return $1.JobStdinRequest();
+      case 'JobKill':
+        return $1.JobKillRequest();
+      case 'FileRead':
+        return $1.FileReadRequest();
+      case 'SyncWorkspace':
+        return $1.SyncWorkspaceRequest();
+      case 'FileWrite':
+        return $1.FileWriteRequest();
+      case 'FileList':
+        return $1.FileListRequest();
+      default:
+        throw $core.ArgumentError('Unknown method: $methodName');
+    }
+  }
+
+  $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx,
+      $core.String methodName, $pb.GeneratedMessage request) {
+    switch (methodName) {
+      case 'ListSandboxes':
+        return listSandboxes(ctx, request as $1.ListSandboxesRequest);
+      case 'GetSandbox':
+        return getSandbox(ctx, request as $1.GetSandboxRequest);
+      case 'EnsureSandboxImage':
+        return ensureSandboxImage(ctx, request as $1.EnsureSandboxImageRequest);
+      case 'LaunchSandbox':
+        return launchSandbox(ctx, request as $1.LaunchSandboxRequest);
+      case 'DeleteSandbox':
+        return deleteSandbox(ctx, request as $1.DeleteSandboxRequest);
+      case 'Execute':
+        return execute(ctx, request as $1.ExecuteRequest);
+      case 'ListJobs':
+        return listJobs(ctx, request as $1.ListJobsRequest);
+      case 'JobOutput':
+        return jobOutput(ctx, request as $1.JobOutputRequest);
+      case 'WatchJob':
+        return watchJob(ctx, request as $1.WatchJobRequest);
+      case 'JobWait':
+        return jobWait(ctx, request as $1.JobWaitRequest);
+      case 'JobStdin':
+        return jobStdin(ctx, request as $1.JobStdinRequest);
+      case 'JobKill':
+        return jobKill(ctx, request as $1.JobKillRequest);
+      case 'FileRead':
+        return fileRead(ctx, request as $1.FileReadRequest);
+      case 'SyncWorkspace':
+        return syncWorkspace(ctx, request as $1.SyncWorkspaceRequest);
+      case 'FileWrite':
+        return fileWrite(ctx, request as $1.FileWriteRequest);
+      case 'FileList':
+        return fileList(ctx, request as $1.FileListRequest);
+      default:
+        throw $core.ArgumentError('Unknown method: $methodName');
+    }
+  }
+
+  $core.Map<$core.String, $core.dynamic> get $json => SandboxServiceBase$json;
+  $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>>
+      get $messageJson => SandboxServiceBase$messageJson;
+}
+
+abstract class WorkflowServiceBase extends $pb.GeneratedService {
+  $async.Future<$1.CreateWorkflowResponse> createWorkflow(
+      $pb.ServerContext ctx, $1.CreateWorkflowRequest request);
+  $async.Future<$1.GetWorkflowResponse> getWorkflow(
+      $pb.ServerContext ctx, $1.GetWorkflowRequest request);
+  $async.Future<$1.ListWorkflowsResponse> listWorkflows(
+      $pb.ServerContext ctx, $1.ListWorkflowsRequest request);
+  $async.Future<$1.TriggerRunResponse> triggerRun(
+      $pb.ServerContext ctx, $1.TriggerRunRequest request);
+  $async.Future<$1.GetRunResponse> getRun(
+      $pb.ServerContext ctx, $1.GetRunRequest request);
+  $async.Future<$1.ListRunsResponse> listRuns(
+      $pb.ServerContext ctx, $1.ListRunsRequest request);
+  $async.Future<$1.RunJobLogResponse> runJobLog(
+      $pb.ServerContext ctx, $1.RunJobLogRequest request);
+  $async.Future<$1.CancelRunResponse> cancelRun(
+      $pb.ServerContext ctx, $1.CancelRunRequest request);
+  $async.Future<$1.RegisterRunnerResponse> registerRunner(
+      $pb.ServerContext ctx, $1.RegisterRunnerRequest request);
+  $async.Future<$1.ListRunnersResponse> listRunners(
+      $pb.ServerContext ctx, $1.ListRunnersRequest request);
+
+  $pb.GeneratedMessage createRequest($core.String methodName) {
+    switch (methodName) {
+      case 'CreateWorkflow':
+        return $1.CreateWorkflowRequest();
+      case 'GetWorkflow':
+        return $1.GetWorkflowRequest();
+      case 'ListWorkflows':
+        return $1.ListWorkflowsRequest();
+      case 'TriggerRun':
+        return $1.TriggerRunRequest();
+      case 'GetRun':
+        return $1.GetRunRequest();
+      case 'ListRuns':
+        return $1.ListRunsRequest();
+      case 'RunJobLog':
+        return $1.RunJobLogRequest();
+      case 'CancelRun':
+        return $1.CancelRunRequest();
+      case 'RegisterRunner':
+        return $1.RegisterRunnerRequest();
+      case 'ListRunners':
+        return $1.ListRunnersRequest();
+      default:
+        throw $core.ArgumentError('Unknown method: $methodName');
+    }
+  }
+
+  $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx,
+      $core.String methodName, $pb.GeneratedMessage request) {
+    switch (methodName) {
+      case 'CreateWorkflow':
+        return createWorkflow(ctx, request as $1.CreateWorkflowRequest);
+      case 'GetWorkflow':
+        return getWorkflow(ctx, request as $1.GetWorkflowRequest);
+      case 'ListWorkflows':
+        return listWorkflows(ctx, request as $1.ListWorkflowsRequest);
+      case 'TriggerRun':
+        return triggerRun(ctx, request as $1.TriggerRunRequest);
+      case 'GetRun':
+        return getRun(ctx, request as $1.GetRunRequest);
+      case 'ListRuns':
+        return listRuns(ctx, request as $1.ListRunsRequest);
+      case 'RunJobLog':
+        return runJobLog(ctx, request as $1.RunJobLogRequest);
+      case 'CancelRun':
+        return cancelRun(ctx, request as $1.CancelRunRequest);
+      case 'RegisterRunner':
+        return registerRunner(ctx, request as $1.RegisterRunnerRequest);
+      case 'ListRunners':
+        return listRunners(ctx, request as $1.ListRunnersRequest);
+      default:
+        throw $core.ArgumentError('Unknown method: $methodName');
+    }
+  }
+
+  $core.Map<$core.String, $core.dynamic> get $json => WorkflowServiceBase$json;
+  $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>>
+      get $messageJson => WorkflowServiceBase$messageJson;
 }

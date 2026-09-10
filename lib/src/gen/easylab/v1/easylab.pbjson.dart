@@ -15,6 +15,8 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+import '../../worker/v1/worker.pbjson.dart' as $0;
+
 @$core.Deprecated('Use serviceKindDescriptor instead')
 const ServiceKind$json = {
   '1': 'ServiceKind',
@@ -1325,43 +1327,6 @@ final $typed_data.Uint8List getTaskResponseDescriptor = $convert.base64Decode(
     'Cg9HZXRUYXNrUmVzcG9uc2USKQoEdGFzaxgBIAEoCzIVLmVhc3lsYWIudjEuVGFza0VudHJ5Ug'
     'R0YXNr');
 
-@$core.Deprecated('Use buildRequestDescriptor instead')
-const BuildRequest$json = {
-  '1': 'BuildRequest',
-  '2': [
-    {'1': 'org', '3': 1, '4': 1, '5': 9, '10': 'org'},
-    {'1': 'repo', '3': 2, '4': 1, '5': 9, '10': 'repo'},
-    {'1': 'ref', '3': 3, '4': 1, '5': 9, '10': 'ref'},
-    {'1': 'dockerfile_path', '3': 4, '4': 1, '5': 9, '10': 'dockerfilePath'},
-    {'1': 'tag', '3': 5, '4': 1, '5': 9, '10': 'tag'},
-    {'1': 'context', '3': 6, '4': 1, '5': 9, '10': 'context'},
-    {'1': 'no_cache', '3': 7, '4': 1, '5': 8, '10': 'noCache'},
-  ],
-};
-
-/// Descriptor for `BuildRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List buildRequestDescriptor = $convert.base64Decode(
-    'CgxCdWlsZFJlcXVlc3QSEAoDb3JnGAEgASgJUgNvcmcSEgoEcmVwbxgCIAEoCVIEcmVwbxIQCg'
-    'NyZWYYAyABKAlSA3JlZhInCg9kb2NrZXJmaWxlX3BhdGgYBCABKAlSDmRvY2tlcmZpbGVQYXRo'
-    'EhAKA3RhZxgFIAEoCVIDdGFnEhgKB2NvbnRleHQYBiABKAlSB2NvbnRleHQSGQoIbm9fY2FjaG'
-    'UYByABKAhSB25vQ2FjaGU=');
-
-@$core.Deprecated('Use buildResponseDescriptor instead')
-const BuildResponse$json = {
-  '1': 'BuildResponse',
-  '2': [
-    {'1': 'ok', '3': 1, '4': 1, '5': 8, '10': 'ok'},
-    {'1': 'task_id', '3': 2, '4': 1, '5': 9, '10': 'taskId'},
-    {'1': 'image', '3': 3, '4': 1, '5': 9, '10': 'image'},
-    {'1': 'error', '3': 4, '4': 1, '5': 9, '10': 'error'},
-  ],
-};
-
-/// Descriptor for `BuildResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List buildResponseDescriptor = $convert.base64Decode(
-    'Cg1CdWlsZFJlc3BvbnNlEg4KAm9rGAEgASgIUgJvaxIXCgd0YXNrX2lkGAIgASgJUgZ0YXNrSW'
-    'QSFAoFaW1hZ2UYAyABKAlSBWltYWdlEhQKBWVycm9yGAQgASgJUgVlcnJvcg==');
-
 @$core.Deprecated('Use opsStatusRequestDescriptor instead')
 const OpsStatusRequest$json = {
   '1': 'OpsStatusRequest',
@@ -2311,6 +2276,978 @@ final $typed_data.Uint8List oCICatalogResponseDescriptor = $convert.base64Decode
     'ChJPQ0lDYXRhbG9nUmVzcG9uc2USIgoMcmVwb3NpdG9yaWVzGAEgAygJUgxyZXBvc2l0b3JpZX'
     'M=');
 
+@$core.Deprecated('Use sandboxInfoDescriptor instead')
+const SandboxInfo$json = {
+  '1': 'SandboxInfo',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'org', '3': 2, '4': 1, '5': 9, '10': 'org'},
+    {'1': 'repo', '3': 3, '4': 1, '5': 9, '10': 'repo'},
+    {'1': 'branch', '3': 4, '4': 1, '5': 9, '10': 'branch'},
+    {'1': 'base_image', '3': 5, '4': 1, '5': 9, '10': 'baseImage'},
+    {'1': 'derived_image', '3': 6, '4': 1, '5': 9, '10': 'derivedImage'},
+    {'1': 'workspace', '3': 7, '4': 1, '5': 9, '10': 'workspace'},
+    {'1': 'phase', '3': 8, '4': 1, '5': 9, '10': 'phase'},
+    {'1': 'pod_ip', '3': 9, '4': 1, '5': 9, '10': 'podIp'},
+    {'1': 'boot_id', '3': 10, '4': 1, '5': 9, '10': 'bootId'},
+    {'1': 'running_jobs', '3': 11, '4': 1, '5': 5, '10': 'runningJobs'},
+    {'1': 'total_jobs', '3': 12, '4': 1, '5': 5, '10': 'totalJobs'},
+    {'1': 'synced_rev', '3': 13, '4': 1, '5': 9, '10': 'syncedRev'},
+    {'1': 'synced_boot_id', '3': 14, '4': 1, '5': 9, '10': 'syncedBootId'},
+    {'1': 'error', '3': 15, '4': 1, '5': 9, '10': 'error'},
+  ],
+};
+
+/// Descriptor for `SandboxInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sandboxInfoDescriptor = $convert.base64Decode(
+    'CgtTYW5kYm94SW5mbxISCgRuYW1lGAEgASgJUgRuYW1lEhAKA29yZxgCIAEoCVIDb3JnEhIKBH'
+    'JlcG8YAyABKAlSBHJlcG8SFgoGYnJhbmNoGAQgASgJUgZicmFuY2gSHQoKYmFzZV9pbWFnZRgF'
+    'IAEoCVIJYmFzZUltYWdlEiMKDWRlcml2ZWRfaW1hZ2UYBiABKAlSDGRlcml2ZWRJbWFnZRIcCg'
+    'l3b3Jrc3BhY2UYByABKAlSCXdvcmtzcGFjZRIUCgVwaGFzZRgIIAEoCVIFcGhhc2USFQoGcG9k'
+    'X2lwGAkgASgJUgVwb2RJcBIXCgdib290X2lkGAogASgJUgZib290SWQSIQoMcnVubmluZ19qb2'
+    'JzGAsgASgFUgtydW5uaW5nSm9icxIdCgp0b3RhbF9qb2JzGAwgASgFUgl0b3RhbEpvYnMSHQoK'
+    'c3luY2VkX3JldhgNIAEoCVIJc3luY2VkUmV2EiQKDnN5bmNlZF9ib290X2lkGA4gASgJUgxzeW'
+    '5jZWRCb290SWQSFAoFZXJyb3IYDyABKAlSBWVycm9y');
+
+@$core.Deprecated('Use listSandboxesRequestDescriptor instead')
+const ListSandboxesRequest$json = {
+  '1': 'ListSandboxesRequest',
+};
+
+/// Descriptor for `ListSandboxesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSandboxesRequestDescriptor =
+    $convert.base64Decode('ChRMaXN0U2FuZGJveGVzUmVxdWVzdA==');
+
+@$core.Deprecated('Use listSandboxesResponseDescriptor instead')
+const ListSandboxesResponse$json = {
+  '1': 'ListSandboxesResponse',
+  '2': [
+    {
+      '1': 'sandboxes',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.easylab.v1.SandboxInfo',
+      '10': 'sandboxes'
+    },
+  ],
+};
+
+/// Descriptor for `ListSandboxesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSandboxesResponseDescriptor = $convert.base64Decode(
+    'ChVMaXN0U2FuZGJveGVzUmVzcG9uc2USNQoJc2FuZGJveGVzGAEgAygLMhcuZWFzeWxhYi52MS'
+    '5TYW5kYm94SW5mb1IJc2FuZGJveGVz');
+
+@$core.Deprecated('Use getSandboxRequestDescriptor instead')
+const GetSandboxRequest$json = {
+  '1': 'GetSandboxRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `GetSandboxRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSandboxRequestDescriptor = $convert
+    .base64Decode('ChFHZXRTYW5kYm94UmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+
+@$core.Deprecated('Use getSandboxResponseDescriptor instead')
+const GetSandboxResponse$json = {
+  '1': 'GetSandboxResponse',
+  '2': [
+    {
+      '1': 'sandbox',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.easylab.v1.SandboxInfo',
+      '10': 'sandbox'
+    },
+  ],
+};
+
+/// Descriptor for `GetSandboxResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSandboxResponseDescriptor = $convert.base64Decode(
+    'ChJHZXRTYW5kYm94UmVzcG9uc2USMQoHc2FuZGJveBgBIAEoCzIXLmVhc3lsYWIudjEuU2FuZG'
+    'JveEluZm9SB3NhbmRib3g=');
+
+@$core.Deprecated('Use ensureSandboxImageRequestDescriptor instead')
+const EnsureSandboxImageRequest$json = {
+  '1': 'EnsureSandboxImageRequest',
+  '2': [
+    {'1': 'base_image', '3': 1, '4': 1, '5': 9, '10': 'baseImage'},
+  ],
+};
+
+/// Descriptor for `EnsureSandboxImageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List ensureSandboxImageRequestDescriptor =
+    $convert.base64Decode(
+        'ChlFbnN1cmVTYW5kYm94SW1hZ2VSZXF1ZXN0Eh0KCmJhc2VfaW1hZ2UYASABKAlSCWJhc2VJbW'
+        'FnZQ==');
+
+@$core.Deprecated('Use ensureSandboxImageResponseDescriptor instead')
+const EnsureSandboxImageResponse$json = {
+  '1': 'EnsureSandboxImageResponse',
+  '2': [
+    {'1': 'derived_image', '3': 1, '4': 1, '5': 9, '10': 'derivedImage'},
+    {'1': 'built', '3': 2, '4': 1, '5': 8, '10': 'built'},
+  ],
+};
+
+/// Descriptor for `EnsureSandboxImageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List ensureSandboxImageResponseDescriptor =
+    $convert.base64Decode(
+        'ChpFbnN1cmVTYW5kYm94SW1hZ2VSZXNwb25zZRIjCg1kZXJpdmVkX2ltYWdlGAEgASgJUgxkZX'
+        'JpdmVkSW1hZ2USFAoFYnVpbHQYAiABKAhSBWJ1aWx0');
+
+@$core.Deprecated('Use launchSandboxRequestDescriptor instead')
+const LaunchSandboxRequest$json = {
+  '1': 'LaunchSandboxRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'base_image', '3': 2, '4': 1, '5': 9, '10': 'baseImage'},
+    {'1': 'org', '3': 3, '4': 1, '5': 9, '10': 'org'},
+    {'1': 'repo', '3': 4, '4': 1, '5': 9, '10': 'repo'},
+    {'1': 'branch', '3': 5, '4': 1, '5': 9, '10': 'branch'},
+    {'1': 'workspace', '3': 6, '4': 1, '5': 9, '10': 'workspace'},
+    {
+      '1': 'env',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.easylab.v1.LaunchSandboxRequest.EnvEntry',
+      '10': 'env'
+    },
+    {'1': 'cpus', '3': 8, '4': 1, '5': 9, '10': 'cpus'},
+    {'1': 'memory_bytes', '3': 9, '4': 1, '5': 4, '10': 'memoryBytes'},
+  ],
+  '3': [LaunchSandboxRequest_EnvEntry$json],
+};
+
+@$core.Deprecated('Use launchSandboxRequestDescriptor instead')
+const LaunchSandboxRequest_EnvEntry$json = {
+  '1': 'EnvEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `LaunchSandboxRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List launchSandboxRequestDescriptor = $convert.base64Decode(
+    'ChRMYXVuY2hTYW5kYm94UmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEh0KCmJhc2VfaW1hZ2'
+    'UYAiABKAlSCWJhc2VJbWFnZRIQCgNvcmcYAyABKAlSA29yZxISCgRyZXBvGAQgASgJUgRyZXBv'
+    'EhYKBmJyYW5jaBgFIAEoCVIGYnJhbmNoEhwKCXdvcmtzcGFjZRgGIAEoCVIJd29ya3NwYWNlEj'
+    'sKA2VudhgHIAMoCzIpLmVhc3lsYWIudjEuTGF1bmNoU2FuZGJveFJlcXVlc3QuRW52RW50cnlS'
+    'A2VudhISCgRjcHVzGAggASgJUgRjcHVzEiEKDG1lbW9yeV9ieXRlcxgJIAEoBFILbWVtb3J5Qn'
+    'l0ZXMaNgoIRW52RW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAlSBXZhbHVl'
+    'OgI4AQ==');
+
+@$core.Deprecated('Use launchSandboxResponseDescriptor instead')
+const LaunchSandboxResponse$json = {
+  '1': 'LaunchSandboxResponse',
+  '2': [
+    {
+      '1': 'sandbox',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.easylab.v1.SandboxInfo',
+      '10': 'sandbox'
+    },
+  ],
+};
+
+/// Descriptor for `LaunchSandboxResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List launchSandboxResponseDescriptor = $convert.base64Decode(
+    'ChVMYXVuY2hTYW5kYm94UmVzcG9uc2USMQoHc2FuZGJveBgBIAEoCzIXLmVhc3lsYWIudjEuU2'
+    'FuZGJveEluZm9SB3NhbmRib3g=');
+
+@$core.Deprecated('Use deleteSandboxRequestDescriptor instead')
+const DeleteSandboxRequest$json = {
+  '1': 'DeleteSandboxRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `DeleteSandboxRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteSandboxRequestDescriptor = $convert
+    .base64Decode('ChREZWxldGVTYW5kYm94UmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+
+@$core.Deprecated('Use deleteSandboxResponseDescriptor instead')
+const DeleteSandboxResponse$json = {
+  '1': 'DeleteSandboxResponse',
+  '2': [
+    {'1': 'ok', '3': 1, '4': 1, '5': 8, '10': 'ok'},
+    {'1': 'error', '3': 2, '4': 1, '5': 9, '10': 'error'},
+  ],
+};
+
+/// Descriptor for `DeleteSandboxResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteSandboxResponseDescriptor = $convert.base64Decode(
+    'ChVEZWxldGVTYW5kYm94UmVzcG9uc2USDgoCb2sYASABKAhSAm9rEhQKBWVycm9yGAIgASgJUg'
+    'VlcnJvcg==');
+
+@$core.Deprecated('Use executeRequestDescriptor instead')
+const ExecuteRequest$json = {
+  '1': 'ExecuteRequest',
+  '2': [
+    {'1': 'sandbox', '3': 1, '4': 1, '5': 9, '10': 'sandbox'},
+    {
+      '1': 'req',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.worker.v1.ExecuteRequest',
+      '10': 'req'
+    },
+  ],
+};
+
+/// Descriptor for `ExecuteRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List executeRequestDescriptor = $convert.base64Decode(
+    'Cg5FeGVjdXRlUmVxdWVzdBIYCgdzYW5kYm94GAEgASgJUgdzYW5kYm94EisKA3JlcRgCIAEoCz'
+    'IZLndvcmtlci52MS5FeGVjdXRlUmVxdWVzdFIDcmVx');
+
+@$core.Deprecated('Use listJobsRequestDescriptor instead')
+const ListJobsRequest$json = {
+  '1': 'ListJobsRequest',
+  '2': [
+    {'1': 'sandbox', '3': 1, '4': 1, '5': 9, '10': 'sandbox'},
+    {'1': 'limit', '3': 2, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListJobsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listJobsRequestDescriptor = $convert.base64Decode(
+    'Cg9MaXN0Sm9ic1JlcXVlc3QSGAoHc2FuZGJveBgBIAEoCVIHc2FuZGJveBIUCgVsaW1pdBgCIA'
+    'EoBVIFbGltaXQ=');
+
+@$core.Deprecated('Use jobOutputRequestDescriptor instead')
+const JobOutputRequest$json = {
+  '1': 'JobOutputRequest',
+  '2': [
+    {'1': 'sandbox', '3': 1, '4': 1, '5': 9, '10': 'sandbox'},
+    {
+      '1': 'req',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.worker.v1.JobOutputRequest',
+      '10': 'req'
+    },
+  ],
+};
+
+/// Descriptor for `JobOutputRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List jobOutputRequestDescriptor = $convert.base64Decode(
+    'ChBKb2JPdXRwdXRSZXF1ZXN0EhgKB3NhbmRib3gYASABKAlSB3NhbmRib3gSLQoDcmVxGAIgAS'
+    'gLMhsud29ya2VyLnYxLkpvYk91dHB1dFJlcXVlc3RSA3JlcQ==');
+
+@$core.Deprecated('Use watchJobRequestDescriptor instead')
+const WatchJobRequest$json = {
+  '1': 'WatchJobRequest',
+  '2': [
+    {'1': 'sandbox', '3': 1, '4': 1, '5': 9, '10': 'sandbox'},
+    {
+      '1': 'req',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.worker.v1.WatchJobRequest',
+      '10': 'req'
+    },
+  ],
+};
+
+/// Descriptor for `WatchJobRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List watchJobRequestDescriptor = $convert.base64Decode(
+    'Cg9XYXRjaEpvYlJlcXVlc3QSGAoHc2FuZGJveBgBIAEoCVIHc2FuZGJveBIsCgNyZXEYAiABKA'
+    'syGi53b3JrZXIudjEuV2F0Y2hKb2JSZXF1ZXN0UgNyZXE=');
+
+@$core.Deprecated('Use jobWaitRequestDescriptor instead')
+const JobWaitRequest$json = {
+  '1': 'JobWaitRequest',
+  '2': [
+    {'1': 'sandbox', '3': 1, '4': 1, '5': 9, '10': 'sandbox'},
+    {
+      '1': 'req',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.worker.v1.JobWaitRequest',
+      '10': 'req'
+    },
+  ],
+};
+
+/// Descriptor for `JobWaitRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List jobWaitRequestDescriptor = $convert.base64Decode(
+    'Cg5Kb2JXYWl0UmVxdWVzdBIYCgdzYW5kYm94GAEgASgJUgdzYW5kYm94EisKA3JlcRgCIAEoCz'
+    'IZLndvcmtlci52MS5Kb2JXYWl0UmVxdWVzdFIDcmVx');
+
+@$core.Deprecated('Use jobStdinRequestDescriptor instead')
+const JobStdinRequest$json = {
+  '1': 'JobStdinRequest',
+  '2': [
+    {'1': 'sandbox', '3': 1, '4': 1, '5': 9, '10': 'sandbox'},
+    {
+      '1': 'req',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.worker.v1.JobStdinRequest',
+      '10': 'req'
+    },
+  ],
+};
+
+/// Descriptor for `JobStdinRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List jobStdinRequestDescriptor = $convert.base64Decode(
+    'Cg9Kb2JTdGRpblJlcXVlc3QSGAoHc2FuZGJveBgBIAEoCVIHc2FuZGJveBIsCgNyZXEYAiABKA'
+    'syGi53b3JrZXIudjEuSm9iU3RkaW5SZXF1ZXN0UgNyZXE=');
+
+@$core.Deprecated('Use jobKillRequestDescriptor instead')
+const JobKillRequest$json = {
+  '1': 'JobKillRequest',
+  '2': [
+    {'1': 'sandbox', '3': 1, '4': 1, '5': 9, '10': 'sandbox'},
+    {
+      '1': 'req',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.worker.v1.JobKillRequest',
+      '10': 'req'
+    },
+  ],
+};
+
+/// Descriptor for `JobKillRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List jobKillRequestDescriptor = $convert.base64Decode(
+    'Cg5Kb2JLaWxsUmVxdWVzdBIYCgdzYW5kYm94GAEgASgJUgdzYW5kYm94EisKA3JlcRgCIAEoCz'
+    'IZLndvcmtlci52MS5Kb2JLaWxsUmVxdWVzdFIDcmVx');
+
+@$core.Deprecated('Use fileReadRequestDescriptor instead')
+const FileReadRequest$json = {
+  '1': 'FileReadRequest',
+  '2': [
+    {'1': 'sandbox', '3': 1, '4': 1, '5': 9, '10': 'sandbox'},
+    {
+      '1': 'req',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.worker.v1.FileReadRequest',
+      '10': 'req'
+    },
+  ],
+};
+
+/// Descriptor for `FileReadRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fileReadRequestDescriptor = $convert.base64Decode(
+    'Cg9GaWxlUmVhZFJlcXVlc3QSGAoHc2FuZGJveBgBIAEoCVIHc2FuZGJveBIsCgNyZXEYAiABKA'
+    'syGi53b3JrZXIudjEuRmlsZVJlYWRSZXF1ZXN0UgNyZXE=');
+
+@$core.Deprecated('Use syncWorkspaceRequestDescriptor instead')
+const SyncWorkspaceRequest$json = {
+  '1': 'SyncWorkspaceRequest',
+  '2': [
+    {'1': 'sandbox', '3': 1, '4': 1, '5': 9, '10': 'sandbox'},
+    {'1': 'org', '3': 2, '4': 1, '5': 9, '10': 'org'},
+    {'1': 'repo', '3': 3, '4': 1, '5': 9, '10': 'repo'},
+    {'1': 'rev', '3': 4, '4': 1, '5': 9, '10': 'rev'},
+    {'1': 'branch', '3': 5, '4': 1, '5': 9, '10': 'branch'},
+  ],
+};
+
+/// Descriptor for `SyncWorkspaceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List syncWorkspaceRequestDescriptor = $convert.base64Decode(
+    'ChRTeW5jV29ya3NwYWNlUmVxdWVzdBIYCgdzYW5kYm94GAEgASgJUgdzYW5kYm94EhAKA29yZx'
+    'gCIAEoCVIDb3JnEhIKBHJlcG8YAyABKAlSBHJlcG8SEAoDcmV2GAQgASgJUgNyZXYSFgoGYnJh'
+    'bmNoGAUgASgJUgZicmFuY2g=');
+
+@$core.Deprecated('Use syncWorkspaceResponseDescriptor instead')
+const SyncWorkspaceResponse$json = {
+  '1': 'SyncWorkspaceResponse',
+  '2': [
+    {'1': 'synced_rev', '3': 1, '4': 1, '5': 9, '10': 'syncedRev'},
+  ],
+};
+
+/// Descriptor for `SyncWorkspaceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List syncWorkspaceResponseDescriptor = $convert.base64Decode(
+    'ChVTeW5jV29ya3NwYWNlUmVzcG9uc2USHQoKc3luY2VkX3JldhgBIAEoCVIJc3luY2VkUmV2');
+
+@$core.Deprecated('Use fileWriteRequestDescriptor instead')
+const FileWriteRequest$json = {
+  '1': 'FileWriteRequest',
+  '2': [
+    {'1': 'sandbox', '3': 1, '4': 1, '5': 9, '10': 'sandbox'},
+    {
+      '1': 'req',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.worker.v1.FileWriteRequest',
+      '10': 'req'
+    },
+  ],
+};
+
+/// Descriptor for `FileWriteRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fileWriteRequestDescriptor = $convert.base64Decode(
+    'ChBGaWxlV3JpdGVSZXF1ZXN0EhgKB3NhbmRib3gYASABKAlSB3NhbmRib3gSLQoDcmVxGAIgAS'
+    'gLMhsud29ya2VyLnYxLkZpbGVXcml0ZVJlcXVlc3RSA3JlcQ==');
+
+@$core.Deprecated('Use fileListRequestDescriptor instead')
+const FileListRequest$json = {
+  '1': 'FileListRequest',
+  '2': [
+    {'1': 'sandbox', '3': 1, '4': 1, '5': 9, '10': 'sandbox'},
+    {
+      '1': 'req',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.worker.v1.FileListRequest',
+      '10': 'req'
+    },
+  ],
+};
+
+/// Descriptor for `FileListRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fileListRequestDescriptor = $convert.base64Decode(
+    'Cg9GaWxlTGlzdFJlcXVlc3QSGAoHc2FuZGJveBgBIAEoCVIHc2FuZGJveBIsCgNyZXEYAiABKA'
+    'syGi53b3JrZXIudjEuRmlsZUxpc3RSZXF1ZXN0UgNyZXE=');
+
+@$core.Deprecated('Use runnerDescriptor instead')
+const Runner$json = {
+  '1': 'Runner',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'labels', '3': 2, '4': 3, '5': 9, '10': 'labels'},
+    {'1': 'backend', '3': 3, '4': 1, '5': 9, '10': 'backend'},
+    {'1': 'addr', '3': 4, '4': 1, '5': 9, '10': 'addr'},
+    {'1': 'last_seen', '3': 5, '4': 1, '5': 3, '10': 'lastSeen'},
+    {'1': 'session_bound', '3': 6, '4': 1, '5': 8, '10': 'sessionBound'},
+  ],
+};
+
+/// Descriptor for `Runner`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List runnerDescriptor = $convert.base64Decode(
+    'CgZSdW5uZXISDgoCaWQYASABKAlSAmlkEhYKBmxhYmVscxgCIAMoCVIGbGFiZWxzEhgKB2JhY2'
+    'tlbmQYAyABKAlSB2JhY2tlbmQSEgoEYWRkchgEIAEoCVIEYWRkchIbCglsYXN0X3NlZW4YBSAB'
+    'KANSCGxhc3RTZWVuEiMKDXNlc3Npb25fYm91bmQYBiABKAhSDHNlc3Npb25Cb3VuZA==');
+
+@$core.Deprecated('Use triggerDescriptor instead')
+const Trigger$json = {
+  '1': 'Trigger',
+  '2': [
+    {'1': 'events', '3': 1, '4': 3, '5': 9, '10': 'events'},
+  ],
+};
+
+/// Descriptor for `Trigger`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List triggerDescriptor =
+    $convert.base64Decode('CgdUcmlnZ2VyEhYKBmV2ZW50cxgBIAMoCVIGZXZlbnRz');
+
+@$core.Deprecated('Use stepDescriptor instead')
+const Step$json = {
+  '1': 'Step',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'run', '3': 2, '4': 1, '5': 9, '10': 'run'},
+    {
+      '1': 'env',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.easylab.v1.Step.EnvEntry',
+      '10': 'env'
+    },
+    {
+      '1': 'working_directory',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'workingDirectory'
+    },
+  ],
+  '3': [Step_EnvEntry$json],
+};
+
+@$core.Deprecated('Use stepDescriptor instead')
+const Step_EnvEntry$json = {
+  '1': 'EnvEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `Step`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List stepDescriptor = $convert.base64Decode(
+    'CgRTdGVwEhIKBG5hbWUYASABKAlSBG5hbWUSEAoDcnVuGAIgASgJUgNydW4SKwoDZW52GAMgAy'
+    'gLMhkuZWFzeWxhYi52MS5TdGVwLkVudkVudHJ5UgNlbnYSKwoRd29ya2luZ19kaXJlY3RvcnkY'
+    'BCABKAlSEHdvcmtpbmdEaXJlY3RvcnkaNgoIRW52RW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFA'
+    'oFdmFsdWUYAiABKAlSBXZhbHVlOgI4AQ==');
+
+@$core.Deprecated('Use produceDescriptor instead')
+const Produce$json = {
+  '1': 'Produce',
+  '2': [
+    {'1': 'action', '3': 1, '4': 1, '5': 9, '10': 'action'},
+    {'1': 'context', '3': 2, '4': 1, '5': 9, '10': 'context'},
+    {'1': 'dockerfile', '3': 3, '4': 1, '5': 9, '10': 'dockerfile'},
+    {'1': 'tag', '3': 4, '4': 1, '5': 9, '10': 'tag'},
+    {'1': 'path', '3': 5, '4': 1, '5': 9, '10': 'path'},
+    {'1': 'destination', '3': 6, '4': 1, '5': 9, '10': 'destination'},
+    {'1': 'ref', '3': 7, '4': 1, '5': 9, '10': 'ref'},
+    {'1': 'protocol', '3': 8, '4': 1, '5': 9, '10': 'protocol'},
+    {'1': 'name', '3': 9, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'version', '3': 10, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'file', '3': 11, '4': 1, '5': 9, '10': 'file'},
+    {'1': 'containerfile', '3': 12, '4': 1, '5': 9, '10': 'containerfile'},
+  ],
+};
+
+/// Descriptor for `Produce`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List produceDescriptor = $convert.base64Decode(
+    'CgdQcm9kdWNlEhYKBmFjdGlvbhgBIAEoCVIGYWN0aW9uEhgKB2NvbnRleHQYAiABKAlSB2Nvbn'
+    'RleHQSHgoKZG9ja2VyZmlsZRgDIAEoCVIKZG9ja2VyZmlsZRIQCgN0YWcYBCABKAlSA3RhZxIS'
+    'CgRwYXRoGAUgASgJUgRwYXRoEiAKC2Rlc3RpbmF0aW9uGAYgASgJUgtkZXN0aW5hdGlvbhIQCg'
+    'NyZWYYByABKAlSA3JlZhIaCghwcm90b2NvbBgIIAEoCVIIcHJvdG9jb2wSEgoEbmFtZRgJIAEo'
+    'CVIEbmFtZRIYCgd2ZXJzaW9uGAogASgJUgd2ZXJzaW9uEhIKBGZpbGUYCyABKAlSBGZpbGUSJA'
+    'oNY29udGFpbmVyZmlsZRgMIAEoCVINY29udGFpbmVyZmlsZQ==');
+
+@$core.Deprecated('Use jobDefDescriptor instead')
+const JobDef$json = {
+  '1': 'JobDef',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'needs', '3': 2, '4': 3, '5': 9, '10': 'needs'},
+    {'1': 'runs_on', '3': 3, '4': 3, '5': 9, '10': 'runsOn'},
+    {'1': 'container', '3': 4, '4': 1, '5': 9, '10': 'container'},
+    {
+      '1': 'working_directory',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'workingDirectory'
+    },
+    {
+      '1': 'steps',
+      '3': 6,
+      '4': 3,
+      '5': 11,
+      '6': '.easylab.v1.Step',
+      '10': 'steps'
+    },
+    {
+      '1': 'produce',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.easylab.v1.Produce',
+      '10': 'produce'
+    },
+  ],
+};
+
+/// Descriptor for `JobDef`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List jobDefDescriptor = $convert.base64Decode(
+    'CgZKb2JEZWYSDgoCaWQYASABKAlSAmlkEhQKBW5lZWRzGAIgAygJUgVuZWVkcxIXCgdydW5zX2'
+    '9uGAMgAygJUgZydW5zT24SHAoJY29udGFpbmVyGAQgASgJUgljb250YWluZXISKwoRd29ya2lu'
+    'Z19kaXJlY3RvcnkYBSABKAlSEHdvcmtpbmdEaXJlY3RvcnkSJgoFc3RlcHMYBiADKAsyEC5lYX'
+    'N5bGFiLnYxLlN0ZXBSBXN0ZXBzEi0KB3Byb2R1Y2UYByABKAsyEy5lYXN5bGFiLnYxLlByb2R1'
+    'Y2VSB3Byb2R1Y2U=');
+
+@$core.Deprecated('Use workflowDescriptor instead')
+const Workflow$json = {
+  '1': 'Workflow',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'org', '3': 3, '4': 1, '5': 9, '10': 'org'},
+    {'1': 'repo', '3': 4, '4': 1, '5': 9, '10': 'repo'},
+    {'1': 'branch', '3': 5, '4': 1, '5': 9, '10': 'branch'},
+    {
+      '1': 'on',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.easylab.v1.Trigger',
+      '10': 'on'
+    },
+    {
+      '1': 'jobs',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.easylab.v1.JobDef',
+      '10': 'jobs'
+    },
+  ],
+};
+
+/// Descriptor for `Workflow`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List workflowDescriptor = $convert.base64Decode(
+    'CghXb3JrZmxvdxIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIQCgNvcmcYAy'
+    'ABKAlSA29yZxISCgRyZXBvGAQgASgJUgRyZXBvEhYKBmJyYW5jaBgFIAEoCVIGYnJhbmNoEiMK'
+    'Am9uGAYgASgLMhMuZWFzeWxhYi52MS5UcmlnZ2VyUgJvbhImCgRqb2JzGAcgAygLMhIuZWFzeW'
+    'xhYi52MS5Kb2JEZWZSBGpvYnM=');
+
+@$core.Deprecated('Use jobInstanceDescriptor instead')
+const JobInstance$json = {
+  '1': 'JobInstance',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'def_id', '3': 2, '4': 1, '5': 9, '10': 'defId'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'result', '3': 4, '4': 1, '5': 9, '10': 'result'},
+  ],
+};
+
+/// Descriptor for `JobInstance`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List jobInstanceDescriptor = $convert.base64Decode(
+    'CgtKb2JJbnN0YW5jZRIOCgJpZBgBIAEoCVICaWQSFQoGZGVmX2lkGAIgASgJUgVkZWZJZBIWCg'
+    'ZzdGF0dXMYAyABKAlSBnN0YXR1cxIWCgZyZXN1bHQYBCABKAlSBnJlc3VsdA==');
+
+@$core.Deprecated('Use runDescriptor instead')
+const Run$json = {
+  '1': 'Run',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'workflow_id', '3': 2, '4': 1, '5': 9, '10': 'workflowId'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'jobs',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.easylab.v1.JobInstance',
+      '10': 'jobs'
+    },
+    {'1': 'started_at', '3': 5, '4': 1, '5': 9, '10': 'startedAt'},
+    {'1': 'finished_at', '3': 6, '4': 1, '5': 9, '10': 'finishedAt'},
+  ],
+};
+
+/// Descriptor for `Run`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List runDescriptor = $convert.base64Decode(
+    'CgNSdW4SDgoCaWQYASABKAlSAmlkEh8KC3dvcmtmbG93X2lkGAIgASgJUgp3b3JrZmxvd0lkEh'
+    'YKBnN0YXR1cxgDIAEoCVIGc3RhdHVzEisKBGpvYnMYBCADKAsyFy5lYXN5bGFiLnYxLkpvYklu'
+    'c3RhbmNlUgRqb2JzEh0KCnN0YXJ0ZWRfYXQYBSABKAlSCXN0YXJ0ZWRBdBIfCgtmaW5pc2hlZF'
+    '9hdBgGIAEoCVIKZmluaXNoZWRBdA==');
+
+@$core.Deprecated('Use getWorkflowRequestDescriptor instead')
+const GetWorkflowRequest$json = {
+  '1': 'GetWorkflowRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `GetWorkflowRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getWorkflowRequestDescriptor =
+    $convert.base64Decode('ChJHZXRXb3JrZmxvd1JlcXVlc3QSDgoCaWQYASABKAlSAmlk');
+
+@$core.Deprecated('Use getWorkflowResponseDescriptor instead')
+const GetWorkflowResponse$json = {
+  '1': 'GetWorkflowResponse',
+  '2': [
+    {
+      '1': 'workflow',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.easylab.v1.Workflow',
+      '10': 'workflow'
+    },
+  ],
+};
+
+/// Descriptor for `GetWorkflowResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getWorkflowResponseDescriptor = $convert.base64Decode(
+    'ChNHZXRXb3JrZmxvd1Jlc3BvbnNlEjAKCHdvcmtmbG93GAEgASgLMhQuZWFzeWxhYi52MS5Xb3'
+    'JrZmxvd1IId29ya2Zsb3c=');
+
+@$core.Deprecated('Use createWorkflowRequestDescriptor instead')
+const CreateWorkflowRequest$json = {
+  '1': 'CreateWorkflowRequest',
+  '2': [
+    {
+      '1': 'workflow',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.easylab.v1.Workflow',
+      '10': 'workflow'
+    },
+  ],
+};
+
+/// Descriptor for `CreateWorkflowRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createWorkflowRequestDescriptor = $convert.base64Decode(
+    'ChVDcmVhdGVXb3JrZmxvd1JlcXVlc3QSMAoId29ya2Zsb3cYASABKAsyFC5lYXN5bGFiLnYxLl'
+    'dvcmtmbG93Ugh3b3JrZmxvdw==');
+
+@$core.Deprecated('Use createWorkflowResponseDescriptor instead')
+const CreateWorkflowResponse$json = {
+  '1': 'CreateWorkflowResponse',
+  '2': [
+    {
+      '1': 'workflow',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.easylab.v1.Workflow',
+      '10': 'workflow'
+    },
+  ],
+};
+
+/// Descriptor for `CreateWorkflowResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createWorkflowResponseDescriptor =
+    $convert.base64Decode(
+        'ChZDcmVhdGVXb3JrZmxvd1Jlc3BvbnNlEjAKCHdvcmtmbG93GAEgASgLMhQuZWFzeWxhYi52MS'
+        '5Xb3JrZmxvd1IId29ya2Zsb3c=');
+
+@$core.Deprecated('Use listWorkflowsRequestDescriptor instead')
+const ListWorkflowsRequest$json = {
+  '1': 'ListWorkflowsRequest',
+  '2': [
+    {'1': 'org', '3': 1, '4': 1, '5': 9, '10': 'org'},
+    {'1': 'repo', '3': 2, '4': 1, '5': 9, '10': 'repo'},
+  ],
+};
+
+/// Descriptor for `ListWorkflowsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listWorkflowsRequestDescriptor = $convert.base64Decode(
+    'ChRMaXN0V29ya2Zsb3dzUmVxdWVzdBIQCgNvcmcYASABKAlSA29yZxISCgRyZXBvGAIgASgJUg'
+    'RyZXBv');
+
+@$core.Deprecated('Use listWorkflowsResponseDescriptor instead')
+const ListWorkflowsResponse$json = {
+  '1': 'ListWorkflowsResponse',
+  '2': [
+    {
+      '1': 'workflows',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.easylab.v1.Workflow',
+      '10': 'workflows'
+    },
+  ],
+};
+
+/// Descriptor for `ListWorkflowsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listWorkflowsResponseDescriptor = $convert.base64Decode(
+    'ChVMaXN0V29ya2Zsb3dzUmVzcG9uc2USMgoJd29ya2Zsb3dzGAEgAygLMhQuZWFzeWxhYi52MS'
+    '5Xb3JrZmxvd1IJd29ya2Zsb3dz');
+
+@$core.Deprecated('Use triggerRunRequestDescriptor instead')
+const TriggerRunRequest$json = {
+  '1': 'TriggerRunRequest',
+  '2': [
+    {'1': 'workflow_id', '3': 1, '4': 1, '5': 9, '10': 'workflowId'},
+  ],
+};
+
+/// Descriptor for `TriggerRunRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List triggerRunRequestDescriptor = $convert.base64Decode(
+    'ChFUcmlnZ2VyUnVuUmVxdWVzdBIfCgt3b3JrZmxvd19pZBgBIAEoCVIKd29ya2Zsb3dJZA==');
+
+@$core.Deprecated('Use triggerRunResponseDescriptor instead')
+const TriggerRunResponse$json = {
+  '1': 'TriggerRunResponse',
+  '2': [
+    {'1': 'run', '3': 1, '4': 1, '5': 11, '6': '.easylab.v1.Run', '10': 'run'},
+  ],
+};
+
+/// Descriptor for `TriggerRunResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List triggerRunResponseDescriptor = $convert.base64Decode(
+    'ChJUcmlnZ2VyUnVuUmVzcG9uc2USIQoDcnVuGAEgASgLMg8uZWFzeWxhYi52MS5SdW5SA3J1bg'
+    '==');
+
+@$core.Deprecated('Use getRunRequestDescriptor instead')
+const GetRunRequest$json = {
+  '1': 'GetRunRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `GetRunRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRunRequestDescriptor =
+    $convert.base64Decode('Cg1HZXRSdW5SZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
+
+@$core.Deprecated('Use getRunResponseDescriptor instead')
+const GetRunResponse$json = {
+  '1': 'GetRunResponse',
+  '2': [
+    {'1': 'run', '3': 1, '4': 1, '5': 11, '6': '.easylab.v1.Run', '10': 'run'},
+  ],
+};
+
+/// Descriptor for `GetRunResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRunResponseDescriptor = $convert.base64Decode(
+    'Cg5HZXRSdW5SZXNwb25zZRIhCgNydW4YASABKAsyDy5lYXN5bGFiLnYxLlJ1blIDcnVu');
+
+@$core.Deprecated('Use listRunsRequestDescriptor instead')
+const ListRunsRequest$json = {
+  '1': 'ListRunsRequest',
+  '2': [
+    {'1': 'workflow_id', '3': 1, '4': 1, '5': 9, '10': 'workflowId'},
+  ],
+};
+
+/// Descriptor for `ListRunsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRunsRequestDescriptor = $convert.base64Decode(
+    'Cg9MaXN0UnVuc1JlcXVlc3QSHwoLd29ya2Zsb3dfaWQYASABKAlSCndvcmtmbG93SWQ=');
+
+@$core.Deprecated('Use listRunsResponseDescriptor instead')
+const ListRunsResponse$json = {
+  '1': 'ListRunsResponse',
+  '2': [
+    {
+      '1': 'runs',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.easylab.v1.Run',
+      '10': 'runs'
+    },
+  ],
+};
+
+/// Descriptor for `ListRunsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRunsResponseDescriptor = $convert.base64Decode(
+    'ChBMaXN0UnVuc1Jlc3BvbnNlEiMKBHJ1bnMYASADKAsyDy5lYXN5bGFiLnYxLlJ1blIEcnVucw'
+    '==');
+
+@$core.Deprecated('Use runJobLogRequestDescriptor instead')
+const RunJobLogRequest$json = {
+  '1': 'RunJobLogRequest',
+  '2': [
+    {'1': 'run_id', '3': 1, '4': 1, '5': 9, '10': 'runId'},
+    {'1': 'job_id', '3': 2, '4': 1, '5': 9, '10': 'jobId'},
+  ],
+};
+
+/// Descriptor for `RunJobLogRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List runJobLogRequestDescriptor = $convert.base64Decode(
+    'ChBSdW5Kb2JMb2dSZXF1ZXN0EhUKBnJ1bl9pZBgBIAEoCVIFcnVuSWQSFQoGam9iX2lkGAIgAS'
+    'gJUgVqb2JJZA==');
+
+@$core.Deprecated('Use runJobLogResponseDescriptor instead')
+const RunJobLogResponse$json = {
+  '1': 'RunJobLogResponse',
+  '2': [
+    {'1': 'stream', '3': 1, '4': 1, '5': 9, '10': 'stream'},
+    {'1': 'line', '3': 2, '4': 1, '5': 9, '10': 'line'},
+  ],
+};
+
+/// Descriptor for `RunJobLogResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List runJobLogResponseDescriptor = $convert.base64Decode(
+    'ChFSdW5Kb2JMb2dSZXNwb25zZRIWCgZzdHJlYW0YASABKAlSBnN0cmVhbRISCgRsaW5lGAIgAS'
+    'gJUgRsaW5l');
+
+@$core.Deprecated('Use cancelRunRequestDescriptor instead')
+const CancelRunRequest$json = {
+  '1': 'CancelRunRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `CancelRunRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cancelRunRequestDescriptor =
+    $convert.base64Decode('ChBDYW5jZWxSdW5SZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
+
+@$core.Deprecated('Use cancelRunResponseDescriptor instead')
+const CancelRunResponse$json = {
+  '1': 'CancelRunResponse',
+  '2': [
+    {'1': 'ok', '3': 1, '4': 1, '5': 8, '10': 'ok'},
+  ],
+};
+
+/// Descriptor for `CancelRunResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cancelRunResponseDescriptor =
+    $convert.base64Decode('ChFDYW5jZWxSdW5SZXNwb25zZRIOCgJvaxgBIAEoCFICb2s=');
+
+@$core.Deprecated('Use registerRunnerRequestDescriptor instead')
+const RegisterRunnerRequest$json = {
+  '1': 'RegisterRunnerRequest',
+  '2': [
+    {
+      '1': 'runner',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.easylab.v1.Runner',
+      '10': 'runner'
+    },
+  ],
+};
+
+/// Descriptor for `RegisterRunnerRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerRunnerRequestDescriptor = $convert.base64Decode(
+    'ChVSZWdpc3RlclJ1bm5lclJlcXVlc3QSKgoGcnVubmVyGAEgASgLMhIuZWFzeWxhYi52MS5SdW'
+    '5uZXJSBnJ1bm5lcg==');
+
+@$core.Deprecated('Use registerRunnerResponseDescriptor instead')
+const RegisterRunnerResponse$json = {
+  '1': 'RegisterRunnerResponse',
+  '2': [
+    {'1': 'ok', '3': 1, '4': 1, '5': 8, '10': 'ok'},
+  ],
+};
+
+/// Descriptor for `RegisterRunnerResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerRunnerResponseDescriptor = $convert
+    .base64Decode('ChZSZWdpc3RlclJ1bm5lclJlc3BvbnNlEg4KAm9rGAEgASgIUgJvaw==');
+
+@$core.Deprecated('Use listRunnersRequestDescriptor instead')
+const ListRunnersRequest$json = {
+  '1': 'ListRunnersRequest',
+  '2': [
+    {'1': 'session_bound', '3': 1, '4': 1, '5': 8, '10': 'sessionBound'},
+  ],
+};
+
+/// Descriptor for `ListRunnersRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRunnersRequestDescriptor = $convert.base64Decode(
+    'ChJMaXN0UnVubmVyc1JlcXVlc3QSIwoNc2Vzc2lvbl9ib3VuZBgBIAEoCFIMc2Vzc2lvbkJvdW'
+    '5k');
+
+@$core.Deprecated('Use listRunnersResponseDescriptor instead')
+const ListRunnersResponse$json = {
+  '1': 'ListRunnersResponse',
+  '2': [
+    {
+      '1': 'runners',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.easylab.v1.Runner',
+      '10': 'runners'
+    },
+  ],
+};
+
+/// Descriptor for `ListRunnersResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRunnersResponseDescriptor = $convert.base64Decode(
+    'ChNMaXN0UnVubmVyc1Jlc3BvbnNlEiwKB3J1bm5lcnMYASADKAsyEi5lYXN5bGFiLnYxLlJ1bm'
+    '5lclIHcnVubmVycw==');
+
 const $core.Map<$core.String, $core.dynamic> LabServiceBase$json = {
   '1': 'LabService',
   '2': [
@@ -2678,11 +3615,6 @@ const $core.Map<$core.String, $core.dynamic> OpsServiceBase$json = {
       '3': '.easylab.v1.GetTaskResponse'
     },
     {
-      '1': 'Build',
-      '2': '.easylab.v1.BuildRequest',
-      '3': '.easylab.v1.BuildResponse'
-    },
-    {
       '1': 'TaskLog',
       '2': '.easylab.v1.TaskLogRequest',
       '3': '.easylab.v1.TaskLogResponse',
@@ -2734,8 +3666,6 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>>
   '.easylab.v1.TaskEntry': TaskEntry$json,
   '.easylab.v1.GetTaskRequest': GetTaskRequest$json,
   '.easylab.v1.GetTaskResponse': GetTaskResponse$json,
-  '.easylab.v1.BuildRequest': BuildRequest$json,
-  '.easylab.v1.BuildResponse': BuildResponse$json,
   '.easylab.v1.TaskLogRequest': TaskLogRequest$json,
   '.easylab.v1.TaskLogResponse': TaskLogResponse$json,
   '.easylab.v1.SyncRequest': SyncRequest$json,
@@ -2763,10 +3693,9 @@ final $typed_data.Uint8List opsServiceDescriptor = $convert.base64Decode(
     'LmVhc3lsYWIudjEuU2FuZGJveEpvYktpbGxSZXNwb25zZRJICglMaXN0VGFza3MSHC5lYXN5bG'
     'FiLnYxLkxpc3RUYXNrc1JlcXVlc3QaHS5lYXN5bGFiLnYxLkxpc3RUYXNrc1Jlc3BvbnNlEkIK'
     'B0dldFRhc2sSGi5lYXN5bGFiLnYxLkdldFRhc2tSZXF1ZXN0GhsuZWFzeWxhYi52MS5HZXRUYX'
-    'NrUmVzcG9uc2USPAoFQnVpbGQSGC5lYXN5bGFiLnYxLkJ1aWxkUmVxdWVzdBoZLmVhc3lsYWIu'
-    'djEuQnVpbGRSZXNwb25zZRJECgdUYXNrTG9nEhouZWFzeWxhYi52MS5UYXNrTG9nUmVxdWVzdB'
-    'obLmVhc3lsYWIudjEuVGFza0xvZ1Jlc3BvbnNlMAESOQoEU3luYxIXLmVhc3lsYWIudjEuU3lu'
-    'Y1JlcXVlc3QaGC5lYXN5bGFiLnYxLlN5bmNSZXNwb25zZQ==');
+    'NrUmVzcG9uc2USRAoHVGFza0xvZxIaLmVhc3lsYWIudjEuVGFza0xvZ1JlcXVlc3QaGy5lYXN5'
+    'bGFiLnYxLlRhc2tMb2dSZXNwb25zZTABEjkKBFN5bmMSFy5lYXN5bGFiLnYxLlN5bmNSZXF1ZX'
+    'N0GhguZWFzeWxhYi52MS5TeW5jUmVzcG9uc2U=');
 
 const $core.Map<$core.String, $core.dynamic> RegistryServiceBase$json = {
   '1': 'RegistryService',
@@ -2847,3 +3776,278 @@ final $typed_data.Uint8List registryServiceDescriptor = $convert.base64Decode(
     'MSIy5lYXN5bGFiLnYxLkxpc3RQdWJsaXNoU3BlY3NSZXF1ZXN0GiQuZWFzeWxhYi52MS5MaXN0'
     'UHVibGlzaFNwZWNzUmVzcG9uc2USSwoKT0NJQ2F0YWxvZxIdLmVhc3lsYWIudjEuT0NJQ2F0YW'
     'xvZ1JlcXVlc3QaHi5lYXN5bGFiLnYxLk9DSUNhdGFsb2dSZXNwb25zZQ==');
+
+const $core.Map<$core.String, $core.dynamic> SandboxServiceBase$json = {
+  '1': 'SandboxService',
+  '2': [
+    {
+      '1': 'ListSandboxes',
+      '2': '.easylab.v1.ListSandboxesRequest',
+      '3': '.easylab.v1.ListSandboxesResponse'
+    },
+    {
+      '1': 'GetSandbox',
+      '2': '.easylab.v1.GetSandboxRequest',
+      '3': '.easylab.v1.GetSandboxResponse'
+    },
+    {
+      '1': 'EnsureSandboxImage',
+      '2': '.easylab.v1.EnsureSandboxImageRequest',
+      '3': '.easylab.v1.EnsureSandboxImageResponse'
+    },
+    {
+      '1': 'LaunchSandbox',
+      '2': '.easylab.v1.LaunchSandboxRequest',
+      '3': '.easylab.v1.LaunchSandboxResponse'
+    },
+    {
+      '1': 'DeleteSandbox',
+      '2': '.easylab.v1.DeleteSandboxRequest',
+      '3': '.easylab.v1.DeleteSandboxResponse'
+    },
+    {
+      '1': 'Execute',
+      '2': '.easylab.v1.ExecuteRequest',
+      '3': '.worker.v1.ExecuteResponse'
+    },
+    {
+      '1': 'ListJobs',
+      '2': '.easylab.v1.ListJobsRequest',
+      '3': '.worker.v1.ListJobsResponse'
+    },
+    {
+      '1': 'JobOutput',
+      '2': '.easylab.v1.JobOutputRequest',
+      '3': '.worker.v1.JobOutputResponse'
+    },
+    {
+      '1': 'WatchJob',
+      '2': '.easylab.v1.WatchJobRequest',
+      '3': '.worker.v1.WatchJobResponse',
+      '6': true
+    },
+    {
+      '1': 'JobWait',
+      '2': '.easylab.v1.JobWaitRequest',
+      '3': '.worker.v1.JobWaitResponse'
+    },
+    {
+      '1': 'JobStdin',
+      '2': '.easylab.v1.JobStdinRequest',
+      '3': '.worker.v1.JobStdinResponse'
+    },
+    {
+      '1': 'JobKill',
+      '2': '.easylab.v1.JobKillRequest',
+      '3': '.worker.v1.JobKillResponse'
+    },
+    {
+      '1': 'FileRead',
+      '2': '.easylab.v1.FileReadRequest',
+      '3': '.worker.v1.FileReadResponse'
+    },
+    {
+      '1': 'SyncWorkspace',
+      '2': '.easylab.v1.SyncWorkspaceRequest',
+      '3': '.easylab.v1.SyncWorkspaceResponse'
+    },
+    {
+      '1': 'FileWrite',
+      '2': '.easylab.v1.FileWriteRequest',
+      '3': '.worker.v1.FileWriteResponse'
+    },
+    {
+      '1': 'FileList',
+      '2': '.easylab.v1.FileListRequest',
+      '3': '.worker.v1.FileListResponse'
+    },
+  ],
+};
+
+@$core.Deprecated('Use sandboxServiceDescriptor instead')
+const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>>
+    SandboxServiceBase$messageJson = {
+  '.easylab.v1.ListSandboxesRequest': ListSandboxesRequest$json,
+  '.easylab.v1.ListSandboxesResponse': ListSandboxesResponse$json,
+  '.easylab.v1.SandboxInfo': SandboxInfo$json,
+  '.easylab.v1.GetSandboxRequest': GetSandboxRequest$json,
+  '.easylab.v1.GetSandboxResponse': GetSandboxResponse$json,
+  '.easylab.v1.EnsureSandboxImageRequest': EnsureSandboxImageRequest$json,
+  '.easylab.v1.EnsureSandboxImageResponse': EnsureSandboxImageResponse$json,
+  '.easylab.v1.LaunchSandboxRequest': LaunchSandboxRequest$json,
+  '.easylab.v1.LaunchSandboxRequest.EnvEntry':
+      LaunchSandboxRequest_EnvEntry$json,
+  '.easylab.v1.LaunchSandboxResponse': LaunchSandboxResponse$json,
+  '.easylab.v1.DeleteSandboxRequest': DeleteSandboxRequest$json,
+  '.easylab.v1.DeleteSandboxResponse': DeleteSandboxResponse$json,
+  '.easylab.v1.ExecuteRequest': ExecuteRequest$json,
+  '.worker.v1.ExecuteRequest': $0.ExecuteRequest$json,
+  '.worker.v1.ExecuteRequest.EnvEntry': $0.ExecuteRequest_EnvEntry$json,
+  '.worker.v1.ExecuteResponse': $0.ExecuteResponse$json,
+  '.easylab.v1.ListJobsRequest': ListJobsRequest$json,
+  '.worker.v1.ListJobsResponse': $0.ListJobsResponse$json,
+  '.worker.v1.JobEntry': $0.JobEntry$json,
+  '.easylab.v1.JobOutputRequest': JobOutputRequest$json,
+  '.worker.v1.JobOutputRequest': $0.JobOutputRequest$json,
+  '.worker.v1.JobOutputResponse': $0.JobOutputResponse$json,
+  '.easylab.v1.WatchJobRequest': WatchJobRequest$json,
+  '.worker.v1.WatchJobRequest': $0.WatchJobRequest$json,
+  '.worker.v1.WatchJobResponse': $0.WatchJobResponse$json,
+  '.worker.v1.WatchJobResponse.Done': $0.WatchJobResponse_Done$json,
+  '.easylab.v1.JobWaitRequest': JobWaitRequest$json,
+  '.worker.v1.JobWaitRequest': $0.JobWaitRequest$json,
+  '.worker.v1.JobWaitResponse': $0.JobWaitResponse$json,
+  '.easylab.v1.JobStdinRequest': JobStdinRequest$json,
+  '.worker.v1.JobStdinRequest': $0.JobStdinRequest$json,
+  '.worker.v1.JobStdinResponse': $0.JobStdinResponse$json,
+  '.easylab.v1.JobKillRequest': JobKillRequest$json,
+  '.worker.v1.JobKillRequest': $0.JobKillRequest$json,
+  '.worker.v1.JobKillResponse': $0.JobKillResponse$json,
+  '.easylab.v1.FileReadRequest': FileReadRequest$json,
+  '.worker.v1.FileReadRequest': $0.FileReadRequest$json,
+  '.worker.v1.FileReadResponse': $0.FileReadResponse$json,
+  '.easylab.v1.SyncWorkspaceRequest': SyncWorkspaceRequest$json,
+  '.easylab.v1.SyncWorkspaceResponse': SyncWorkspaceResponse$json,
+  '.easylab.v1.FileWriteRequest': FileWriteRequest$json,
+  '.worker.v1.FileWriteRequest': $0.FileWriteRequest$json,
+  '.worker.v1.FileWriteResponse': $0.FileWriteResponse$json,
+  '.easylab.v1.FileListRequest': FileListRequest$json,
+  '.worker.v1.FileListRequest': $0.FileListRequest$json,
+  '.worker.v1.FileListResponse': $0.FileListResponse$json,
+  '.worker.v1.FileEntry': $0.FileEntry$json,
+};
+
+/// Descriptor for `SandboxService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
+final $typed_data.Uint8List sandboxServiceDescriptor = $convert.base64Decode(
+    'Cg5TYW5kYm94U2VydmljZRJUCg1MaXN0U2FuZGJveGVzEiAuZWFzeWxhYi52MS5MaXN0U2FuZG'
+    'JveGVzUmVxdWVzdBohLmVhc3lsYWIudjEuTGlzdFNhbmRib3hlc1Jlc3BvbnNlEksKCkdldFNh'
+    'bmRib3gSHS5lYXN5bGFiLnYxLkdldFNhbmRib3hSZXF1ZXN0Gh4uZWFzeWxhYi52MS5HZXRTYW'
+    '5kYm94UmVzcG9uc2USYwoSRW5zdXJlU2FuZGJveEltYWdlEiUuZWFzeWxhYi52MS5FbnN1cmVT'
+    'YW5kYm94SW1hZ2VSZXF1ZXN0GiYuZWFzeWxhYi52MS5FbnN1cmVTYW5kYm94SW1hZ2VSZXNwb2'
+    '5zZRJUCg1MYXVuY2hTYW5kYm94EiAuZWFzeWxhYi52MS5MYXVuY2hTYW5kYm94UmVxdWVzdBoh'
+    'LmVhc3lsYWIudjEuTGF1bmNoU2FuZGJveFJlc3BvbnNlElQKDURlbGV0ZVNhbmRib3gSIC5lYX'
+    'N5bGFiLnYxLkRlbGV0ZVNhbmRib3hSZXF1ZXN0GiEuZWFzeWxhYi52MS5EZWxldGVTYW5kYm94'
+    'UmVzcG9uc2USQQoHRXhlY3V0ZRIaLmVhc3lsYWIudjEuRXhlY3V0ZVJlcXVlc3QaGi53b3JrZX'
+    'IudjEuRXhlY3V0ZVJlc3BvbnNlEkQKCExpc3RKb2JzEhsuZWFzeWxhYi52MS5MaXN0Sm9ic1Jl'
+    'cXVlc3QaGy53b3JrZXIudjEuTGlzdEpvYnNSZXNwb25zZRJHCglKb2JPdXRwdXQSHC5lYXN5bG'
+    'FiLnYxLkpvYk91dHB1dFJlcXVlc3QaHC53b3JrZXIudjEuSm9iT3V0cHV0UmVzcG9uc2USRgoI'
+    'V2F0Y2hKb2ISGy5lYXN5bGFiLnYxLldhdGNoSm9iUmVxdWVzdBobLndvcmtlci52MS5XYXRjaE'
+    'pvYlJlc3BvbnNlMAESQQoHSm9iV2FpdBIaLmVhc3lsYWIudjEuSm9iV2FpdFJlcXVlc3QaGi53'
+    'b3JrZXIudjEuSm9iV2FpdFJlc3BvbnNlEkQKCEpvYlN0ZGluEhsuZWFzeWxhYi52MS5Kb2JTdG'
+    'RpblJlcXVlc3QaGy53b3JrZXIudjEuSm9iU3RkaW5SZXNwb25zZRJBCgdKb2JLaWxsEhouZWFz'
+    'eWxhYi52MS5Kb2JLaWxsUmVxdWVzdBoaLndvcmtlci52MS5Kb2JLaWxsUmVzcG9uc2USRAoIRm'
+    'lsZVJlYWQSGy5lYXN5bGFiLnYxLkZpbGVSZWFkUmVxdWVzdBobLndvcmtlci52MS5GaWxlUmVh'
+    'ZFJlc3BvbnNlElQKDVN5bmNXb3Jrc3BhY2USIC5lYXN5bGFiLnYxLlN5bmNXb3Jrc3BhY2VSZX'
+    'F1ZXN0GiEuZWFzeWxhYi52MS5TeW5jV29ya3NwYWNlUmVzcG9uc2USRwoJRmlsZVdyaXRlEhwu'
+    'ZWFzeWxhYi52MS5GaWxlV3JpdGVSZXF1ZXN0Ghwud29ya2VyLnYxLkZpbGVXcml0ZVJlc3Bvbn'
+    'NlEkQKCEZpbGVMaXN0EhsuZWFzeWxhYi52MS5GaWxlTGlzdFJlcXVlc3QaGy53b3JrZXIudjEu'
+    'RmlsZUxpc3RSZXNwb25zZQ==');
+
+const $core.Map<$core.String, $core.dynamic> WorkflowServiceBase$json = {
+  '1': 'WorkflowService',
+  '2': [
+    {
+      '1': 'CreateWorkflow',
+      '2': '.easylab.v1.CreateWorkflowRequest',
+      '3': '.easylab.v1.CreateWorkflowResponse'
+    },
+    {
+      '1': 'GetWorkflow',
+      '2': '.easylab.v1.GetWorkflowRequest',
+      '3': '.easylab.v1.GetWorkflowResponse'
+    },
+    {
+      '1': 'ListWorkflows',
+      '2': '.easylab.v1.ListWorkflowsRequest',
+      '3': '.easylab.v1.ListWorkflowsResponse'
+    },
+    {
+      '1': 'TriggerRun',
+      '2': '.easylab.v1.TriggerRunRequest',
+      '3': '.easylab.v1.TriggerRunResponse'
+    },
+    {
+      '1': 'GetRun',
+      '2': '.easylab.v1.GetRunRequest',
+      '3': '.easylab.v1.GetRunResponse'
+    },
+    {
+      '1': 'ListRuns',
+      '2': '.easylab.v1.ListRunsRequest',
+      '3': '.easylab.v1.ListRunsResponse'
+    },
+    {
+      '1': 'RunJobLog',
+      '2': '.easylab.v1.RunJobLogRequest',
+      '3': '.easylab.v1.RunJobLogResponse',
+      '6': true
+    },
+    {
+      '1': 'CancelRun',
+      '2': '.easylab.v1.CancelRunRequest',
+      '3': '.easylab.v1.CancelRunResponse'
+    },
+    {
+      '1': 'RegisterRunner',
+      '2': '.easylab.v1.RegisterRunnerRequest',
+      '3': '.easylab.v1.RegisterRunnerResponse'
+    },
+    {
+      '1': 'ListRunners',
+      '2': '.easylab.v1.ListRunnersRequest',
+      '3': '.easylab.v1.ListRunnersResponse'
+    },
+  ],
+};
+
+@$core.Deprecated('Use workflowServiceDescriptor instead')
+const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>>
+    WorkflowServiceBase$messageJson = {
+  '.easylab.v1.CreateWorkflowRequest': CreateWorkflowRequest$json,
+  '.easylab.v1.Workflow': Workflow$json,
+  '.easylab.v1.Trigger': Trigger$json,
+  '.easylab.v1.JobDef': JobDef$json,
+  '.easylab.v1.Step': Step$json,
+  '.easylab.v1.Step.EnvEntry': Step_EnvEntry$json,
+  '.easylab.v1.Produce': Produce$json,
+  '.easylab.v1.CreateWorkflowResponse': CreateWorkflowResponse$json,
+  '.easylab.v1.GetWorkflowRequest': GetWorkflowRequest$json,
+  '.easylab.v1.GetWorkflowResponse': GetWorkflowResponse$json,
+  '.easylab.v1.ListWorkflowsRequest': ListWorkflowsRequest$json,
+  '.easylab.v1.ListWorkflowsResponse': ListWorkflowsResponse$json,
+  '.easylab.v1.TriggerRunRequest': TriggerRunRequest$json,
+  '.easylab.v1.TriggerRunResponse': TriggerRunResponse$json,
+  '.easylab.v1.Run': Run$json,
+  '.easylab.v1.JobInstance': JobInstance$json,
+  '.easylab.v1.GetRunRequest': GetRunRequest$json,
+  '.easylab.v1.GetRunResponse': GetRunResponse$json,
+  '.easylab.v1.ListRunsRequest': ListRunsRequest$json,
+  '.easylab.v1.ListRunsResponse': ListRunsResponse$json,
+  '.easylab.v1.RunJobLogRequest': RunJobLogRequest$json,
+  '.easylab.v1.RunJobLogResponse': RunJobLogResponse$json,
+  '.easylab.v1.CancelRunRequest': CancelRunRequest$json,
+  '.easylab.v1.CancelRunResponse': CancelRunResponse$json,
+  '.easylab.v1.RegisterRunnerRequest': RegisterRunnerRequest$json,
+  '.easylab.v1.Runner': Runner$json,
+  '.easylab.v1.RegisterRunnerResponse': RegisterRunnerResponse$json,
+  '.easylab.v1.ListRunnersRequest': ListRunnersRequest$json,
+  '.easylab.v1.ListRunnersResponse': ListRunnersResponse$json,
+};
+
+/// Descriptor for `WorkflowService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
+final $typed_data.Uint8List workflowServiceDescriptor = $convert.base64Decode(
+    'Cg9Xb3JrZmxvd1NlcnZpY2USVwoOQ3JlYXRlV29ya2Zsb3cSIS5lYXN5bGFiLnYxLkNyZWF0ZV'
+    'dvcmtmbG93UmVxdWVzdBoiLmVhc3lsYWIudjEuQ3JlYXRlV29ya2Zsb3dSZXNwb25zZRJOCgtH'
+    'ZXRXb3JrZmxvdxIeLmVhc3lsYWIudjEuR2V0V29ya2Zsb3dSZXF1ZXN0Gh8uZWFzeWxhYi52MS'
+    '5HZXRXb3JrZmxvd1Jlc3BvbnNlElQKDUxpc3RXb3JrZmxvd3MSIC5lYXN5bGFiLnYxLkxpc3RX'
+    'b3JrZmxvd3NSZXF1ZXN0GiEuZWFzeWxhYi52MS5MaXN0V29ya2Zsb3dzUmVzcG9uc2USSwoKVH'
+    'JpZ2dlclJ1bhIdLmVhc3lsYWIudjEuVHJpZ2dlclJ1blJlcXVlc3QaHi5lYXN5bGFiLnYxLlRy'
+    'aWdnZXJSdW5SZXNwb25zZRI/CgZHZXRSdW4SGS5lYXN5bGFiLnYxLkdldFJ1blJlcXVlc3QaGi'
+    '5lYXN5bGFiLnYxLkdldFJ1blJlc3BvbnNlEkUKCExpc3RSdW5zEhsuZWFzeWxhYi52MS5MaXN0'
+    'UnVuc1JlcXVlc3QaHC5lYXN5bGFiLnYxLkxpc3RSdW5zUmVzcG9uc2USSgoJUnVuSm9iTG9nEh'
+    'wuZWFzeWxhYi52MS5SdW5Kb2JMb2dSZXF1ZXN0Gh0uZWFzeWxhYi52MS5SdW5Kb2JMb2dSZXNw'
+    'b25zZTABEkgKCUNhbmNlbFJ1bhIcLmVhc3lsYWIudjEuQ2FuY2VsUnVuUmVxdWVzdBodLmVhc3'
+    'lsYWIudjEuQ2FuY2VsUnVuUmVzcG9uc2USVwoOUmVnaXN0ZXJSdW5uZXISIS5lYXN5bGFiLnYx'
+    'LlJlZ2lzdGVyUnVubmVyUmVxdWVzdBoiLmVhc3lsYWIudjEuUmVnaXN0ZXJSdW5uZXJSZXNwb2'
+    '5zZRJOCgtMaXN0UnVubmVycxIeLmVhc3lsYWIudjEuTGlzdFJ1bm5lcnNSZXF1ZXN0Gh8uZWFz'
+    'eWxhYi52MS5MaXN0UnVubmVyc1Jlc3BvbnNl');

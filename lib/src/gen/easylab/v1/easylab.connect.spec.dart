@@ -5,6 +5,7 @@
 
 import "package:connectrpc/connect.dart" as connect;
 import "easylab.pb.dart" as easylabv1easylab;
+import "../../worker/v1/worker.pb.dart" as workerv1worker;
 
 /// LabService covers the revision-native repo + filesystem surface.
 abstract final class LabService {
@@ -342,13 +343,6 @@ abstract final class OpsService {
     easylabv1easylab.GetTaskResponse.new,
   );
 
-  static const build = connect.Spec(
-    '/$name/Build',
-    connect.StreamType.unary,
-    easylabv1easylab.BuildRequest.new,
-    easylabv1easylab.BuildResponse.new,
-  );
-
   static const taskLog = connect.Spec(
     '/$name/TaskLog',
     connect.StreamType.server,
@@ -415,5 +409,201 @@ abstract final class RegistryService {
     connect.StreamType.unary,
     easylabv1easylab.OCICatalogRequest.new,
     easylabv1easylab.OCICatalogResponse.new,
+  );
+}
+/// SandboxService fronts every worker.v1 API for the UI/console and owns the
+/// sandbox lifecycle (derived image + launch + sync + registry table).
+abstract final class SandboxService {
+  /// Fully-qualified name of the SandboxService service.
+  static const name = 'easylab.v1.SandboxService';
+
+  /// lifecycle
+  static const listSandboxes = connect.Spec(
+    '/$name/ListSandboxes',
+    connect.StreamType.unary,
+    easylabv1easylab.ListSandboxesRequest.new,
+    easylabv1easylab.ListSandboxesResponse.new,
+  );
+
+  static const getSandbox = connect.Spec(
+    '/$name/GetSandbox',
+    connect.StreamType.unary,
+    easylabv1easylab.GetSandboxRequest.new,
+    easylabv1easylab.GetSandboxResponse.new,
+  );
+
+  static const ensureSandboxImage = connect.Spec(
+    '/$name/EnsureSandboxImage',
+    connect.StreamType.unary,
+    easylabv1easylab.EnsureSandboxImageRequest.new,
+    easylabv1easylab.EnsureSandboxImageResponse.new,
+  );
+
+  static const launchSandbox = connect.Spec(
+    '/$name/LaunchSandbox',
+    connect.StreamType.unary,
+    easylabv1easylab.LaunchSandboxRequest.new,
+    easylabv1easylab.LaunchSandboxResponse.new,
+  );
+
+  static const deleteSandbox = connect.Spec(
+    '/$name/DeleteSandbox',
+    connect.StreamType.unary,
+    easylabv1easylab.DeleteSandboxRequest.new,
+    easylabv1easylab.DeleteSandboxResponse.new,
+  );
+
+  /// worker passthroughs (sandbox routing + worker.v1 payloads)
+  static const execute = connect.Spec(
+    '/$name/Execute',
+    connect.StreamType.unary,
+    easylabv1easylab.ExecuteRequest.new,
+    workerv1worker.ExecuteResponse.new,
+  );
+
+  static const listJobs = connect.Spec(
+    '/$name/ListJobs',
+    connect.StreamType.unary,
+    easylabv1easylab.ListJobsRequest.new,
+    workerv1worker.ListJobsResponse.new,
+  );
+
+  static const jobOutput = connect.Spec(
+    '/$name/JobOutput',
+    connect.StreamType.unary,
+    easylabv1easylab.JobOutputRequest.new,
+    workerv1worker.JobOutputResponse.new,
+  );
+
+  static const watchJob = connect.Spec(
+    '/$name/WatchJob',
+    connect.StreamType.server,
+    easylabv1easylab.WatchJobRequest.new,
+    workerv1worker.WatchJobResponse.new,
+  );
+
+  static const jobWait = connect.Spec(
+    '/$name/JobWait',
+    connect.StreamType.unary,
+    easylabv1easylab.JobWaitRequest.new,
+    workerv1worker.JobWaitResponse.new,
+  );
+
+  static const jobStdin = connect.Spec(
+    '/$name/JobStdin',
+    connect.StreamType.unary,
+    easylabv1easylab.JobStdinRequest.new,
+    workerv1worker.JobStdinResponse.new,
+  );
+
+  static const jobKill = connect.Spec(
+    '/$name/JobKill',
+    connect.StreamType.unary,
+    easylabv1easylab.JobKillRequest.new,
+    workerv1worker.JobKillResponse.new,
+  );
+
+  static const fileRead = connect.Spec(
+    '/$name/FileRead',
+    connect.StreamType.unary,
+    easylabv1easylab.FileReadRequest.new,
+    workerv1worker.FileReadResponse.new,
+  );
+
+  /// SyncWorkspace pushes the repo tree at rev into the sandbox and records
+  /// rev + worker boot id in the registry (single rev-coherence write).
+  static const syncWorkspace = connect.Spec(
+    '/$name/SyncWorkspace',
+    connect.StreamType.unary,
+    easylabv1easylab.SyncWorkspaceRequest.new,
+    easylabv1easylab.SyncWorkspaceResponse.new,
+  );
+
+  static const fileWrite = connect.Spec(
+    '/$name/FileWrite',
+    connect.StreamType.unary,
+    easylabv1easylab.FileWriteRequest.new,
+    workerv1worker.FileWriteResponse.new,
+  );
+
+  static const fileList = connect.Spec(
+    '/$name/FileList',
+    connect.StreamType.unary,
+    easylabv1easylab.FileListRequest.new,
+    workerv1worker.FileListResponse.new,
+  );
+}
+abstract final class WorkflowService {
+  /// Fully-qualified name of the WorkflowService service.
+  static const name = 'easylab.v1.WorkflowService';
+
+  static const createWorkflow = connect.Spec(
+    '/$name/CreateWorkflow',
+    connect.StreamType.unary,
+    easylabv1easylab.CreateWorkflowRequest.new,
+    easylabv1easylab.CreateWorkflowResponse.new,
+  );
+
+  static const getWorkflow = connect.Spec(
+    '/$name/GetWorkflow',
+    connect.StreamType.unary,
+    easylabv1easylab.GetWorkflowRequest.new,
+    easylabv1easylab.GetWorkflowResponse.new,
+  );
+
+  static const listWorkflows = connect.Spec(
+    '/$name/ListWorkflows',
+    connect.StreamType.unary,
+    easylabv1easylab.ListWorkflowsRequest.new,
+    easylabv1easylab.ListWorkflowsResponse.new,
+  );
+
+  static const triggerRun = connect.Spec(
+    '/$name/TriggerRun',
+    connect.StreamType.unary,
+    easylabv1easylab.TriggerRunRequest.new,
+    easylabv1easylab.TriggerRunResponse.new,
+  );
+
+  static const getRun = connect.Spec(
+    '/$name/GetRun',
+    connect.StreamType.unary,
+    easylabv1easylab.GetRunRequest.new,
+    easylabv1easylab.GetRunResponse.new,
+  );
+
+  static const listRuns = connect.Spec(
+    '/$name/ListRuns',
+    connect.StreamType.unary,
+    easylabv1easylab.ListRunsRequest.new,
+    easylabv1easylab.ListRunsResponse.new,
+  );
+
+  static const runJobLog = connect.Spec(
+    '/$name/RunJobLog',
+    connect.StreamType.server,
+    easylabv1easylab.RunJobLogRequest.new,
+    easylabv1easylab.RunJobLogResponse.new,
+  );
+
+  static const cancelRun = connect.Spec(
+    '/$name/CancelRun',
+    connect.StreamType.unary,
+    easylabv1easylab.CancelRunRequest.new,
+    easylabv1easylab.CancelRunResponse.new,
+  );
+
+  static const registerRunner = connect.Spec(
+    '/$name/RegisterRunner',
+    connect.StreamType.unary,
+    easylabv1easylab.RegisterRunnerRequest.new,
+    easylabv1easylab.RegisterRunnerResponse.new,
+  );
+
+  static const listRunners = connect.Spec(
+    '/$name/ListRunners',
+    connect.StreamType.unary,
+    easylabv1easylab.ListRunnersRequest.new,
+    easylabv1easylab.ListRunnersResponse.new,
   );
 }

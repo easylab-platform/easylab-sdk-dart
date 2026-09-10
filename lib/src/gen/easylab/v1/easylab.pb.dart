@@ -16,6 +16,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../worker/v1/worker.pb.dart' as $0;
+
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'easylab.pbenum.dart';
@@ -5743,222 +5745,6 @@ class GetTaskResponse extends $pb.GeneratedMessage {
   TaskEntry ensureTask() => $_ensure(0);
 }
 
-class BuildRequest extends $pb.GeneratedMessage {
-  factory BuildRequest({
-    $core.String? org,
-    $core.String? repo,
-    $core.String? ref,
-    $core.String? dockerfilePath,
-    $core.String? tag,
-    $core.String? context,
-    $core.bool? noCache,
-  }) {
-    final result = create();
-    if (org != null) result.org = org;
-    if (repo != null) result.repo = repo;
-    if (ref != null) result.ref = ref;
-    if (dockerfilePath != null) result.dockerfilePath = dockerfilePath;
-    if (tag != null) result.tag = tag;
-    if (context != null) result.context = context;
-    if (noCache != null) result.noCache = noCache;
-    return result;
-  }
-
-  BuildRequest._();
-
-  factory BuildRequest.fromBuffer($core.List<$core.int> data,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
-  factory BuildRequest.fromJson($core.String json,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'BuildRequest',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
-      createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'org')
-    ..aOS(2, _omitFieldNames ? '' : 'repo')
-    ..aOS(3, _omitFieldNames ? '' : 'ref')
-    ..aOS(4, _omitFieldNames ? '' : 'dockerfilePath')
-    ..aOS(5, _omitFieldNames ? '' : 'tag')
-    ..aOS(6, _omitFieldNames ? '' : 'context')
-    ..aOB(7, _omitFieldNames ? '' : 'noCache')
-    ..hasRequiredFields = false;
-
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BuildRequest clone() => deepCopy();
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BuildRequest copyWith(void Function(BuildRequest) updates) =>
-      super.copyWith((message) => updates(message as BuildRequest))
-          as BuildRequest;
-
-  @$core.override
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static BuildRequest create() => BuildRequest._();
-  @$core.override
-  BuildRequest createEmptyInstance() => create();
-  @$core.pragma('dart2js:noInline')
-  static BuildRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<BuildRequest>(create);
-  static BuildRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get org => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set org($core.String value) => $_setString(0, value);
-  @$pb.TagNumber(1)
-  $core.bool hasOrg() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearOrg() => $_clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get repo => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set repo($core.String value) => $_setString(1, value);
-  @$pb.TagNumber(2)
-  $core.bool hasRepo() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearRepo() => $_clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get ref => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set ref($core.String value) => $_setString(2, value);
-  @$pb.TagNumber(3)
-  $core.bool hasRef() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearRef() => $_clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get dockerfilePath => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set dockerfilePath($core.String value) => $_setString(3, value);
-  @$pb.TagNumber(4)
-  $core.bool hasDockerfilePath() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearDockerfilePath() => $_clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get tag => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set tag($core.String value) => $_setString(4, value);
-  @$pb.TagNumber(5)
-  $core.bool hasTag() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearTag() => $_clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.String get context => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set context($core.String value) => $_setString(5, value);
-  @$pb.TagNumber(6)
-  $core.bool hasContext() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearContext() => $_clearField(6);
-
-  @$pb.TagNumber(7)
-  $core.bool get noCache => $_getBF(6);
-  @$pb.TagNumber(7)
-  set noCache($core.bool value) => $_setBool(6, value);
-  @$pb.TagNumber(7)
-  $core.bool hasNoCache() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearNoCache() => $_clearField(7);
-}
-
-class BuildResponse extends $pb.GeneratedMessage {
-  factory BuildResponse({
-    $core.bool? ok,
-    $core.String? taskId,
-    $core.String? image,
-    $core.String? error,
-  }) {
-    final result = create();
-    if (ok != null) result.ok = ok;
-    if (taskId != null) result.taskId = taskId;
-    if (image != null) result.image = image;
-    if (error != null) result.error = error;
-    return result;
-  }
-
-  BuildResponse._();
-
-  factory BuildResponse.fromBuffer($core.List<$core.int> data,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
-  factory BuildResponse.fromJson($core.String json,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'BuildResponse',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
-      createEmptyInstance: create)
-    ..aOB(1, _omitFieldNames ? '' : 'ok')
-    ..aOS(2, _omitFieldNames ? '' : 'taskId')
-    ..aOS(3, _omitFieldNames ? '' : 'image')
-    ..aOS(4, _omitFieldNames ? '' : 'error')
-    ..hasRequiredFields = false;
-
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BuildResponse clone() => deepCopy();
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BuildResponse copyWith(void Function(BuildResponse) updates) =>
-      super.copyWith((message) => updates(message as BuildResponse))
-          as BuildResponse;
-
-  @$core.override
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static BuildResponse create() => BuildResponse._();
-  @$core.override
-  BuildResponse createEmptyInstance() => create();
-  @$core.pragma('dart2js:noInline')
-  static BuildResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<BuildResponse>(create);
-  static BuildResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.bool get ok => $_getBF(0);
-  @$pb.TagNumber(1)
-  set ok($core.bool value) => $_setBool(0, value);
-  @$pb.TagNumber(1)
-  $core.bool hasOk() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearOk() => $_clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get taskId => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set taskId($core.String value) => $_setString(1, value);
-  @$pb.TagNumber(2)
-  $core.bool hasTaskId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearTaskId() => $_clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get image => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set image($core.String value) => $_setString(2, value);
-  @$pb.TagNumber(3)
-  $core.bool hasImage() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearImage() => $_clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get error => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set error($core.String value) => $_setString(3, value);
-  @$pb.TagNumber(4)
-  $core.bool hasError() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearError() => $_clearField(4);
-}
-
 class OpsStatusRequest extends $pb.GeneratedMessage {
   factory OpsStatusRequest() => create();
 
@@ -10044,6 +9830,3698 @@ class OCICatalogResponse extends $pb.GeneratedMessage {
   $pb.PbList<$core.String> get repositories => $_getList(0);
 }
 
+class SandboxInfo extends $pb.GeneratedMessage {
+  factory SandboxInfo({
+    $core.String? name,
+    $core.String? org,
+    $core.String? repo,
+    $core.String? branch,
+    $core.String? baseImage,
+    $core.String? derivedImage,
+    $core.String? workspace,
+    $core.String? phase,
+    $core.String? podIp,
+    $core.String? bootId,
+    $core.int? runningJobs,
+    $core.int? totalJobs,
+    $core.String? syncedRev,
+    $core.String? syncedBootId,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (name != null) result.name = name;
+    if (org != null) result.org = org;
+    if (repo != null) result.repo = repo;
+    if (branch != null) result.branch = branch;
+    if (baseImage != null) result.baseImage = baseImage;
+    if (derivedImage != null) result.derivedImage = derivedImage;
+    if (workspace != null) result.workspace = workspace;
+    if (phase != null) result.phase = phase;
+    if (podIp != null) result.podIp = podIp;
+    if (bootId != null) result.bootId = bootId;
+    if (runningJobs != null) result.runningJobs = runningJobs;
+    if (totalJobs != null) result.totalJobs = totalJobs;
+    if (syncedRev != null) result.syncedRev = syncedRev;
+    if (syncedBootId != null) result.syncedBootId = syncedBootId;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  SandboxInfo._();
+
+  factory SandboxInfo.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SandboxInfo.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SandboxInfo',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'org')
+    ..aOS(3, _omitFieldNames ? '' : 'repo')
+    ..aOS(4, _omitFieldNames ? '' : 'branch')
+    ..aOS(5, _omitFieldNames ? '' : 'baseImage')
+    ..aOS(6, _omitFieldNames ? '' : 'derivedImage')
+    ..aOS(7, _omitFieldNames ? '' : 'workspace')
+    ..aOS(8, _omitFieldNames ? '' : 'phase')
+    ..aOS(9, _omitFieldNames ? '' : 'podIp')
+    ..aOS(10, _omitFieldNames ? '' : 'bootId')
+    ..aI(11, _omitFieldNames ? '' : 'runningJobs')
+    ..aI(12, _omitFieldNames ? '' : 'totalJobs')
+    ..aOS(13, _omitFieldNames ? '' : 'syncedRev')
+    ..aOS(14, _omitFieldNames ? '' : 'syncedBootId')
+    ..aOS(15, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SandboxInfo clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SandboxInfo copyWith(void Function(SandboxInfo) updates) =>
+      super.copyWith((message) => updates(message as SandboxInfo))
+          as SandboxInfo;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SandboxInfo create() => SandboxInfo._();
+  @$core.override
+  SandboxInfo createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SandboxInfo getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SandboxInfo>(create);
+  static SandboxInfo? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get org => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set org($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOrg() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrg() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get repo => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set repo($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRepo() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRepo() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get branch => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set branch($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBranch() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBranch() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get baseImage => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set baseImage($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBaseImage() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBaseImage() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get derivedImage => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set derivedImage($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDerivedImage() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDerivedImage() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get workspace => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set workspace($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasWorkspace() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWorkspace() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get phase => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set phase($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPhase() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPhase() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get podIp => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set podIp($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPodIp() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPodIp() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get bootId => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set bootId($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasBootId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearBootId() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get runningJobs => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set runningJobs($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasRunningJobs() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearRunningJobs() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.int get totalJobs => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set totalJobs($core.int value) => $_setSignedInt32(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasTotalJobs() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearTotalJobs() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get syncedRev => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set syncedRev($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasSyncedRev() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearSyncedRev() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get syncedBootId => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set syncedBootId($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasSyncedBootId() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearSyncedBootId() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get error => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set error($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasError() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearError() => $_clearField(15);
+}
+
+class ListSandboxesRequest extends $pb.GeneratedMessage {
+  factory ListSandboxesRequest() => create();
+
+  ListSandboxesRequest._();
+
+  factory ListSandboxesRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListSandboxesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListSandboxesRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSandboxesRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSandboxesRequest copyWith(void Function(ListSandboxesRequest) updates) =>
+      super.copyWith((message) => updates(message as ListSandboxesRequest))
+          as ListSandboxesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSandboxesRequest create() => ListSandboxesRequest._();
+  @$core.override
+  ListSandboxesRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListSandboxesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListSandboxesRequest>(create);
+  static ListSandboxesRequest? _defaultInstance;
+}
+
+class ListSandboxesResponse extends $pb.GeneratedMessage {
+  factory ListSandboxesResponse({
+    $core.Iterable<SandboxInfo>? sandboxes,
+  }) {
+    final result = create();
+    if (sandboxes != null) result.sandboxes.addAll(sandboxes);
+    return result;
+  }
+
+  ListSandboxesResponse._();
+
+  factory ListSandboxesResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListSandboxesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListSandboxesResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..pPM<SandboxInfo>(1, _omitFieldNames ? '' : 'sandboxes',
+        subBuilder: SandboxInfo.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSandboxesResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSandboxesResponse copyWith(
+          void Function(ListSandboxesResponse) updates) =>
+      super.copyWith((message) => updates(message as ListSandboxesResponse))
+          as ListSandboxesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSandboxesResponse create() => ListSandboxesResponse._();
+  @$core.override
+  ListSandboxesResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListSandboxesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListSandboxesResponse>(create);
+  static ListSandboxesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<SandboxInfo> get sandboxes => $_getList(0);
+}
+
+class GetSandboxRequest extends $pb.GeneratedMessage {
+  factory GetSandboxRequest({
+    $core.String? name,
+  }) {
+    final result = create();
+    if (name != null) result.name = name;
+    return result;
+  }
+
+  GetSandboxRequest._();
+
+  factory GetSandboxRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetSandboxRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetSandboxRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSandboxRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSandboxRequest copyWith(void Function(GetSandboxRequest) updates) =>
+      super.copyWith((message) => updates(message as GetSandboxRequest))
+          as GetSandboxRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSandboxRequest create() => GetSandboxRequest._();
+  @$core.override
+  GetSandboxRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetSandboxRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetSandboxRequest>(create);
+  static GetSandboxRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+}
+
+class GetSandboxResponse extends $pb.GeneratedMessage {
+  factory GetSandboxResponse({
+    SandboxInfo? sandbox,
+  }) {
+    final result = create();
+    if (sandbox != null) result.sandbox = sandbox;
+    return result;
+  }
+
+  GetSandboxResponse._();
+
+  factory GetSandboxResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetSandboxResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetSandboxResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOM<SandboxInfo>(1, _omitFieldNames ? '' : 'sandbox',
+        subBuilder: SandboxInfo.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSandboxResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSandboxResponse copyWith(void Function(GetSandboxResponse) updates) =>
+      super.copyWith((message) => updates(message as GetSandboxResponse))
+          as GetSandboxResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSandboxResponse create() => GetSandboxResponse._();
+  @$core.override
+  GetSandboxResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetSandboxResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetSandboxResponse>(create);
+  static GetSandboxResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SandboxInfo get sandbox => $_getN(0);
+  @$pb.TagNumber(1)
+  set sandbox(SandboxInfo value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSandbox() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSandbox() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SandboxInfo ensureSandbox() => $_ensure(0);
+}
+
+class EnsureSandboxImageRequest extends $pb.GeneratedMessage {
+  factory EnsureSandboxImageRequest({
+    $core.String? baseImage,
+  }) {
+    final result = create();
+    if (baseImage != null) result.baseImage = baseImage;
+    return result;
+  }
+
+  EnsureSandboxImageRequest._();
+
+  factory EnsureSandboxImageRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EnsureSandboxImageRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EnsureSandboxImageRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'baseImage')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EnsureSandboxImageRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EnsureSandboxImageRequest copyWith(
+          void Function(EnsureSandboxImageRequest) updates) =>
+      super.copyWith((message) => updates(message as EnsureSandboxImageRequest))
+          as EnsureSandboxImageRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EnsureSandboxImageRequest create() => EnsureSandboxImageRequest._();
+  @$core.override
+  EnsureSandboxImageRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EnsureSandboxImageRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EnsureSandboxImageRequest>(create);
+  static EnsureSandboxImageRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get baseImage => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set baseImage($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBaseImage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseImage() => $_clearField(1);
+}
+
+class EnsureSandboxImageResponse extends $pb.GeneratedMessage {
+  factory EnsureSandboxImageResponse({
+    $core.String? derivedImage,
+    $core.bool? built,
+  }) {
+    final result = create();
+    if (derivedImage != null) result.derivedImage = derivedImage;
+    if (built != null) result.built = built;
+    return result;
+  }
+
+  EnsureSandboxImageResponse._();
+
+  factory EnsureSandboxImageResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EnsureSandboxImageResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EnsureSandboxImageResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'derivedImage')
+    ..aOB(2, _omitFieldNames ? '' : 'built')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EnsureSandboxImageResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EnsureSandboxImageResponse copyWith(
+          void Function(EnsureSandboxImageResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as EnsureSandboxImageResponse))
+          as EnsureSandboxImageResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EnsureSandboxImageResponse create() => EnsureSandboxImageResponse._();
+  @$core.override
+  EnsureSandboxImageResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EnsureSandboxImageResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EnsureSandboxImageResponse>(create);
+  static EnsureSandboxImageResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get derivedImage => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set derivedImage($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDerivedImage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDerivedImage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get built => $_getBF(1);
+  @$pb.TagNumber(2)
+  set built($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBuilt() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBuilt() => $_clearField(2);
+}
+
+class LaunchSandboxRequest extends $pb.GeneratedMessage {
+  factory LaunchSandboxRequest({
+    $core.String? name,
+    $core.String? baseImage,
+    $core.String? org,
+    $core.String? repo,
+    $core.String? branch,
+    $core.String? workspace,
+    $core.Iterable<$core.MapEntry<$core.String, $core.String>>? env,
+    $core.String? cpus,
+    $fixnum.Int64? memoryBytes,
+  }) {
+    final result = create();
+    if (name != null) result.name = name;
+    if (baseImage != null) result.baseImage = baseImage;
+    if (org != null) result.org = org;
+    if (repo != null) result.repo = repo;
+    if (branch != null) result.branch = branch;
+    if (workspace != null) result.workspace = workspace;
+    if (env != null) result.env.addEntries(env);
+    if (cpus != null) result.cpus = cpus;
+    if (memoryBytes != null) result.memoryBytes = memoryBytes;
+    return result;
+  }
+
+  LaunchSandboxRequest._();
+
+  factory LaunchSandboxRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LaunchSandboxRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LaunchSandboxRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'baseImage')
+    ..aOS(3, _omitFieldNames ? '' : 'org')
+    ..aOS(4, _omitFieldNames ? '' : 'repo')
+    ..aOS(5, _omitFieldNames ? '' : 'branch')
+    ..aOS(6, _omitFieldNames ? '' : 'workspace')
+    ..m<$core.String, $core.String>(7, _omitFieldNames ? '' : 'env',
+        entryClassName: 'LaunchSandboxRequest.EnvEntry',
+        keyFieldType: $pb.PbFieldType.OS,
+        valueFieldType: $pb.PbFieldType.OS,
+        packageName: const $pb.PackageName('easylab.v1'))
+    ..aOS(8, _omitFieldNames ? '' : 'cpus')
+    ..a<$fixnum.Int64>(
+        9, _omitFieldNames ? '' : 'memoryBytes', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LaunchSandboxRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LaunchSandboxRequest copyWith(void Function(LaunchSandboxRequest) updates) =>
+      super.copyWith((message) => updates(message as LaunchSandboxRequest))
+          as LaunchSandboxRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LaunchSandboxRequest create() => LaunchSandboxRequest._();
+  @$core.override
+  LaunchSandboxRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LaunchSandboxRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LaunchSandboxRequest>(create);
+  static LaunchSandboxRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get baseImage => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set baseImage($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBaseImage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBaseImage() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get org => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set org($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOrg() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOrg() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get repo => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set repo($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRepo() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRepo() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get branch => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set branch($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBranch() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBranch() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get workspace => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set workspace($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasWorkspace() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearWorkspace() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbMap<$core.String, $core.String> get env => $_getMap(6);
+
+  @$pb.TagNumber(8)
+  $core.String get cpus => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set cpus($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCpus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCpus() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get memoryBytes => $_getI64(8);
+  @$pb.TagNumber(9)
+  set memoryBytes($fixnum.Int64 value) => $_setInt64(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMemoryBytes() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMemoryBytes() => $_clearField(9);
+}
+
+class LaunchSandboxResponse extends $pb.GeneratedMessage {
+  factory LaunchSandboxResponse({
+    SandboxInfo? sandbox,
+  }) {
+    final result = create();
+    if (sandbox != null) result.sandbox = sandbox;
+    return result;
+  }
+
+  LaunchSandboxResponse._();
+
+  factory LaunchSandboxResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LaunchSandboxResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LaunchSandboxResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOM<SandboxInfo>(1, _omitFieldNames ? '' : 'sandbox',
+        subBuilder: SandboxInfo.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LaunchSandboxResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LaunchSandboxResponse copyWith(
+          void Function(LaunchSandboxResponse) updates) =>
+      super.copyWith((message) => updates(message as LaunchSandboxResponse))
+          as LaunchSandboxResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LaunchSandboxResponse create() => LaunchSandboxResponse._();
+  @$core.override
+  LaunchSandboxResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LaunchSandboxResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LaunchSandboxResponse>(create);
+  static LaunchSandboxResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SandboxInfo get sandbox => $_getN(0);
+  @$pb.TagNumber(1)
+  set sandbox(SandboxInfo value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSandbox() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSandbox() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SandboxInfo ensureSandbox() => $_ensure(0);
+}
+
+class DeleteSandboxRequest extends $pb.GeneratedMessage {
+  factory DeleteSandboxRequest({
+    $core.String? name,
+  }) {
+    final result = create();
+    if (name != null) result.name = name;
+    return result;
+  }
+
+  DeleteSandboxRequest._();
+
+  factory DeleteSandboxRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteSandboxRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteSandboxRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteSandboxRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteSandboxRequest copyWith(void Function(DeleteSandboxRequest) updates) =>
+      super.copyWith((message) => updates(message as DeleteSandboxRequest))
+          as DeleteSandboxRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteSandboxRequest create() => DeleteSandboxRequest._();
+  @$core.override
+  DeleteSandboxRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteSandboxRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteSandboxRequest>(create);
+  static DeleteSandboxRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+}
+
+class DeleteSandboxResponse extends $pb.GeneratedMessage {
+  factory DeleteSandboxResponse({
+    $core.bool? ok,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (ok != null) result.ok = ok;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  DeleteSandboxResponse._();
+
+  factory DeleteSandboxResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteSandboxResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteSandboxResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'ok')
+    ..aOS(2, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteSandboxResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteSandboxResponse copyWith(
+          void Function(DeleteSandboxResponse) updates) =>
+      super.copyWith((message) => updates(message as DeleteSandboxResponse))
+          as DeleteSandboxResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteSandboxResponse create() => DeleteSandboxResponse._();
+  @$core.override
+  DeleteSandboxResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteSandboxResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteSandboxResponse>(create);
+  static DeleteSandboxResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get ok => $_getBF(0);
+  @$pb.TagNumber(1)
+  set ok($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOk() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOk() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get error => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set error($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasError() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearError() => $_clearField(2);
+}
+
+class ExecuteRequest extends $pb.GeneratedMessage {
+  factory ExecuteRequest({
+    $core.String? sandbox,
+    $0.ExecuteRequest? req,
+  }) {
+    final result = create();
+    if (sandbox != null) result.sandbox = sandbox;
+    if (req != null) result.req = req;
+    return result;
+  }
+
+  ExecuteRequest._();
+
+  factory ExecuteRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExecuteRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExecuteRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sandbox')
+    ..aOM<$0.ExecuteRequest>(2, _omitFieldNames ? '' : 'req',
+        subBuilder: $0.ExecuteRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExecuteRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExecuteRequest copyWith(void Function(ExecuteRequest) updates) =>
+      super.copyWith((message) => updates(message as ExecuteRequest))
+          as ExecuteRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExecuteRequest create() => ExecuteRequest._();
+  @$core.override
+  ExecuteRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ExecuteRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExecuteRequest>(create);
+  static ExecuteRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sandbox => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sandbox($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSandbox() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSandbox() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $0.ExecuteRequest get req => $_getN(1);
+  @$pb.TagNumber(2)
+  set req($0.ExecuteRequest value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReq() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReq() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $0.ExecuteRequest ensureReq() => $_ensure(1);
+}
+
+class ListJobsRequest extends $pb.GeneratedMessage {
+  factory ListJobsRequest({
+    $core.String? sandbox,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (sandbox != null) result.sandbox = sandbox;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListJobsRequest._();
+
+  factory ListJobsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListJobsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListJobsRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sandbox')
+    ..aI(2, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListJobsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListJobsRequest copyWith(void Function(ListJobsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListJobsRequest))
+          as ListJobsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListJobsRequest create() => ListJobsRequest._();
+  @$core.override
+  ListJobsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListJobsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListJobsRequest>(create);
+  static ListJobsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sandbox => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sandbox($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSandbox() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSandbox() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get limit => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set limit($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLimit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLimit() => $_clearField(2);
+}
+
+class JobOutputRequest extends $pb.GeneratedMessage {
+  factory JobOutputRequest({
+    $core.String? sandbox,
+    $0.JobOutputRequest? req,
+  }) {
+    final result = create();
+    if (sandbox != null) result.sandbox = sandbox;
+    if (req != null) result.req = req;
+    return result;
+  }
+
+  JobOutputRequest._();
+
+  factory JobOutputRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory JobOutputRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'JobOutputRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sandbox')
+    ..aOM<$0.JobOutputRequest>(2, _omitFieldNames ? '' : 'req',
+        subBuilder: $0.JobOutputRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JobOutputRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JobOutputRequest copyWith(void Function(JobOutputRequest) updates) =>
+      super.copyWith((message) => updates(message as JobOutputRequest))
+          as JobOutputRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JobOutputRequest create() => JobOutputRequest._();
+  @$core.override
+  JobOutputRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static JobOutputRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<JobOutputRequest>(create);
+  static JobOutputRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sandbox => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sandbox($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSandbox() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSandbox() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $0.JobOutputRequest get req => $_getN(1);
+  @$pb.TagNumber(2)
+  set req($0.JobOutputRequest value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReq() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReq() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $0.JobOutputRequest ensureReq() => $_ensure(1);
+}
+
+class WatchJobRequest extends $pb.GeneratedMessage {
+  factory WatchJobRequest({
+    $core.String? sandbox,
+    $0.WatchJobRequest? req,
+  }) {
+    final result = create();
+    if (sandbox != null) result.sandbox = sandbox;
+    if (req != null) result.req = req;
+    return result;
+  }
+
+  WatchJobRequest._();
+
+  factory WatchJobRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory WatchJobRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'WatchJobRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sandbox')
+    ..aOM<$0.WatchJobRequest>(2, _omitFieldNames ? '' : 'req',
+        subBuilder: $0.WatchJobRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  WatchJobRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  WatchJobRequest copyWith(void Function(WatchJobRequest) updates) =>
+      super.copyWith((message) => updates(message as WatchJobRequest))
+          as WatchJobRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static WatchJobRequest create() => WatchJobRequest._();
+  @$core.override
+  WatchJobRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static WatchJobRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<WatchJobRequest>(create);
+  static WatchJobRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sandbox => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sandbox($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSandbox() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSandbox() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $0.WatchJobRequest get req => $_getN(1);
+  @$pb.TagNumber(2)
+  set req($0.WatchJobRequest value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReq() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReq() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $0.WatchJobRequest ensureReq() => $_ensure(1);
+}
+
+class JobWaitRequest extends $pb.GeneratedMessage {
+  factory JobWaitRequest({
+    $core.String? sandbox,
+    $0.JobWaitRequest? req,
+  }) {
+    final result = create();
+    if (sandbox != null) result.sandbox = sandbox;
+    if (req != null) result.req = req;
+    return result;
+  }
+
+  JobWaitRequest._();
+
+  factory JobWaitRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory JobWaitRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'JobWaitRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sandbox')
+    ..aOM<$0.JobWaitRequest>(2, _omitFieldNames ? '' : 'req',
+        subBuilder: $0.JobWaitRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JobWaitRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JobWaitRequest copyWith(void Function(JobWaitRequest) updates) =>
+      super.copyWith((message) => updates(message as JobWaitRequest))
+          as JobWaitRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JobWaitRequest create() => JobWaitRequest._();
+  @$core.override
+  JobWaitRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static JobWaitRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<JobWaitRequest>(create);
+  static JobWaitRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sandbox => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sandbox($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSandbox() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSandbox() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $0.JobWaitRequest get req => $_getN(1);
+  @$pb.TagNumber(2)
+  set req($0.JobWaitRequest value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReq() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReq() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $0.JobWaitRequest ensureReq() => $_ensure(1);
+}
+
+class JobStdinRequest extends $pb.GeneratedMessage {
+  factory JobStdinRequest({
+    $core.String? sandbox,
+    $0.JobStdinRequest? req,
+  }) {
+    final result = create();
+    if (sandbox != null) result.sandbox = sandbox;
+    if (req != null) result.req = req;
+    return result;
+  }
+
+  JobStdinRequest._();
+
+  factory JobStdinRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory JobStdinRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'JobStdinRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sandbox')
+    ..aOM<$0.JobStdinRequest>(2, _omitFieldNames ? '' : 'req',
+        subBuilder: $0.JobStdinRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JobStdinRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JobStdinRequest copyWith(void Function(JobStdinRequest) updates) =>
+      super.copyWith((message) => updates(message as JobStdinRequest))
+          as JobStdinRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JobStdinRequest create() => JobStdinRequest._();
+  @$core.override
+  JobStdinRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static JobStdinRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<JobStdinRequest>(create);
+  static JobStdinRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sandbox => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sandbox($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSandbox() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSandbox() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $0.JobStdinRequest get req => $_getN(1);
+  @$pb.TagNumber(2)
+  set req($0.JobStdinRequest value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReq() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReq() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $0.JobStdinRequest ensureReq() => $_ensure(1);
+}
+
+class JobKillRequest extends $pb.GeneratedMessage {
+  factory JobKillRequest({
+    $core.String? sandbox,
+    $0.JobKillRequest? req,
+  }) {
+    final result = create();
+    if (sandbox != null) result.sandbox = sandbox;
+    if (req != null) result.req = req;
+    return result;
+  }
+
+  JobKillRequest._();
+
+  factory JobKillRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory JobKillRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'JobKillRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sandbox')
+    ..aOM<$0.JobKillRequest>(2, _omitFieldNames ? '' : 'req',
+        subBuilder: $0.JobKillRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JobKillRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JobKillRequest copyWith(void Function(JobKillRequest) updates) =>
+      super.copyWith((message) => updates(message as JobKillRequest))
+          as JobKillRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JobKillRequest create() => JobKillRequest._();
+  @$core.override
+  JobKillRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static JobKillRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<JobKillRequest>(create);
+  static JobKillRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sandbox => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sandbox($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSandbox() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSandbox() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $0.JobKillRequest get req => $_getN(1);
+  @$pb.TagNumber(2)
+  set req($0.JobKillRequest value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReq() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReq() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $0.JobKillRequest ensureReq() => $_ensure(1);
+}
+
+class FileReadRequest extends $pb.GeneratedMessage {
+  factory FileReadRequest({
+    $core.String? sandbox,
+    $0.FileReadRequest? req,
+  }) {
+    final result = create();
+    if (sandbox != null) result.sandbox = sandbox;
+    if (req != null) result.req = req;
+    return result;
+  }
+
+  FileReadRequest._();
+
+  factory FileReadRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FileReadRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FileReadRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sandbox')
+    ..aOM<$0.FileReadRequest>(2, _omitFieldNames ? '' : 'req',
+        subBuilder: $0.FileReadRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FileReadRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FileReadRequest copyWith(void Function(FileReadRequest) updates) =>
+      super.copyWith((message) => updates(message as FileReadRequest))
+          as FileReadRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FileReadRequest create() => FileReadRequest._();
+  @$core.override
+  FileReadRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static FileReadRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FileReadRequest>(create);
+  static FileReadRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sandbox => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sandbox($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSandbox() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSandbox() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $0.FileReadRequest get req => $_getN(1);
+  @$pb.TagNumber(2)
+  set req($0.FileReadRequest value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReq() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReq() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $0.FileReadRequest ensureReq() => $_ensure(1);
+}
+
+class SyncWorkspaceRequest extends $pb.GeneratedMessage {
+  factory SyncWorkspaceRequest({
+    $core.String? sandbox,
+    $core.String? org,
+    $core.String? repo,
+    $core.String? rev,
+    $core.String? branch,
+  }) {
+    final result = create();
+    if (sandbox != null) result.sandbox = sandbox;
+    if (org != null) result.org = org;
+    if (repo != null) result.repo = repo;
+    if (rev != null) result.rev = rev;
+    if (branch != null) result.branch = branch;
+    return result;
+  }
+
+  SyncWorkspaceRequest._();
+
+  factory SyncWorkspaceRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SyncWorkspaceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SyncWorkspaceRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sandbox')
+    ..aOS(2, _omitFieldNames ? '' : 'org')
+    ..aOS(3, _omitFieldNames ? '' : 'repo')
+    ..aOS(4, _omitFieldNames ? '' : 'rev')
+    ..aOS(5, _omitFieldNames ? '' : 'branch')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SyncWorkspaceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SyncWorkspaceRequest copyWith(void Function(SyncWorkspaceRequest) updates) =>
+      super.copyWith((message) => updates(message as SyncWorkspaceRequest))
+          as SyncWorkspaceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SyncWorkspaceRequest create() => SyncWorkspaceRequest._();
+  @$core.override
+  SyncWorkspaceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SyncWorkspaceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SyncWorkspaceRequest>(create);
+  static SyncWorkspaceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sandbox => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sandbox($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSandbox() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSandbox() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get org => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set org($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOrg() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrg() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get repo => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set repo($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRepo() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRepo() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get rev => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set rev($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRev() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRev() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get branch => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set branch($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBranch() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBranch() => $_clearField(5);
+}
+
+class SyncWorkspaceResponse extends $pb.GeneratedMessage {
+  factory SyncWorkspaceResponse({
+    $core.String? syncedRev,
+  }) {
+    final result = create();
+    if (syncedRev != null) result.syncedRev = syncedRev;
+    return result;
+  }
+
+  SyncWorkspaceResponse._();
+
+  factory SyncWorkspaceResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SyncWorkspaceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SyncWorkspaceResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'syncedRev')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SyncWorkspaceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SyncWorkspaceResponse copyWith(
+          void Function(SyncWorkspaceResponse) updates) =>
+      super.copyWith((message) => updates(message as SyncWorkspaceResponse))
+          as SyncWorkspaceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SyncWorkspaceResponse create() => SyncWorkspaceResponse._();
+  @$core.override
+  SyncWorkspaceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SyncWorkspaceResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SyncWorkspaceResponse>(create);
+  static SyncWorkspaceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get syncedRev => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set syncedRev($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSyncedRev() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSyncedRev() => $_clearField(1);
+}
+
+class FileWriteRequest extends $pb.GeneratedMessage {
+  factory FileWriteRequest({
+    $core.String? sandbox,
+    $0.FileWriteRequest? req,
+  }) {
+    final result = create();
+    if (sandbox != null) result.sandbox = sandbox;
+    if (req != null) result.req = req;
+    return result;
+  }
+
+  FileWriteRequest._();
+
+  factory FileWriteRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FileWriteRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FileWriteRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sandbox')
+    ..aOM<$0.FileWriteRequest>(2, _omitFieldNames ? '' : 'req',
+        subBuilder: $0.FileWriteRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FileWriteRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FileWriteRequest copyWith(void Function(FileWriteRequest) updates) =>
+      super.copyWith((message) => updates(message as FileWriteRequest))
+          as FileWriteRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FileWriteRequest create() => FileWriteRequest._();
+  @$core.override
+  FileWriteRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static FileWriteRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FileWriteRequest>(create);
+  static FileWriteRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sandbox => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sandbox($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSandbox() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSandbox() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $0.FileWriteRequest get req => $_getN(1);
+  @$pb.TagNumber(2)
+  set req($0.FileWriteRequest value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReq() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReq() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $0.FileWriteRequest ensureReq() => $_ensure(1);
+}
+
+class FileListRequest extends $pb.GeneratedMessage {
+  factory FileListRequest({
+    $core.String? sandbox,
+    $0.FileListRequest? req,
+  }) {
+    final result = create();
+    if (sandbox != null) result.sandbox = sandbox;
+    if (req != null) result.req = req;
+    return result;
+  }
+
+  FileListRequest._();
+
+  factory FileListRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FileListRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FileListRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sandbox')
+    ..aOM<$0.FileListRequest>(2, _omitFieldNames ? '' : 'req',
+        subBuilder: $0.FileListRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FileListRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FileListRequest copyWith(void Function(FileListRequest) updates) =>
+      super.copyWith((message) => updates(message as FileListRequest))
+          as FileListRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FileListRequest create() => FileListRequest._();
+  @$core.override
+  FileListRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static FileListRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FileListRequest>(create);
+  static FileListRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sandbox => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sandbox($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSandbox() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSandbox() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $0.FileListRequest get req => $_getN(1);
+  @$pb.TagNumber(2)
+  set req($0.FileListRequest value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReq() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReq() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $0.FileListRequest ensureReq() => $_ensure(1);
+}
+
+class Runner extends $pb.GeneratedMessage {
+  factory Runner({
+    $core.String? id,
+    $core.Iterable<$core.String>? labels,
+    $core.String? backend,
+    $core.String? addr,
+    $fixnum.Int64? lastSeen,
+    $core.bool? sessionBound,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (labels != null) result.labels.addAll(labels);
+    if (backend != null) result.backend = backend;
+    if (addr != null) result.addr = addr;
+    if (lastSeen != null) result.lastSeen = lastSeen;
+    if (sessionBound != null) result.sessionBound = sessionBound;
+    return result;
+  }
+
+  Runner._();
+
+  factory Runner.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Runner.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Runner',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..pPS(2, _omitFieldNames ? '' : 'labels')
+    ..aOS(3, _omitFieldNames ? '' : 'backend')
+    ..aOS(4, _omitFieldNames ? '' : 'addr')
+    ..aInt64(5, _omitFieldNames ? '' : 'lastSeen')
+    ..aOB(6, _omitFieldNames ? '' : 'sessionBound')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Runner clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Runner copyWith(void Function(Runner) updates) =>
+      super.copyWith((message) => updates(message as Runner)) as Runner;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Runner create() => Runner._();
+  @$core.override
+  Runner createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static Runner getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Runner>(create);
+  static Runner? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<$core.String> get labels => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.String get backend => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set backend($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBackend() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBackend() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get addr => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set addr($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAddr() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAddr() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get lastSeen => $_getI64(4);
+  @$pb.TagNumber(5)
+  set lastSeen($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLastSeen() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLastSeen() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get sessionBound => $_getBF(5);
+  @$pb.TagNumber(6)
+  set sessionBound($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSessionBound() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSessionBound() => $_clearField(6);
+}
+
+class Trigger extends $pb.GeneratedMessage {
+  factory Trigger({
+    $core.Iterable<$core.String>? events,
+  }) {
+    final result = create();
+    if (events != null) result.events.addAll(events);
+    return result;
+  }
+
+  Trigger._();
+
+  factory Trigger.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Trigger.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Trigger',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'events')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Trigger clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Trigger copyWith(void Function(Trigger) updates) =>
+      super.copyWith((message) => updates(message as Trigger)) as Trigger;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Trigger create() => Trigger._();
+  @$core.override
+  Trigger createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static Trigger getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Trigger>(create);
+  static Trigger? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<$core.String> get events => $_getList(0);
+}
+
+class Step extends $pb.GeneratedMessage {
+  factory Step({
+    $core.String? name,
+    $core.String? run,
+    $core.Iterable<$core.MapEntry<$core.String, $core.String>>? env,
+    $core.String? workingDirectory,
+  }) {
+    final result = create();
+    if (name != null) result.name = name;
+    if (run != null) result.run = run;
+    if (env != null) result.env.addEntries(env);
+    if (workingDirectory != null) result.workingDirectory = workingDirectory;
+    return result;
+  }
+
+  Step._();
+
+  factory Step.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Step.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Step',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'run')
+    ..m<$core.String, $core.String>(3, _omitFieldNames ? '' : 'env',
+        entryClassName: 'Step.EnvEntry',
+        keyFieldType: $pb.PbFieldType.OS,
+        valueFieldType: $pb.PbFieldType.OS,
+        packageName: const $pb.PackageName('easylab.v1'))
+    ..aOS(4, _omitFieldNames ? '' : 'workingDirectory')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Step clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Step copyWith(void Function(Step) updates) =>
+      super.copyWith((message) => updates(message as Step)) as Step;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Step create() => Step._();
+  @$core.override
+  Step createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static Step getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Step>(create);
+  static Step? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get run => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set run($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRun() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRun() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $pb.PbMap<$core.String, $core.String> get env => $_getMap(2);
+
+  @$pb.TagNumber(4)
+  $core.String get workingDirectory => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set workingDirectory($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasWorkingDirectory() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWorkingDirectory() => $_clearField(4);
+}
+
+class Produce extends $pb.GeneratedMessage {
+  factory Produce({
+    $core.String? action,
+    $core.String? context,
+    $core.String? dockerfile,
+    $core.String? tag,
+    $core.String? path,
+    $core.String? destination,
+    $core.String? ref,
+    $core.String? protocol,
+    $core.String? name,
+    $core.String? version,
+    $core.String? file,
+    $core.String? containerfile,
+  }) {
+    final result = create();
+    if (action != null) result.action = action;
+    if (context != null) result.context = context;
+    if (dockerfile != null) result.dockerfile = dockerfile;
+    if (tag != null) result.tag = tag;
+    if (path != null) result.path = path;
+    if (destination != null) result.destination = destination;
+    if (ref != null) result.ref = ref;
+    if (protocol != null) result.protocol = protocol;
+    if (name != null) result.name = name;
+    if (version != null) result.version = version;
+    if (file != null) result.file = file;
+    if (containerfile != null) result.containerfile = containerfile;
+    return result;
+  }
+
+  Produce._();
+
+  factory Produce.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Produce.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Produce',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'action')
+    ..aOS(2, _omitFieldNames ? '' : 'context')
+    ..aOS(3, _omitFieldNames ? '' : 'dockerfile')
+    ..aOS(4, _omitFieldNames ? '' : 'tag')
+    ..aOS(5, _omitFieldNames ? '' : 'path')
+    ..aOS(6, _omitFieldNames ? '' : 'destination')
+    ..aOS(7, _omitFieldNames ? '' : 'ref')
+    ..aOS(8, _omitFieldNames ? '' : 'protocol')
+    ..aOS(9, _omitFieldNames ? '' : 'name')
+    ..aOS(10, _omitFieldNames ? '' : 'version')
+    ..aOS(11, _omitFieldNames ? '' : 'file')
+    ..aOS(12, _omitFieldNames ? '' : 'containerfile')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Produce clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Produce copyWith(void Function(Produce) updates) =>
+      super.copyWith((message) => updates(message as Produce)) as Produce;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Produce create() => Produce._();
+  @$core.override
+  Produce createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static Produce getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Produce>(create);
+  static Produce? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get action => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set action($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAction() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAction() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get context => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set context($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContext() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContext() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get dockerfile => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set dockerfile($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDockerfile() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDockerfile() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get tag => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set tag($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTag() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTag() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get path => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set path($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPath() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPath() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get destination => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set destination($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDestination() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDestination() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get ref => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set ref($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRef() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRef() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get protocol => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set protocol($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasProtocol() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearProtocol() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get name => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set name($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasName() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearName() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get version => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set version($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasVersion() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearVersion() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get file => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set file($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasFile() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearFile() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get containerfile => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set containerfile($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasContainerfile() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearContainerfile() => $_clearField(12);
+}
+
+class JobDef extends $pb.GeneratedMessage {
+  factory JobDef({
+    $core.String? id,
+    $core.Iterable<$core.String>? needs,
+    $core.Iterable<$core.String>? runsOn,
+    $core.String? container,
+    $core.String? workingDirectory,
+    $core.Iterable<Step>? steps,
+    Produce? produce,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (needs != null) result.needs.addAll(needs);
+    if (runsOn != null) result.runsOn.addAll(runsOn);
+    if (container != null) result.container = container;
+    if (workingDirectory != null) result.workingDirectory = workingDirectory;
+    if (steps != null) result.steps.addAll(steps);
+    if (produce != null) result.produce = produce;
+    return result;
+  }
+
+  JobDef._();
+
+  factory JobDef.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory JobDef.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'JobDef',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..pPS(2, _omitFieldNames ? '' : 'needs')
+    ..pPS(3, _omitFieldNames ? '' : 'runsOn')
+    ..aOS(4, _omitFieldNames ? '' : 'container')
+    ..aOS(5, _omitFieldNames ? '' : 'workingDirectory')
+    ..pPM<Step>(6, _omitFieldNames ? '' : 'steps', subBuilder: Step.create)
+    ..aOM<Produce>(7, _omitFieldNames ? '' : 'produce',
+        subBuilder: Produce.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JobDef clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JobDef copyWith(void Function(JobDef) updates) =>
+      super.copyWith((message) => updates(message as JobDef)) as JobDef;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JobDef create() => JobDef._();
+  @$core.override
+  JobDef createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static JobDef getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JobDef>(create);
+  static JobDef? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<$core.String> get needs => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<$core.String> get runsOn => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.String get container => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set container($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasContainer() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearContainer() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get workingDirectory => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set workingDirectory($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWorkingDirectory() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWorkingDirectory() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $pb.PbList<Step> get steps => $_getList(5);
+
+  @$pb.TagNumber(7)
+  Produce get produce => $_getN(6);
+  @$pb.TagNumber(7)
+  set produce(Produce value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasProduce() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearProduce() => $_clearField(7);
+  @$pb.TagNumber(7)
+  Produce ensureProduce() => $_ensure(6);
+}
+
+class Workflow extends $pb.GeneratedMessage {
+  factory Workflow({
+    $core.String? id,
+    $core.String? name,
+    $core.String? org,
+    $core.String? repo,
+    $core.String? branch,
+    Trigger? on,
+    $core.Iterable<JobDef>? jobs,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (org != null) result.org = org;
+    if (repo != null) result.repo = repo;
+    if (branch != null) result.branch = branch;
+    if (on != null) result.on = on;
+    if (jobs != null) result.jobs.addAll(jobs);
+    return result;
+  }
+
+  Workflow._();
+
+  factory Workflow.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Workflow.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Workflow',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'org')
+    ..aOS(4, _omitFieldNames ? '' : 'repo')
+    ..aOS(5, _omitFieldNames ? '' : 'branch')
+    ..aOM<Trigger>(6, _omitFieldNames ? '' : 'on', subBuilder: Trigger.create)
+    ..pPM<JobDef>(7, _omitFieldNames ? '' : 'jobs', subBuilder: JobDef.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Workflow clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Workflow copyWith(void Function(Workflow) updates) =>
+      super.copyWith((message) => updates(message as Workflow)) as Workflow;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Workflow create() => Workflow._();
+  @$core.override
+  Workflow createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static Workflow getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Workflow>(create);
+  static Workflow? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get org => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set org($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOrg() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOrg() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get repo => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set repo($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRepo() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRepo() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get branch => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set branch($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBranch() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBranch() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  Trigger get on => $_getN(5);
+  @$pb.TagNumber(6)
+  set on(Trigger value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOn() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOn() => $_clearField(6);
+  @$pb.TagNumber(6)
+  Trigger ensureOn() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<JobDef> get jobs => $_getList(6);
+}
+
+class JobInstance extends $pb.GeneratedMessage {
+  factory JobInstance({
+    $core.String? id,
+    $core.String? defId,
+    $core.String? status,
+    $core.String? result,
+  }) {
+    final result$ = create();
+    if (id != null) result$.id = id;
+    if (defId != null) result$.defId = defId;
+    if (status != null) result$.status = status;
+    if (result != null) result$.result = result;
+    return result$;
+  }
+
+  JobInstance._();
+
+  factory JobInstance.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory JobInstance.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'JobInstance',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'defId')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aOS(4, _omitFieldNames ? '' : 'result')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JobInstance clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JobInstance copyWith(void Function(JobInstance) updates) =>
+      super.copyWith((message) => updates(message as JobInstance))
+          as JobInstance;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JobInstance create() => JobInstance._();
+  @$core.override
+  JobInstance createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static JobInstance getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<JobInstance>(create);
+  static JobInstance? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get defId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set defId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDefId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDefId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get result => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set result($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasResult() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearResult() => $_clearField(4);
+}
+
+class Run extends $pb.GeneratedMessage {
+  factory Run({
+    $core.String? id,
+    $core.String? workflowId,
+    $core.String? status,
+    $core.Iterable<JobInstance>? jobs,
+    $core.String? startedAt,
+    $core.String? finishedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (workflowId != null) result.workflowId = workflowId;
+    if (status != null) result.status = status;
+    if (jobs != null) result.jobs.addAll(jobs);
+    if (startedAt != null) result.startedAt = startedAt;
+    if (finishedAt != null) result.finishedAt = finishedAt;
+    return result;
+  }
+
+  Run._();
+
+  factory Run.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Run.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Run',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'workflowId')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..pPM<JobInstance>(4, _omitFieldNames ? '' : 'jobs',
+        subBuilder: JobInstance.create)
+    ..aOS(5, _omitFieldNames ? '' : 'startedAt')
+    ..aOS(6, _omitFieldNames ? '' : 'finishedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Run clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Run copyWith(void Function(Run) updates) =>
+      super.copyWith((message) => updates(message as Run)) as Run;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Run create() => Run._();
+  @$core.override
+  Run createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static Run getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Run>(create);
+  static Run? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get workflowId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set workflowId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWorkflowId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWorkflowId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<JobInstance> get jobs => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.String get startedAt => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set startedAt($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStartedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStartedAt() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get finishedAt => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set finishedAt($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasFinishedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFinishedAt() => $_clearField(6);
+}
+
+class GetWorkflowRequest extends $pb.GeneratedMessage {
+  factory GetWorkflowRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  GetWorkflowRequest._();
+
+  factory GetWorkflowRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetWorkflowRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetWorkflowRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWorkflowRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWorkflowRequest copyWith(void Function(GetWorkflowRequest) updates) =>
+      super.copyWith((message) => updates(message as GetWorkflowRequest))
+          as GetWorkflowRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetWorkflowRequest create() => GetWorkflowRequest._();
+  @$core.override
+  GetWorkflowRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetWorkflowRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetWorkflowRequest>(create);
+  static GetWorkflowRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class GetWorkflowResponse extends $pb.GeneratedMessage {
+  factory GetWorkflowResponse({
+    Workflow? workflow,
+  }) {
+    final result = create();
+    if (workflow != null) result.workflow = workflow;
+    return result;
+  }
+
+  GetWorkflowResponse._();
+
+  factory GetWorkflowResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetWorkflowResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetWorkflowResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOM<Workflow>(1, _omitFieldNames ? '' : 'workflow',
+        subBuilder: Workflow.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWorkflowResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWorkflowResponse copyWith(void Function(GetWorkflowResponse) updates) =>
+      super.copyWith((message) => updates(message as GetWorkflowResponse))
+          as GetWorkflowResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetWorkflowResponse create() => GetWorkflowResponse._();
+  @$core.override
+  GetWorkflowResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetWorkflowResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetWorkflowResponse>(create);
+  static GetWorkflowResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Workflow get workflow => $_getN(0);
+  @$pb.TagNumber(1)
+  set workflow(Workflow value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkflow() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkflow() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Workflow ensureWorkflow() => $_ensure(0);
+}
+
+class CreateWorkflowRequest extends $pb.GeneratedMessage {
+  factory CreateWorkflowRequest({
+    Workflow? workflow,
+  }) {
+    final result = create();
+    if (workflow != null) result.workflow = workflow;
+    return result;
+  }
+
+  CreateWorkflowRequest._();
+
+  factory CreateWorkflowRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateWorkflowRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateWorkflowRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOM<Workflow>(1, _omitFieldNames ? '' : 'workflow',
+        subBuilder: Workflow.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateWorkflowRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateWorkflowRequest copyWith(
+          void Function(CreateWorkflowRequest) updates) =>
+      super.copyWith((message) => updates(message as CreateWorkflowRequest))
+          as CreateWorkflowRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateWorkflowRequest create() => CreateWorkflowRequest._();
+  @$core.override
+  CreateWorkflowRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateWorkflowRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateWorkflowRequest>(create);
+  static CreateWorkflowRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Workflow get workflow => $_getN(0);
+  @$pb.TagNumber(1)
+  set workflow(Workflow value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkflow() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkflow() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Workflow ensureWorkflow() => $_ensure(0);
+}
+
+class CreateWorkflowResponse extends $pb.GeneratedMessage {
+  factory CreateWorkflowResponse({
+    Workflow? workflow,
+  }) {
+    final result = create();
+    if (workflow != null) result.workflow = workflow;
+    return result;
+  }
+
+  CreateWorkflowResponse._();
+
+  factory CreateWorkflowResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateWorkflowResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateWorkflowResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOM<Workflow>(1, _omitFieldNames ? '' : 'workflow',
+        subBuilder: Workflow.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateWorkflowResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateWorkflowResponse copyWith(
+          void Function(CreateWorkflowResponse) updates) =>
+      super.copyWith((message) => updates(message as CreateWorkflowResponse))
+          as CreateWorkflowResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateWorkflowResponse create() => CreateWorkflowResponse._();
+  @$core.override
+  CreateWorkflowResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateWorkflowResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateWorkflowResponse>(create);
+  static CreateWorkflowResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Workflow get workflow => $_getN(0);
+  @$pb.TagNumber(1)
+  set workflow(Workflow value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkflow() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkflow() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Workflow ensureWorkflow() => $_ensure(0);
+}
+
+class ListWorkflowsRequest extends $pb.GeneratedMessage {
+  factory ListWorkflowsRequest({
+    $core.String? org,
+    $core.String? repo,
+  }) {
+    final result = create();
+    if (org != null) result.org = org;
+    if (repo != null) result.repo = repo;
+    return result;
+  }
+
+  ListWorkflowsRequest._();
+
+  factory ListWorkflowsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListWorkflowsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListWorkflowsRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'org')
+    ..aOS(2, _omitFieldNames ? '' : 'repo')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWorkflowsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWorkflowsRequest copyWith(void Function(ListWorkflowsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListWorkflowsRequest))
+          as ListWorkflowsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListWorkflowsRequest create() => ListWorkflowsRequest._();
+  @$core.override
+  ListWorkflowsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListWorkflowsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListWorkflowsRequest>(create);
+  static ListWorkflowsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get org => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set org($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrg() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrg() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get repo => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set repo($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRepo() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRepo() => $_clearField(2);
+}
+
+class ListWorkflowsResponse extends $pb.GeneratedMessage {
+  factory ListWorkflowsResponse({
+    $core.Iterable<Workflow>? workflows,
+  }) {
+    final result = create();
+    if (workflows != null) result.workflows.addAll(workflows);
+    return result;
+  }
+
+  ListWorkflowsResponse._();
+
+  factory ListWorkflowsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListWorkflowsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListWorkflowsResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..pPM<Workflow>(1, _omitFieldNames ? '' : 'workflows',
+        subBuilder: Workflow.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWorkflowsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWorkflowsResponse copyWith(
+          void Function(ListWorkflowsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListWorkflowsResponse))
+          as ListWorkflowsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListWorkflowsResponse create() => ListWorkflowsResponse._();
+  @$core.override
+  ListWorkflowsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListWorkflowsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListWorkflowsResponse>(create);
+  static ListWorkflowsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Workflow> get workflows => $_getList(0);
+}
+
+class TriggerRunRequest extends $pb.GeneratedMessage {
+  factory TriggerRunRequest({
+    $core.String? workflowId,
+  }) {
+    final result = create();
+    if (workflowId != null) result.workflowId = workflowId;
+    return result;
+  }
+
+  TriggerRunRequest._();
+
+  factory TriggerRunRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TriggerRunRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TriggerRunRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'workflowId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerRunRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerRunRequest copyWith(void Function(TriggerRunRequest) updates) =>
+      super.copyWith((message) => updates(message as TriggerRunRequest))
+          as TriggerRunRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TriggerRunRequest create() => TriggerRunRequest._();
+  @$core.override
+  TriggerRunRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static TriggerRunRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TriggerRunRequest>(create);
+  static TriggerRunRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get workflowId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set workflowId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkflowId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkflowId() => $_clearField(1);
+}
+
+class TriggerRunResponse extends $pb.GeneratedMessage {
+  factory TriggerRunResponse({
+    Run? run,
+  }) {
+    final result = create();
+    if (run != null) result.run = run;
+    return result;
+  }
+
+  TriggerRunResponse._();
+
+  factory TriggerRunResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TriggerRunResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TriggerRunResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOM<Run>(1, _omitFieldNames ? '' : 'run', subBuilder: Run.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerRunResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerRunResponse copyWith(void Function(TriggerRunResponse) updates) =>
+      super.copyWith((message) => updates(message as TriggerRunResponse))
+          as TriggerRunResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TriggerRunResponse create() => TriggerRunResponse._();
+  @$core.override
+  TriggerRunResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static TriggerRunResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TriggerRunResponse>(create);
+  static TriggerRunResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Run get run => $_getN(0);
+  @$pb.TagNumber(1)
+  set run(Run value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRun() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRun() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Run ensureRun() => $_ensure(0);
+}
+
+class GetRunRequest extends $pb.GeneratedMessage {
+  factory GetRunRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  GetRunRequest._();
+
+  factory GetRunRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetRunRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetRunRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRunRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRunRequest copyWith(void Function(GetRunRequest) updates) =>
+      super.copyWith((message) => updates(message as GetRunRequest))
+          as GetRunRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRunRequest create() => GetRunRequest._();
+  @$core.override
+  GetRunRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetRunRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetRunRequest>(create);
+  static GetRunRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class GetRunResponse extends $pb.GeneratedMessage {
+  factory GetRunResponse({
+    Run? run,
+  }) {
+    final result = create();
+    if (run != null) result.run = run;
+    return result;
+  }
+
+  GetRunResponse._();
+
+  factory GetRunResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetRunResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetRunResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOM<Run>(1, _omitFieldNames ? '' : 'run', subBuilder: Run.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRunResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRunResponse copyWith(void Function(GetRunResponse) updates) =>
+      super.copyWith((message) => updates(message as GetRunResponse))
+          as GetRunResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRunResponse create() => GetRunResponse._();
+  @$core.override
+  GetRunResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetRunResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetRunResponse>(create);
+  static GetRunResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Run get run => $_getN(0);
+  @$pb.TagNumber(1)
+  set run(Run value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRun() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRun() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Run ensureRun() => $_ensure(0);
+}
+
+class ListRunsRequest extends $pb.GeneratedMessage {
+  factory ListRunsRequest({
+    $core.String? workflowId,
+  }) {
+    final result = create();
+    if (workflowId != null) result.workflowId = workflowId;
+    return result;
+  }
+
+  ListRunsRequest._();
+
+  factory ListRunsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListRunsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListRunsRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'workflowId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRunsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRunsRequest copyWith(void Function(ListRunsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListRunsRequest))
+          as ListRunsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRunsRequest create() => ListRunsRequest._();
+  @$core.override
+  ListRunsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListRunsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListRunsRequest>(create);
+  static ListRunsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get workflowId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set workflowId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkflowId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkflowId() => $_clearField(1);
+}
+
+class ListRunsResponse extends $pb.GeneratedMessage {
+  factory ListRunsResponse({
+    $core.Iterable<Run>? runs,
+  }) {
+    final result = create();
+    if (runs != null) result.runs.addAll(runs);
+    return result;
+  }
+
+  ListRunsResponse._();
+
+  factory ListRunsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListRunsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListRunsResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..pPM<Run>(1, _omitFieldNames ? '' : 'runs', subBuilder: Run.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRunsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRunsResponse copyWith(void Function(ListRunsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListRunsResponse))
+          as ListRunsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRunsResponse create() => ListRunsResponse._();
+  @$core.override
+  ListRunsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListRunsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListRunsResponse>(create);
+  static ListRunsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Run> get runs => $_getList(0);
+}
+
+class RunJobLogRequest extends $pb.GeneratedMessage {
+  factory RunJobLogRequest({
+    $core.String? runId,
+    $core.String? jobId,
+  }) {
+    final result = create();
+    if (runId != null) result.runId = runId;
+    if (jobId != null) result.jobId = jobId;
+    return result;
+  }
+
+  RunJobLogRequest._();
+
+  factory RunJobLogRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RunJobLogRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RunJobLogRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'runId')
+    ..aOS(2, _omitFieldNames ? '' : 'jobId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunJobLogRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunJobLogRequest copyWith(void Function(RunJobLogRequest) updates) =>
+      super.copyWith((message) => updates(message as RunJobLogRequest))
+          as RunJobLogRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RunJobLogRequest create() => RunJobLogRequest._();
+  @$core.override
+  RunJobLogRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RunJobLogRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RunJobLogRequest>(create);
+  static RunJobLogRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get runId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set runId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRunId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRunId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get jobId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set jobId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasJobId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearJobId() => $_clearField(2);
+}
+
+class RunJobLogResponse extends $pb.GeneratedMessage {
+  factory RunJobLogResponse({
+    $core.String? stream,
+    $core.String? line,
+  }) {
+    final result = create();
+    if (stream != null) result.stream = stream;
+    if (line != null) result.line = line;
+    return result;
+  }
+
+  RunJobLogResponse._();
+
+  factory RunJobLogResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RunJobLogResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RunJobLogResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'stream')
+    ..aOS(2, _omitFieldNames ? '' : 'line')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunJobLogResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunJobLogResponse copyWith(void Function(RunJobLogResponse) updates) =>
+      super.copyWith((message) => updates(message as RunJobLogResponse))
+          as RunJobLogResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RunJobLogResponse create() => RunJobLogResponse._();
+  @$core.override
+  RunJobLogResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RunJobLogResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RunJobLogResponse>(create);
+  static RunJobLogResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get stream => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set stream($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasStream() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStream() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get line => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set line($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLine() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLine() => $_clearField(2);
+}
+
+class CancelRunRequest extends $pb.GeneratedMessage {
+  factory CancelRunRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  CancelRunRequest._();
+
+  factory CancelRunRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CancelRunRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CancelRunRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelRunRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelRunRequest copyWith(void Function(CancelRunRequest) updates) =>
+      super.copyWith((message) => updates(message as CancelRunRequest))
+          as CancelRunRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CancelRunRequest create() => CancelRunRequest._();
+  @$core.override
+  CancelRunRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CancelRunRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CancelRunRequest>(create);
+  static CancelRunRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class CancelRunResponse extends $pb.GeneratedMessage {
+  factory CancelRunResponse({
+    $core.bool? ok,
+  }) {
+    final result = create();
+    if (ok != null) result.ok = ok;
+    return result;
+  }
+
+  CancelRunResponse._();
+
+  factory CancelRunResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CancelRunResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CancelRunResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'ok')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelRunResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelRunResponse copyWith(void Function(CancelRunResponse) updates) =>
+      super.copyWith((message) => updates(message as CancelRunResponse))
+          as CancelRunResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CancelRunResponse create() => CancelRunResponse._();
+  @$core.override
+  CancelRunResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CancelRunResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CancelRunResponse>(create);
+  static CancelRunResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get ok => $_getBF(0);
+  @$pb.TagNumber(1)
+  set ok($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOk() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOk() => $_clearField(1);
+}
+
+class RegisterRunnerRequest extends $pb.GeneratedMessage {
+  factory RegisterRunnerRequest({
+    Runner? runner,
+  }) {
+    final result = create();
+    if (runner != null) result.runner = runner;
+    return result;
+  }
+
+  RegisterRunnerRequest._();
+
+  factory RegisterRunnerRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RegisterRunnerRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RegisterRunnerRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOM<Runner>(1, _omitFieldNames ? '' : 'runner', subBuilder: Runner.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterRunnerRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterRunnerRequest copyWith(
+          void Function(RegisterRunnerRequest) updates) =>
+      super.copyWith((message) => updates(message as RegisterRunnerRequest))
+          as RegisterRunnerRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterRunnerRequest create() => RegisterRunnerRequest._();
+  @$core.override
+  RegisterRunnerRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RegisterRunnerRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RegisterRunnerRequest>(create);
+  static RegisterRunnerRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Runner get runner => $_getN(0);
+  @$pb.TagNumber(1)
+  set runner(Runner value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRunner() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRunner() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Runner ensureRunner() => $_ensure(0);
+}
+
+class RegisterRunnerResponse extends $pb.GeneratedMessage {
+  factory RegisterRunnerResponse({
+    $core.bool? ok,
+  }) {
+    final result = create();
+    if (ok != null) result.ok = ok;
+    return result;
+  }
+
+  RegisterRunnerResponse._();
+
+  factory RegisterRunnerResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RegisterRunnerResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RegisterRunnerResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'ok')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterRunnerResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterRunnerResponse copyWith(
+          void Function(RegisterRunnerResponse) updates) =>
+      super.copyWith((message) => updates(message as RegisterRunnerResponse))
+          as RegisterRunnerResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterRunnerResponse create() => RegisterRunnerResponse._();
+  @$core.override
+  RegisterRunnerResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RegisterRunnerResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RegisterRunnerResponse>(create);
+  static RegisterRunnerResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get ok => $_getBF(0);
+  @$pb.TagNumber(1)
+  set ok($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOk() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOk() => $_clearField(1);
+}
+
+class ListRunnersRequest extends $pb.GeneratedMessage {
+  factory ListRunnersRequest({
+    $core.bool? sessionBound,
+  }) {
+    final result = create();
+    if (sessionBound != null) result.sessionBound = sessionBound;
+    return result;
+  }
+
+  ListRunnersRequest._();
+
+  factory ListRunnersRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListRunnersRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListRunnersRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'sessionBound')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRunnersRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRunnersRequest copyWith(void Function(ListRunnersRequest) updates) =>
+      super.copyWith((message) => updates(message as ListRunnersRequest))
+          as ListRunnersRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRunnersRequest create() => ListRunnersRequest._();
+  @$core.override
+  ListRunnersRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListRunnersRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListRunnersRequest>(create);
+  static ListRunnersRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get sessionBound => $_getBF(0);
+  @$pb.TagNumber(1)
+  set sessionBound($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSessionBound() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionBound() => $_clearField(1);
+}
+
+class ListRunnersResponse extends $pb.GeneratedMessage {
+  factory ListRunnersResponse({
+    $core.Iterable<Runner>? runners,
+  }) {
+    final result = create();
+    if (runners != null) result.runners.addAll(runners);
+    return result;
+  }
+
+  ListRunnersResponse._();
+
+  factory ListRunnersResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListRunnersResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListRunnersResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'easylab.v1'),
+      createEmptyInstance: create)
+    ..pPM<Runner>(1, _omitFieldNames ? '' : 'runners',
+        subBuilder: Runner.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRunnersResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRunnersResponse copyWith(void Function(ListRunnersResponse) updates) =>
+      super.copyWith((message) => updates(message as ListRunnersResponse))
+          as ListRunnersResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRunnersResponse create() => ListRunnersResponse._();
+  @$core.override
+  ListRunnersResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListRunnersResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListRunnersResponse>(create);
+  static ListRunnersResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Runner> get runners => $_getList(0);
+}
+
 /// LabService covers the revision-native repo + filesystem surface.
 class LabServiceApi {
   final $pb.RpcClient _client;
@@ -10249,10 +13727,6 @@ class OpsServiceApi {
           $pb.ClientContext? ctx, GetTaskRequest request) =>
       _client.invoke<GetTaskResponse>(
           ctx, 'OpsService', 'GetTask', request, GetTaskResponse());
-  $async.Future<BuildResponse> build(
-          $pb.ClientContext? ctx, BuildRequest request) =>
-      _client.invoke<BuildResponse>(
-          ctx, 'OpsService', 'Build', request, BuildResponse());
   $async.Future<TaskLogResponse> taskLog(
           $pb.ClientContext? ctx, TaskLogRequest request) =>
       _client.invoke<TaskLogResponse>(
@@ -10297,6 +13771,132 @@ class RegistryServiceApi {
           $pb.ClientContext? ctx, OCICatalogRequest request) =>
       _client.invoke<OCICatalogResponse>(
           ctx, 'RegistryService', 'OCICatalog', request, OCICatalogResponse());
+}
+
+/// SandboxService fronts every worker.v1 API for the UI/console and owns the
+/// sandbox lifecycle (derived image + launch + sync + registry table).
+class SandboxServiceApi {
+  final $pb.RpcClient _client;
+
+  SandboxServiceApi(this._client);
+
+  /// lifecycle
+  $async.Future<ListSandboxesResponse> listSandboxes(
+          $pb.ClientContext? ctx, ListSandboxesRequest request) =>
+      _client.invoke<ListSandboxesResponse>(ctx, 'SandboxService',
+          'ListSandboxes', request, ListSandboxesResponse());
+  $async.Future<GetSandboxResponse> getSandbox(
+          $pb.ClientContext? ctx, GetSandboxRequest request) =>
+      _client.invoke<GetSandboxResponse>(
+          ctx, 'SandboxService', 'GetSandbox', request, GetSandboxResponse());
+  $async.Future<EnsureSandboxImageResponse> ensureSandboxImage(
+          $pb.ClientContext? ctx, EnsureSandboxImageRequest request) =>
+      _client.invoke<EnsureSandboxImageResponse>(ctx, 'SandboxService',
+          'EnsureSandboxImage', request, EnsureSandboxImageResponse());
+  $async.Future<LaunchSandboxResponse> launchSandbox(
+          $pb.ClientContext? ctx, LaunchSandboxRequest request) =>
+      _client.invoke<LaunchSandboxResponse>(ctx, 'SandboxService',
+          'LaunchSandbox', request, LaunchSandboxResponse());
+  $async.Future<DeleteSandboxResponse> deleteSandbox(
+          $pb.ClientContext? ctx, DeleteSandboxRequest request) =>
+      _client.invoke<DeleteSandboxResponse>(ctx, 'SandboxService',
+          'DeleteSandbox', request, DeleteSandboxResponse());
+
+  /// worker passthroughs (sandbox routing + worker.v1 payloads)
+  $async.Future<$0.ExecuteResponse> execute(
+          $pb.ClientContext? ctx, ExecuteRequest request) =>
+      _client.invoke<$0.ExecuteResponse>(
+          ctx, 'SandboxService', 'Execute', request, $0.ExecuteResponse());
+  $async.Future<$0.ListJobsResponse> listJobs(
+          $pb.ClientContext? ctx, ListJobsRequest request) =>
+      _client.invoke<$0.ListJobsResponse>(
+          ctx, 'SandboxService', 'ListJobs', request, $0.ListJobsResponse());
+  $async.Future<$0.JobOutputResponse> jobOutput(
+          $pb.ClientContext? ctx, JobOutputRequest request) =>
+      _client.invoke<$0.JobOutputResponse>(
+          ctx, 'SandboxService', 'JobOutput', request, $0.JobOutputResponse());
+  $async.Future<$0.WatchJobResponse> watchJob(
+          $pb.ClientContext? ctx, WatchJobRequest request) =>
+      _client.invoke<$0.WatchJobResponse>(
+          ctx, 'SandboxService', 'WatchJob', request, $0.WatchJobResponse());
+  $async.Future<$0.JobWaitResponse> jobWait(
+          $pb.ClientContext? ctx, JobWaitRequest request) =>
+      _client.invoke<$0.JobWaitResponse>(
+          ctx, 'SandboxService', 'JobWait', request, $0.JobWaitResponse());
+  $async.Future<$0.JobStdinResponse> jobStdin(
+          $pb.ClientContext? ctx, JobStdinRequest request) =>
+      _client.invoke<$0.JobStdinResponse>(
+          ctx, 'SandboxService', 'JobStdin', request, $0.JobStdinResponse());
+  $async.Future<$0.JobKillResponse> jobKill(
+          $pb.ClientContext? ctx, JobKillRequest request) =>
+      _client.invoke<$0.JobKillResponse>(
+          ctx, 'SandboxService', 'JobKill', request, $0.JobKillResponse());
+  $async.Future<$0.FileReadResponse> fileRead(
+          $pb.ClientContext? ctx, FileReadRequest request) =>
+      _client.invoke<$0.FileReadResponse>(
+          ctx, 'SandboxService', 'FileRead', request, $0.FileReadResponse());
+
+  /// SyncWorkspace pushes the repo tree at rev into the sandbox and records
+  /// rev + worker boot id in the registry (single rev-coherence write).
+  $async.Future<SyncWorkspaceResponse> syncWorkspace(
+          $pb.ClientContext? ctx, SyncWorkspaceRequest request) =>
+      _client.invoke<SyncWorkspaceResponse>(ctx, 'SandboxService',
+          'SyncWorkspace', request, SyncWorkspaceResponse());
+  $async.Future<$0.FileWriteResponse> fileWrite(
+          $pb.ClientContext? ctx, FileWriteRequest request) =>
+      _client.invoke<$0.FileWriteResponse>(
+          ctx, 'SandboxService', 'FileWrite', request, $0.FileWriteResponse());
+  $async.Future<$0.FileListResponse> fileList(
+          $pb.ClientContext? ctx, FileListRequest request) =>
+      _client.invoke<$0.FileListResponse>(
+          ctx, 'SandboxService', 'FileList', request, $0.FileListResponse());
+}
+
+class WorkflowServiceApi {
+  final $pb.RpcClient _client;
+
+  WorkflowServiceApi(this._client);
+
+  $async.Future<CreateWorkflowResponse> createWorkflow(
+          $pb.ClientContext? ctx, CreateWorkflowRequest request) =>
+      _client.invoke<CreateWorkflowResponse>(ctx, 'WorkflowService',
+          'CreateWorkflow', request, CreateWorkflowResponse());
+  $async.Future<GetWorkflowResponse> getWorkflow(
+          $pb.ClientContext? ctx, GetWorkflowRequest request) =>
+      _client.invoke<GetWorkflowResponse>(ctx, 'WorkflowService', 'GetWorkflow',
+          request, GetWorkflowResponse());
+  $async.Future<ListWorkflowsResponse> listWorkflows(
+          $pb.ClientContext? ctx, ListWorkflowsRequest request) =>
+      _client.invoke<ListWorkflowsResponse>(ctx, 'WorkflowService',
+          'ListWorkflows', request, ListWorkflowsResponse());
+  $async.Future<TriggerRunResponse> triggerRun(
+          $pb.ClientContext? ctx, TriggerRunRequest request) =>
+      _client.invoke<TriggerRunResponse>(
+          ctx, 'WorkflowService', 'TriggerRun', request, TriggerRunResponse());
+  $async.Future<GetRunResponse> getRun(
+          $pb.ClientContext? ctx, GetRunRequest request) =>
+      _client.invoke<GetRunResponse>(
+          ctx, 'WorkflowService', 'GetRun', request, GetRunResponse());
+  $async.Future<ListRunsResponse> listRuns(
+          $pb.ClientContext? ctx, ListRunsRequest request) =>
+      _client.invoke<ListRunsResponse>(
+          ctx, 'WorkflowService', 'ListRuns', request, ListRunsResponse());
+  $async.Future<RunJobLogResponse> runJobLog(
+          $pb.ClientContext? ctx, RunJobLogRequest request) =>
+      _client.invoke<RunJobLogResponse>(
+          ctx, 'WorkflowService', 'RunJobLog', request, RunJobLogResponse());
+  $async.Future<CancelRunResponse> cancelRun(
+          $pb.ClientContext? ctx, CancelRunRequest request) =>
+      _client.invoke<CancelRunResponse>(
+          ctx, 'WorkflowService', 'CancelRun', request, CancelRunResponse());
+  $async.Future<RegisterRunnerResponse> registerRunner(
+          $pb.ClientContext? ctx, RegisterRunnerRequest request) =>
+      _client.invoke<RegisterRunnerResponse>(ctx, 'WorkflowService',
+          'RegisterRunner', request, RegisterRunnerResponse());
+  $async.Future<ListRunnersResponse> listRunners(
+          $pb.ClientContext? ctx, ListRunnersRequest request) =>
+      _client.invoke<ListRunnersResponse>(ctx, 'WorkflowService', 'ListRunners',
+          request, ListRunnersResponse());
 }
 
 const $core.bool _omitFieldNames =

@@ -6,6 +6,7 @@
 import "package:connectrpc/connect.dart" as connect;
 import "easylab.pb.dart" as easylabv1easylab;
 import "easylab.connect.spec.dart" as specs;
+import "../../worker/v1/worker.pb.dart" as workerv1worker;
 
 /// LabService covers the revision-native repo + filesystem surface.
 extension type LabServiceClient (connect.Transport _transport) {
@@ -797,23 +798,6 @@ extension type OpsServiceClient (connect.Transport _transport) {
     );
   }
 
-  Future<easylabv1easylab.BuildResponse> build(
-    easylabv1easylab.BuildRequest input, {
-    connect.Headers? headers,
-    connect.AbortSignal? signal,
-    Function(connect.Headers)? onHeader,
-    Function(connect.Headers)? onTrailer,
-  }) {
-    return connect.Client(_transport).unary(
-      specs.OpsService.build,
-      input,
-      signal: signal,
-      headers: headers,
-      onHeader: onHeader,
-      onTrailer: onTrailer,
-    );
-  }
-
   Stream<easylabv1easylab.TaskLogResponse> taskLog(
     easylabv1easylab.TaskLogRequest input, {
     connect.Headers? headers,
@@ -961,6 +945,456 @@ extension type RegistryServiceClient (connect.Transport _transport) {
   }) {
     return connect.Client(_transport).unary(
       specs.RegistryService.oCICatalog,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+}
+/// SandboxService fronts every worker.v1 API for the UI/console and owns the
+/// sandbox lifecycle (derived image + launch + sync + registry table).
+extension type SandboxServiceClient (connect.Transport _transport) {
+  /// lifecycle
+  Future<easylabv1easylab.ListSandboxesResponse> listSandboxes(
+    easylabv1easylab.ListSandboxesRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.SandboxService.listSandboxes,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.GetSandboxResponse> getSandbox(
+    easylabv1easylab.GetSandboxRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.SandboxService.getSandbox,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.EnsureSandboxImageResponse> ensureSandboxImage(
+    easylabv1easylab.EnsureSandboxImageRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.SandboxService.ensureSandboxImage,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.LaunchSandboxResponse> launchSandbox(
+    easylabv1easylab.LaunchSandboxRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.SandboxService.launchSandbox,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.DeleteSandboxResponse> deleteSandbox(
+    easylabv1easylab.DeleteSandboxRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.SandboxService.deleteSandbox,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  /// worker passthroughs (sandbox routing + worker.v1 payloads)
+  Future<workerv1worker.ExecuteResponse> execute(
+    easylabv1easylab.ExecuteRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.SandboxService.execute,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<workerv1worker.ListJobsResponse> listJobs(
+    easylabv1easylab.ListJobsRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.SandboxService.listJobs,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<workerv1worker.JobOutputResponse> jobOutput(
+    easylabv1easylab.JobOutputRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.SandboxService.jobOutput,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Stream<workerv1worker.WatchJobResponse> watchJob(
+    easylabv1easylab.WatchJobRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).server(
+      specs.SandboxService.watchJob,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<workerv1worker.JobWaitResponse> jobWait(
+    easylabv1easylab.JobWaitRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.SandboxService.jobWait,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<workerv1worker.JobStdinResponse> jobStdin(
+    easylabv1easylab.JobStdinRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.SandboxService.jobStdin,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<workerv1worker.JobKillResponse> jobKill(
+    easylabv1easylab.JobKillRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.SandboxService.jobKill,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<workerv1worker.FileReadResponse> fileRead(
+    easylabv1easylab.FileReadRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.SandboxService.fileRead,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  /// SyncWorkspace pushes the repo tree at rev into the sandbox and records
+  /// rev + worker boot id in the registry (single rev-coherence write).
+  Future<easylabv1easylab.SyncWorkspaceResponse> syncWorkspace(
+    easylabv1easylab.SyncWorkspaceRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.SandboxService.syncWorkspace,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<workerv1worker.FileWriteResponse> fileWrite(
+    easylabv1easylab.FileWriteRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.SandboxService.fileWrite,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<workerv1worker.FileListResponse> fileList(
+    easylabv1easylab.FileListRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.SandboxService.fileList,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+}
+extension type WorkflowServiceClient (connect.Transport _transport) {
+  Future<easylabv1easylab.CreateWorkflowResponse> createWorkflow(
+    easylabv1easylab.CreateWorkflowRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.WorkflowService.createWorkflow,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.GetWorkflowResponse> getWorkflow(
+    easylabv1easylab.GetWorkflowRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.WorkflowService.getWorkflow,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.ListWorkflowsResponse> listWorkflows(
+    easylabv1easylab.ListWorkflowsRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.WorkflowService.listWorkflows,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.TriggerRunResponse> triggerRun(
+    easylabv1easylab.TriggerRunRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.WorkflowService.triggerRun,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.GetRunResponse> getRun(
+    easylabv1easylab.GetRunRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.WorkflowService.getRun,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.ListRunsResponse> listRuns(
+    easylabv1easylab.ListRunsRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.WorkflowService.listRuns,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Stream<easylabv1easylab.RunJobLogResponse> runJobLog(
+    easylabv1easylab.RunJobLogRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).server(
+      specs.WorkflowService.runJobLog,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.CancelRunResponse> cancelRun(
+    easylabv1easylab.CancelRunRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.WorkflowService.cancelRun,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.RegisterRunnerResponse> registerRunner(
+    easylabv1easylab.RegisterRunnerRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.WorkflowService.registerRunner,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
+  Future<easylabv1easylab.ListRunnersResponse> listRunners(
+    easylabv1easylab.ListRunnersRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.WorkflowService.listRunners,
       input,
       signal: signal,
       headers: headers,

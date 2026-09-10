@@ -4061,8 +4061,17 @@ class TestProviderResponse extends $pb.GeneratedMessage {
   void clearResult() => $_clearField(2);
 }
 
+/// ListModels returns the models of ONE provider. provider_id is required: the
+/// server rejects an empty value (InvalidArgument) so a global flat model list
+/// — which would surface duplicate ids across providers — is never produced.
 class ListModelsRequest extends $pb.GeneratedMessage {
-  factory ListModelsRequest() => create();
+  factory ListModelsRequest({
+    $core.String? providerId,
+  }) {
+    final result = create();
+    if (providerId != null) result.providerId = providerId;
+    return result;
+  }
 
   ListModelsRequest._();
 
@@ -4077,6 +4086,7 @@ class ListModelsRequest extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'ListModelsRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'agent.v1'),
       createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'providerId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -4097,6 +4107,15 @@ class ListModelsRequest extends $pb.GeneratedMessage {
   static ListModelsRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListModelsRequest>(create);
   static ListModelsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get providerId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set providerId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProviderId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProviderId() => $_clearField(1);
 }
 
 class ListModelsResponse extends $pb.GeneratedMessage {
@@ -4213,8 +4232,17 @@ class ModelInfo extends $pb.GeneratedMessage {
   void clearName() => $_clearField(2);
 }
 
+/// ListPresets lists presets. When locale is set (e.g. "zh"), each preset's
+/// system_prompt is resolved from its i18n map for that locale, falling back
+/// to the default prompt.
 class ListPresetsRequest extends $pb.GeneratedMessage {
-  factory ListPresetsRequest() => create();
+  factory ListPresetsRequest({
+    $core.String? locale,
+  }) {
+    final result = create();
+    if (locale != null) result.locale = locale;
+    return result;
+  }
 
   ListPresetsRequest._();
 
@@ -4229,6 +4257,7 @@ class ListPresetsRequest extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'ListPresetsRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'agent.v1'),
       createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'locale')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -4249,6 +4278,15 @@ class ListPresetsRequest extends $pb.GeneratedMessage {
   static ListPresetsRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListPresetsRequest>(create);
   static ListPresetsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get locale => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set locale($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLocale() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLocale() => $_clearField(1);
 }
 
 class ListPresetsResponse extends $pb.GeneratedMessage {
